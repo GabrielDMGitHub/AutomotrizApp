@@ -54,19 +54,29 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.Color.Gray;
             this.txtPassword.Location = new System.Drawing.Point(85, 298);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(160, 26);
             this.txtPassword.TabIndex = 1;
+            this.txtPassword.Tag = "Contraseña";
+            this.txtPassword.Text = "Contraseña";
+            this.txtPassword.Enter += new System.EventHandler(this.TextBoxEvento);
+            this.txtPassword.Leave += new System.EventHandler(this.TextBoxEvento);
             // 
             // txtUser
             // 
-            this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUser.ForeColor = System.Drawing.Color.Gray;
             this.txtUser.Location = new System.Drawing.Point(84, 235);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(160, 26);
             this.txtUser.TabIndex = 2;
+            this.txtUser.Tag = "Usuario";
+            this.txtUser.Text = "Usuario";
+            this.txtUser.Enter += new System.EventHandler(this.TextBoxEvento);
+            this.txtUser.Leave += new System.EventHandler(this.TextBoxEvento);
             // 
             // pbLogo
             // 
@@ -87,9 +97,8 @@
             this.lblLoginError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.lblLoginError.Location = new System.Drawing.Point(47, 337);
             this.lblLoginError.Name = "lblLoginError";
-            this.lblLoginError.Size = new System.Drawing.Size(236, 16);
+            this.lblLoginError.Size = new System.Drawing.Size(0, 16);
             this.lblLoginError.TabIndex = 5;
-            this.lblLoginError.Text = "Usuario o contraseña incorrectos";
             this.lblLoginError.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cbPassword

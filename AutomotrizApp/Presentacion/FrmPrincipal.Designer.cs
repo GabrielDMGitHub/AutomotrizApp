@@ -30,26 +30,26 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             this.pnMenuPrincipal = new System.Windows.Forms.Panel();
-            this.pnMuestra = new System.Windows.Forms.Panel();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.pnControles = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.btn1 = new System.Windows.Forms.Button();
             this.pnUsuario = new System.Windows.Forms.Panel();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.pnControles = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.pnMuestra = new System.Windows.Forms.Panel();
             this.pnMenuPrincipal.SuspendLayout();
-            this.pnUsuario.SuspendLayout();
             this.pnControles.SuspendLayout();
+            this.pnUsuario.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnMenuPrincipal
             // 
-            this.pnMenuPrincipal.Controls.Add(this.button7);
+            this.pnMenuPrincipal.Controls.Add(this.btnSalir);
             this.pnMenuPrincipal.Controls.Add(this.pnControles);
             this.pnMenuPrincipal.Controls.Add(this.pnUsuario);
             this.pnMenuPrincipal.Dock = System.Windows.Forms.DockStyle.Left;
@@ -58,15 +58,112 @@
             this.pnMenuPrincipal.Size = new System.Drawing.Size(170, 540);
             this.pnMenuPrincipal.TabIndex = 0;
             // 
-            // pnMuestra
+            // btnSalir
             // 
-            this.pnMuestra.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnMuestra.Location = new System.Drawing.Point(180, 10);
-            this.pnMuestra.Name = "pnMuestra";
-            this.pnMuestra.Size = new System.Drawing.Size(770, 520);
-            this.pnMuestra.TabIndex = 1;
+            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnSalir.Location = new System.Drawing.Point(0, 498);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(170, 42);
+            this.btnSalir.TabIndex = 7;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // pnControles
+            // 
+            this.pnControles.Controls.Add(this.button6);
+            this.pnControles.Controls.Add(this.button5);
+            this.pnControles.Controls.Add(this.button4);
+            this.pnControles.Controls.Add(this.button3);
+            this.pnControles.Controls.Add(this.button2);
+            this.pnControles.Controls.Add(this.button1);
+            this.pnControles.Controls.Add(this.btn1);
+            this.pnControles.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnControles.Location = new System.Drawing.Point(0, 170);
+            this.pnControles.Name = "pnControles";
+            this.pnControles.Size = new System.Drawing.Size(170, 308);
+            this.pnControles.TabIndex = 2;
+            // 
+            // button6
+            // 
+            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.button6.Location = new System.Drawing.Point(0, 252);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(170, 42);
+            this.button6.TabIndex = 6;
+            this.button6.Text = "button7";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.button5.Location = new System.Drawing.Point(0, 210);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(170, 42);
+            this.button5.TabIndex = 5;
+            this.button5.Text = "button6";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.button4.Location = new System.Drawing.Point(0, 168);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(170, 42);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "button5";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.button3.Location = new System.Drawing.Point(0, 126);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(170, 42);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "button4";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.button2.Location = new System.Drawing.Point(0, 84);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(170, 42);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "button3";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.button1.Location = new System.Drawing.Point(0, 42);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(170, 42);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button2";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // btn1
             // 
@@ -100,111 +197,15 @@
             this.lblUsuario.TabIndex = 2;
             this.lblUsuario.Text = "Usuario";
             // 
-            // pnControles
+            // pnMuestra
             // 
-            this.pnControles.Controls.Add(this.button6);
-            this.pnControles.Controls.Add(this.button5);
-            this.pnControles.Controls.Add(this.button4);
-            this.pnControles.Controls.Add(this.button3);
-            this.pnControles.Controls.Add(this.button2);
-            this.pnControles.Controls.Add(this.button1);
-            this.pnControles.Controls.Add(this.btn1);
-            this.pnControles.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnControles.Location = new System.Drawing.Point(0, 170);
-            this.pnControles.Name = "pnControles";
-            this.pnControles.Size = new System.Drawing.Size(170, 308);
-            this.pnControles.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button1.Location = new System.Drawing.Point(0, 42);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(170, 42);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button2";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.Location = new System.Drawing.Point(0, 84);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(170, 42);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button3";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button3.Location = new System.Drawing.Point(0, 126);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(170, 42);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button4";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button4.Location = new System.Drawing.Point(0, 168);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(170, 42);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "button5";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button5.Location = new System.Drawing.Point(0, 210);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(170, 42);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "button6";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button6.Location = new System.Drawing.Point(0, 252);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(170, 42);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "button7";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button7.Location = new System.Drawing.Point(0, 498);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(170, 42);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "button8";
-            this.button7.UseVisualStyleBackColor = true;
+            this.pnMuestra.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnMuestra.Location = new System.Drawing.Point(180, 10);
+            this.pnMuestra.Name = "pnMuestra";
+            this.pnMuestra.Size = new System.Drawing.Size(770, 520);
+            this.pnMuestra.TabIndex = 1;
             // 
             // FrmPrincipal
             // 
@@ -220,9 +221,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.pnMenuPrincipal.ResumeLayout(false);
+            this.pnControles.ResumeLayout(false);
             this.pnUsuario.ResumeLayout(false);
             this.pnUsuario.PerformLayout();
-            this.pnControles.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -235,7 +236,7 @@
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Button btn1;
         private System.Windows.Forms.Panel pnControles;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
