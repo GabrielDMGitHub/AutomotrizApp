@@ -1,7 +1,7 @@
 CREATE DATABASE [AutomotrizApp]
-
 USE [AutomotrizApp]
-drop database [AutomotrizAp]
+
+
 --Comandos
 --Drop de tablas
 DROP TABLE TIPOS
@@ -48,7 +48,8 @@ CONSTRAINT pk_id_cliente PRIMARY KEY (id_cliente))
 CREATE TABLE PRODUCTOS
 (id_producto int,
 nombre varchar(50),
-id_tipo int,
+precio money,
+id_tipo int
 CONSTRAINT pk_id_producto PRIMARY KEY (id_producto),
 CONSTRAINT fk_id_tipo FOREIGN KEY (id_tipo)
 REFERENCES TIPOS (id_tipo))
@@ -74,7 +75,9 @@ id_producto int,
 cantidad int
 CONSTRAINT pk_id_detalle_id_presupuesto PRIMARY KEY (id_presupuesto, id_detalle),
 CONSTRAINT fk_id_producto FOREIGN KEY (id_producto)
-REFERENCES PRODUCTOS (id_producto))
+REFERENCES PRODUCTOS (id_producto),
+CONSTRAINT fk_id_presupuesto FOREIGN KEY (id_presupuesto)
+REFERENCES PRESUPUESTOS (id_presupuesto))
 
 -- ========================================================================================================================================== --
 
