@@ -4,11 +4,15 @@ USE [AutomotrizApp]
 
 --Comandos
 --Drop de tablas
-DROP TABLE TIPOS
-DROP TABLE CLIENTES
-DROP TABLE PRODUCTOS
-DROP TABLE PRESUPUESTOS
 DROP TABLE DETALLES
+DROP TABLE PRESUPUESTOS
+DROP TABLE PRODUCTOS
+DROP TABLE CLIENTES
+DROP TABLE TIPOS
+
+
+
+
 
 
 
@@ -92,8 +96,8 @@ INSERT INTO TIPOS VALUES (1, 'Filtros');
 INSERT INTO CLIENTES VALUES (1, 'Juan', 'Pérez', '12345678A', '123456789', 'test', '123');
 
 
---Tabla PRODUCTOS (id_producto, nombre, id_tipo)
-INSERT INTO PRODUCTOS VALUES (1, 'Filtro de Aceite', 1);
+--Tabla PRODUCTOS (id_producto, nombre, precio, id_tipo)
+INSERT INTO PRODUCTOS VALUES (1, 'Filtro de Aceite', 200.0, 1);
 
 
 --Tabla PRESUPUESTOS (id_presupuesto, id_cliente, fecha, total, fecha_baja)
