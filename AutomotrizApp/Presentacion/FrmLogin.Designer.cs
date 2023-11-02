@@ -111,6 +111,7 @@
             this.cbPassword.Size = new System.Drawing.Size(15, 14);
             this.cbPassword.TabIndex = 6;
             this.cbPassword.UseVisualStyleBackColor = true;
+            this.cbPassword.CheckedChanged += new System.EventHandler(this.cbPassword_CheckedChanged);
             // 
             // FrmLogin
             // 

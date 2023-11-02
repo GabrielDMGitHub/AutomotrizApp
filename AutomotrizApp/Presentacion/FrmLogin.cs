@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -20,8 +21,30 @@ namespace AutomotrizApp.Presentacion
             InitializeComponent();
         }
 
+        //Metodos
+        // ================================================================================================================================= //
+        //Crea un objeto cliente con una tabla como parametro de entrada
+        private Cliente CrearCliente(DataTable tabla)
+        {
+            Cliente cliente = new Cliente(
+                                            tabla.Rows[0]["Nombre Completo"].ToString(),
+                                            tabla.Rows[0]["DNI"].ToString(),
+                                            tabla.Rows[0]["Telefono"].ToString()
+                                         );
+
+            return cliente;
+        }
+        // ================================================================================================================================= //
+
+
+
+        //Eventos
+        // ================================================================================================================================= //
+        //Consultar cliente con el user y pass de txtbox: (existe) = crea cliente, lo carga y cierra, (no existe) = avisa error
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+            lblLoginError.Text = "";
+
             List<Parametro> parametros = new List<Parametro>();
             parametros.Add(new Parametro("@input_usuario", txtUser.Text));
             parametros.Add(new Parametro("@input_pass", txtPassword.Text));
@@ -30,22 +53,18 @@ namespace AutomotrizApp.Presentacion
 
             if (tabla.Rows.Count != 1)
             {
+                Thread.Sleep(100);
                 lblLoginError.Text = "Usuario o contraseña incorrectos";
             }
             else
             {
-                Cliente cliente = new Cliente(  
-                                                tabla.Rows[0]["Nombre Completo"].ToString(),
-                                                tabla.Rows[0]["DNI"].ToString(),
-                                                tabla.Rows[0]["Telefono"].ToString()
-                                             );
-                FrmPrincipal.clienteActivo = cliente;
+                FrmPrincipal.clienteActivo = CrearCliente(tabla);
                 this.Close();
             }
-
-
         }
 
+
+        //Muestra contenido a introducir en los txt + condicional de mostrar caracteres de la password
         private void TextBoxEvento(object sender, EventArgs e)
         {
             TextBox tb = (TextBox)sender;
@@ -53,6 +72,10 @@ namespace AutomotrizApp.Presentacion
             {
                 tb.Text = "";
                 tb.ForeColor = Color.Black;
+                if(tb.Tag.ToString() == "Contraseña" && !(cbPassword.Checked))
+                {
+                    tb.UseSystemPasswordChar = true;
+                }
             }
             else
             {
@@ -60,8 +83,31 @@ namespace AutomotrizApp.Presentacion
                 {
                     tb.Text = tb.Tag.ToString();
                     tb.ForeColor = Color.Gray;
+                    if (tb.Tag.ToString() == "Contraseña")
+                    {
+                        tb.UseSystemPasswordChar = false;
+                    }
                 }
             }
         }
+
+
+        //Controla si debe mostrar o no los caracteres de la password
+        private void cbPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (txtPassword.Text != txtPassword.Tag.ToString())
+            {
+                if (cbPassword.Checked)
+                {
+                    txtPassword.UseSystemPasswordChar = false;
+                }
+                else
+                {
+                    txtPassword.UseSystemPasswordChar = true;
+                }
+            }
+        }
+        // ================================================================================================================================= //
+
     }
 }

@@ -38,7 +38,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btn1 = new System.Windows.Forms.Button();
+            this.btnConsultarProductos = new System.Windows.Forms.Button();
             this.pnUsuario = new System.Windows.Forms.Panel();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.pnMuestra = new System.Windows.Forms.Panel();
@@ -49,6 +49,7 @@
             // 
             // pnMenuPrincipal
             // 
+            this.pnMenuPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.pnMenuPrincipal.Controls.Add(this.btnSalir);
             this.pnMenuPrincipal.Controls.Add(this.pnControles);
             this.pnMenuPrincipal.Controls.Add(this.pnUsuario);
@@ -80,7 +81,7 @@
             this.pnControles.Controls.Add(this.button3);
             this.pnControles.Controls.Add(this.button2);
             this.pnControles.Controls.Add(this.button1);
-            this.pnControles.Controls.Add(this.btn1);
+            this.pnControles.Controls.Add(this.btnConsultarProductos);
             this.pnControles.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnControles.Location = new System.Drawing.Point(0, 170);
             this.pnControles.Name = "pnControles";
@@ -165,21 +166,23 @@
             this.button1.Text = "button2";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // btn1
+            // btnConsultarProductos
             // 
-            this.btn1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btn1.Location = new System.Drawing.Point(0, 0);
-            this.btn1.Name = "btn1";
-            this.btn1.Size = new System.Drawing.Size(170, 42);
-            this.btn1.TabIndex = 0;
-            this.btn1.Text = "button1";
-            this.btn1.UseVisualStyleBackColor = true;
+            this.btnConsultarProductos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnConsultarProductos.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnConsultarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultarProductos.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnConsultarProductos.Location = new System.Drawing.Point(0, 0);
+            this.btnConsultarProductos.Name = "btnConsultarProductos";
+            this.btnConsultarProductos.Size = new System.Drawing.Size(170, 42);
+            this.btnConsultarProductos.TabIndex = 0;
+            this.btnConsultarProductos.Text = "Productos";
+            this.btnConsultarProductos.UseVisualStyleBackColor = true;
+            this.btnConsultarProductos.Click += new System.EventHandler(this.btnConsultarProductos_Click);
             // 
             // pnUsuario
             // 
+            this.pnUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.pnUsuario.Controls.Add(this.lblUsuario);
             this.pnUsuario.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnUsuario.Location = new System.Drawing.Point(0, 0);
@@ -189,19 +192,22 @@
             // 
             // lblUsuario
             // 
-            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblUsuario.Location = new System.Drawing.Point(60, 130);
+            this.lblUsuario.Location = new System.Drawing.Point(3, 130);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(43, 13);
+            this.lblUsuario.Size = new System.Drawing.Size(164, 37);
             this.lblUsuario.TabIndex = 2;
             this.lblUsuario.Text = "Usuario";
+            this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnMuestra
             // 
             this.pnMuestra.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnMuestra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.pnMuestra.Location = new System.Drawing.Point(180, 10);
             this.pnMuestra.Name = "pnMuestra";
             this.pnMuestra.Size = new System.Drawing.Size(770, 520);
@@ -211,7 +217,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(960, 540);
             this.Controls.Add(this.pnMuestra);
             this.Controls.Add(this.pnMenuPrincipal);
@@ -223,7 +229,6 @@
             this.pnMenuPrincipal.ResumeLayout(false);
             this.pnControles.ResumeLayout(false);
             this.pnUsuario.ResumeLayout(false);
-            this.pnUsuario.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -234,7 +239,7 @@
         private System.Windows.Forms.Panel pnMuestra;
         private System.Windows.Forms.Panel pnUsuario;
         private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.Button btn1;
+        private System.Windows.Forms.Button btnConsultarProductos;
         private System.Windows.Forms.Panel pnControles;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button button6;

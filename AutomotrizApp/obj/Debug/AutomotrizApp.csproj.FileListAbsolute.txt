@@ -21,3 +21,4 @@ C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\o
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\obj\Debug\AutomotrizApp.csproj.CoreCompileInputs.cache
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\obj\Debug\AutomotrizApp.exe
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\obj\Debug\AutomotrizApp.pdb
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\obj\Debug\AutomotrizApp.Presentacion.FrmConsultarProductos.resources

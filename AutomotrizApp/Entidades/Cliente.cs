@@ -15,9 +15,9 @@ namespace AutomotrizApp.Entidades
 
 
         //Propiedades
-        public string NombreCompleto { get { return nombreCompleto; } set { nombreCompleto = value; } }
-        public string Dni { get { return dni; } set { dni = value; } }
-        public string Telefono { get { return telefono; } set { telefono = value; } }
+        public string NombreCompleto    { get { return nombreCompleto; }    set { nombreCompleto = value; } }
+        public string Dni               { get { return dni; }               set { dni = value; } }
+        public string Telefono          { get { return telefono; }          set { telefono = value; } }
 
 
         //Constructor
@@ -27,5 +27,9 @@ namespace AutomotrizApp.Entidades
             this.Dni = Dni;
             this.Telefono = Telefono;
         }
+
+
+        //Metodos
+
     }
 }
