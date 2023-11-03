@@ -109,7 +109,7 @@ namespace AutomotrizApp.Datos
 
                 foreach (DataGridViewColumn columna in grilla.Columns)          // Recorre todas las columnas del DGV (no de la tabla)
                 {
-                    if (columna.HeaderText == "Accion")                          // Si la columna es de "Accion" pone como texto en la lista el VALOR de la columna (no el header.text)
+                    if (columna.HeaderText == "Accion")                         // Si la columna es de "Accion" pone como texto en la lista el VALOR de la columna (no el header.text)
                     {
                         valores.Add(columna.Name);
                     }

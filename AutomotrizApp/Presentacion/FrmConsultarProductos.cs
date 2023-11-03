@@ -16,11 +16,6 @@ namespace AutomotrizApp.Presentacion
         public FrmConsultarProductos()
         {
             InitializeComponent();
-
-            LimpiarControles();
-            DBHelper.ObtenerInstancia().CargarCombo(cboTipoProducto, "SP_Consultar_Tipos");
-            DBHelper.ObtenerInstancia().CargarGrilla(dgvConsultarProductos, null, "SP_Consultar_Productos");
-            //txtNombreProducto.AutoCompleteSource = ---> Completar mas adelante
         }
 
         //Metodos
@@ -31,8 +26,7 @@ namespace AutomotrizApp.Presentacion
             txtNombreProducto.Text = "";
             txtPrecioProductoMin.Text = "";
             txtPrecioProductoMax.Text = "";
-            cboTipoProducto.Items.Clear();
-            dgvConsultarProductos.Rows.Clear();
+            cboTipoProducto.SelectedIndex = -1;
         }
         // ================================================================================================================================= //
 
@@ -40,6 +34,17 @@ namespace AutomotrizApp.Presentacion
 
         //Eventos
         // ================================================================================================================================= //
+        //Load
+        private void FrmConsultarProductos_Load(object sender, EventArgs e)
+        {
+            LimpiarControles();
+            txtNombreProducto.Focus();
+            DBHelper.ObtenerInstancia().CargarCombo(cboTipoProducto, "SP_CONSULTAR_TIPOS");
+            DBHelper.ObtenerInstancia().CargarGrilla(dgvConsultarProductos, null, "SP_CONSULTAR_PRODUCTOS");
+            //txtNombreProducto.AutoCompleteSource = ---> Completar mas adelante
+        }
+
+
         //Carga y filtra el contenido del dgv
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
@@ -51,25 +56,26 @@ namespace AutomotrizApp.Presentacion
             }
             if (txtPrecioProductoMin.Text != "")
             {
-                lista.Add(new Parametro("@input_precio_min", txtNombreProducto.Text));
+                lista.Add(new Parametro("@input_precio_min", txtPrecioProductoMin.Text));
             }
             if (txtPrecioProductoMax.Text != "")
             {
-                lista.Add(new Parametro("@input_precio_max", txtNombreProducto.Text));
+                lista.Add(new Parametro("@input_precio_max", txtPrecioProductoMax.Text));
             }
             if (cboTipoProducto.SelectedItem != null)
             {
-                lista.Add(new Parametro("@input_tipo", cboTipoProducto.SelectedValue));
+                lista.Add(new Parametro("@input_id_tipo", cboTipoProducto.SelectedValue));
             }
 
             dgvConsultarProductos.Rows.Clear();
-            DBHelper.ObtenerInstancia().CargarGrilla(dgvConsultarProductos, lista, @"SP_Consultar_Productos");
+            DBHelper.ObtenerInstancia().CargarGrilla(dgvConsultarProductos, lista, "SP_CONSULTAR_PRODUCTOS");
         }
 
-        private void FrmConsultarProductos_Load(object sender, EventArgs e)
+        private void btnReiniciarFiltros_Click(object sender, EventArgs e)
         {
-
+            LimpiarControles();
         }
+
         // ================================================================================================================================= //
     }
 }

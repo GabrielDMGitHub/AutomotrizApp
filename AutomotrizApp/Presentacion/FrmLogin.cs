@@ -40,6 +40,13 @@ namespace AutomotrizApp.Presentacion
 
         //Eventos
         // ================================================================================================================================= //
+        //Load
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
         //Consultar cliente con el user y pass de txtbox: (existe) = crea cliente, lo carga y cierra, (no existe) = avisa error
         private void btnIngresar_Click(object sender, EventArgs e)
         {
@@ -49,7 +56,7 @@ namespace AutomotrizApp.Presentacion
             parametros.Add(new Parametro("@input_usuario", txtUser.Text));
             parametros.Add(new Parametro("@input_pass", txtPassword.Text));
 
-            DataTable tabla = DBHelper.ObtenerInstancia().ConsultarSP("SP_Consultar_Login", parametros);
+            DataTable tabla = DBHelper.ObtenerInstancia().ConsultarSP("SP_CONSULTAR_LOGIN", parametros);
 
             if (tabla.Rows.Count != 1)
             {
@@ -107,6 +114,7 @@ namespace AutomotrizApp.Presentacion
                 }
             }
         }
+
         // ================================================================================================================================= //
 
     }

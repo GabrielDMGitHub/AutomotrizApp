@@ -18,8 +18,8 @@ namespace AutomotrizApp.Presentacion
             InitializeComponent();
 
             LimpiarControles();
-            DBHelper.ObtenerInstancia().CargarCombo(cboTipoProducto, "SP_Consultar_Tipos");
-            DBHelper.ObtenerInstancia().CargarGrilla(dgvConsultarProductos, null, "SP_Consultar_Productos");
+            DBHelper.ObtenerInstancia().CargarCombo(cboTipoProducto, "SP_CONSULTAR_TIPOS");
+            DBHelper.ObtenerInstancia().CargarGrilla(dgvConsultarProductos, null, "SP_CONSULTAR_PRODUCTOS");
         }
 
 
@@ -40,11 +40,20 @@ namespace AutomotrizApp.Presentacion
 
         //Metodos
         // ================================================================================================================================= //
+        //Load
+        private void FrmNuevoProducto_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
         //
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
 
         }
+
+        
         // ================================================================================================================================= //
     }
 }

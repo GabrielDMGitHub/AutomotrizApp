@@ -18,6 +18,7 @@ namespace AutomotrizApp
         // ================================================================================================================================= //
         FrmLogin Login = new FrmLogin();
         FrmConsultarProductos ConsultarProductos = new FrmConsultarProductos();
+        FrmNuevoProducto NuevoProducto = new FrmNuevoProducto();
 
         public static Cliente clienteActivo;
         // ================================================================================================================================= //
@@ -26,8 +27,6 @@ namespace AutomotrizApp
         {
             Login.ShowDialog();
             InitializeComponent();
-
-            lblUsuario.Text = clienteActivo.NombreCompleto.ToString();
         }
 
         //Metodos
@@ -46,6 +45,13 @@ namespace AutomotrizApp
 
         //Eventos
         // ================================================================================================================================= //
+        //Load
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            lblUsuario.Text = clienteActivo.NombreCompleto.ToString();
+        }
+
+
         //Cierra el programa completo
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -53,11 +59,15 @@ namespace AutomotrizApp
         }
 
 
-
         //Botones del menu
         private void btnConsultarProductos_Click(object sender, EventArgs e)
         {
             CambiarFormulario(ConsultarProductos);
+        }
+
+        private void btnNuevoProducto_Click(object sender, EventArgs e)
+        {
+            CambiarFormulario(NuevoProducto);
         }
     }
 }

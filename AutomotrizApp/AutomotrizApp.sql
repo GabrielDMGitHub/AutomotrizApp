@@ -23,6 +23,7 @@ set dateformat dmy
 -- 3. Modifico los inserts grupales a inserts independientes para que sean mas faciles de manejar
 -- 4. En algunos SPs campos como total es money (no numeric), id_cliente es int (no varchar)
 -- 5. Agregue "SP_CONSULTAR_TIPOS" que faltaba para poder hacer carga de los combo box
+-- 6. Modifique SP_CONSULTAR_PRODUCTOS para que acepte parametros de entrada y filtre
 
 
 --Creacion de tablas (por orden)
@@ -91,8 +92,8 @@ INSERT INTO TIPOS VALUES (1, 'Frenos');
 INSERT INTO TIPOS VALUES (2, 'Aceite');
 INSERT INTO TIPOS VALUES (3, 'Filtros');
 INSERT INTO TIPOS VALUES (4, 'Suspensión');
-INSERT INTO TIPOS VALUES (5, 'Motor');
-INSERT INTO TIPOS VALUES (6, 'Transmisión');
+INSERT INTO TIPOS VALUES (5, 'Motor'); --
+INSERT INTO TIPOS VALUES (6, 'Transmisión'); --
 INSERT INTO TIPOS VALUES (7, 'Luces');
 INSERT INTO TIPOS VALUES (8, 'Neumáticos');
 INSERT INTO TIPOS VALUES (9, 'Carrocería');
@@ -101,7 +102,6 @@ INSERT INTO TIPOS VALUES (11, 'Sistema de escape');
 INSERT INTO TIPOS VALUES (12, 'Sistema de enfriamiento');
 INSERT INTO TIPOS VALUES (13, 'Dirección');
 INSERT INTO TIPOS VALUES (14, 'Electrónica');
-INSERT INTO TIPOS VALUES (15, 'Accesorios exteriores');
 
 
 
@@ -139,39 +139,39 @@ INSERT INTO CLIENTES VALUES (30, 'Hugo', 'Fernández', '12345690', '109876543', '
 
 
 --Tabla PRODUCTOS (id_producto, nombre, precio, id_tipo)
-INSERT INTO PRODUCTOS VALUES (1, 'Kit de frenos de alto rendimiento', 15999, 1);
-INSERT INTO PRODUCTOS VALUES (2, 'Aceite de motor sintético premium', 7999.99, 2);
-INSERT INTO PRODUCTOS VALUES (3, 'Filtro de aire de alto flujo', 16999.99, 3);
-INSERT INTO PRODUCTOS VALUES (4, 'Amortiguadores deportivos ajustables', 15499, 4);
-INSERT INTO PRODUCTOS VALUES (5, 'Batería de alto rendimiento', 77999, 8);
-INSERT INTO PRODUCTOS VALUES (6, 'Escape deportivo de acero inoxidable', 55999.99, 11);
-INSERT INTO PRODUCTOS VALUES (7, 'Radiador de enfriamiento de alto flujo', 77999.99, 12);
-INSERT INTO PRODUCTOS VALUES (8, 'Dirección asistida eléctrica', 15999, 13);
-INSERT INTO PRODUCTOS VALUES (9, 'Sistema de sonido premium', 17999.99, 14);
-INSERT INTO PRODUCTOS VALUES (10, 'Kit de iluminación LED', 36999, 7);
-INSERT INTO PRODUCTOS VALUES (11, 'Neumáticos de alto desempeño', 95999.99, 8);
-INSERT INTO PRODUCTOS VALUES (12, 'Parachoques delantero de fibra de carbono', 86999, 9);
-INSERT INTO PRODUCTOS VALUES (13, 'Asientos deportivos de cuero', 107999.99, 10);
-INSERT INTO PRODUCTOS VALUES (14, 'Sistema de escape de alto rendimiento', 106999, 11);
-INSERT INTO PRODUCTOS VALUES (15, 'Sistema de enfriamiento líquido premium', 95999.99, 12);
-INSERT INTO PRODUCTOS VALUES (16, 'Sistema de dirección asistida hidráulica', 95999, 13);
-INSERT INTO PRODUCTOS VALUES (17, 'Unidad de control del motor reprogramable', 76999, 14);
-INSERT INTO PRODUCTOS VALUES (18, 'Faros LED delanteros', 55999.99, 7);
-INSERT INTO PRODUCTOS VALUES (19, 'Neumáticos todoterreno', 105999, 8);
-INSERT INTO PRODUCTOS VALUES (20, 'Puerta delantera de fibra de vidrio', 107999, 9);
+INSERT INTO PRODUCTOS VALUES (1, 'Kit de frenos de alto rendimiento', 16000, 1);
+INSERT INTO PRODUCTOS VALUES (2, 'Aceite de motor sintético premium', 8000, 2);
+INSERT INTO PRODUCTOS VALUES (3, 'Filtro de aire de alto flujo', 17000, 3);
+INSERT INTO PRODUCTOS VALUES (4, 'Amortiguadores deportivos ajustables', 15500, 4);
+INSERT INTO PRODUCTOS VALUES (5, 'Batería de alto rendimiento', 78000, 8);
+INSERT INTO PRODUCTOS VALUES (6, 'Escape deportivo de acero inoxidable', 56000, 11);
+INSERT INTO PRODUCTOS VALUES (7, 'Radiador de enfriamiento de alto flujo', 7800, 12);
+INSERT INTO PRODUCTOS VALUES (8, 'Dirección asistida eléctrica', 16000, 13);
+INSERT INTO PRODUCTOS VALUES (9, 'Sistema de sonido premium', 18000, 14);
+INSERT INTO PRODUCTOS VALUES (10, 'Kit de iluminación LED', 37000, 7);
+INSERT INTO PRODUCTOS VALUES (11, 'Neumáticos de alto desempeño', 76000, 8);
+INSERT INTO PRODUCTOS VALUES (12, 'Parachoques delantero de fibra de carbono', 82000, 9);
+INSERT INTO PRODUCTOS VALUES (13, 'Asientos deportivos de cuero', 108000, 10);
+INSERT INTO PRODUCTOS VALUES (14, 'Sistema de escape de alto rendimiento', 106000, 11);
+INSERT INTO PRODUCTOS VALUES (15, 'Sistema de enfriamiento líquido premium', 95000, 12);
+INSERT INTO PRODUCTOS VALUES (16, 'Sistema de dirección asistida hidráulica', 96000, 13);
+INSERT INTO PRODUCTOS VALUES (17, 'Unidad de control del motor reprogramable', 77000, 14);
+INSERT INTO PRODUCTOS VALUES (18, 'Faros LED delanteros', 16000, 7);
+INSERT INTO PRODUCTOS VALUES (19, 'Neumáticos todoterreno', 106000, 8);
+INSERT INTO PRODUCTOS VALUES (20, 'Puerta delantera de fibra de vidrio', 64000, 9);
 
 
 --Tabla PRESUPUESTOS (id_presupuesto, id_cliente, fecha, total, fecha_baja)
-INSERT INTO PRESUPUESTOS VALUES (1, 1, '05/10/2023', 48997.99, NULL);
-INSERT INTO PRESUPUESTOS VALUES (2, 2, '02/12/2022', 15499, NULL);
-INSERT INTO PRESUPUESTOS VALUES (3, 3, '02/11/2022', 241999.96, NULL);
-INSERT INTO PRESUPUESTOS VALUES (4, 4, '02/05/2022', 109997, NULL);
-INSERT INTO PRESUPUESTOS VALUES (5, 5, '02/06/2022', 73998, NULL);
-INSERT INTO PRESUPUESTOS VALUES (6, 6, '04/11/2022', 374998.97, NULL);
-INSERT INTO PRESUPUESTOS VALUES (7, 7, '10/01/2022', 215999.98, NULL);
-INSERT INTO PRESUPUESTOS VALUES (8, 8, '08/09/2022', 95999.99, NULL);
-INSERT INTO PRESUPUESTOS VALUES (9, 9, '02/04/2023', 76999, NULL);
-INSERT INTO PRESUPUESTOS VALUES (10, 10, '22/04/2023', 211998, NULL);
+INSERT INTO PRESUPUESTOS VALUES (1, 1, '05/10/2023', 49000, NULL);
+INSERT INTO PRESUPUESTOS VALUES (2, 2, '02/12/2022', 15500, NULL);
+INSERT INTO PRESUPUESTOS VALUES (3, 3, '02/11/2022', 31400, NULL);
+INSERT INTO PRESUPUESTOS VALUES (4, 4, '02/05/2022', 94000, NULL);
+INSERT INTO PRESUPUESTOS VALUES (5, 5, '02/06/2022', 74000, NULL);
+INSERT INTO PRESUPUESTOS VALUES (6, 6, '04/11/2022', 310000, NULL);
+INSERT INTO PRESUPUESTOS VALUES (7, 7, '10/01/2022', 216000, NULL);
+INSERT INTO PRESUPUESTOS VALUES (8, 8, '08/09/2022', 95000, NULL);
+INSERT INTO PRESUPUESTOS VALUES (9, 9, '02/04/2023', 77000, NULL);
+INSERT INTO PRESUPUESTOS VALUES (10, 10, '22/04/2023', 212000, NULL);
 
 
 --Tabla DETALLES (id_presupuesto, id_detalle, id_producto, cantidad)
@@ -203,7 +203,7 @@ create proc [SP_CONSULTAR_LOGIN]
 		@input_pass varchar(50) = ''
 as
 begin
-		SELECT top(1) c.nombre + c.apellido 'Nombre Completo', c.dni 'DNI', c.telefono 'Telefono'
+		SELECT top(1) c.nombre + ' ' + c.apellido 'Nombre Completo', c.dni 'DNI', c.telefono 'Telefono'
 		FROM CLIENTES c
 		WHERE c.usuario = @input_usuario and c.pass = @input_pass
 end
@@ -230,14 +230,21 @@ exec [SP_ELIMINAR_PRESUPUESTO] @input_id_presupuesto = 0
 go
 --SP para consultar productos sin parametros de entrada (sirve para los combo box)
 create proc [SP_CONSULTAR_PRODUCTOS]
+		@input_nombre varchar(50) = '',
+		@input_precio_min money = null,
+		@input_precio_max money = null,
+		@input_id_tipo int = null
 as
 begin
 
-        SELECT p.id_producto 'ID', p.nombre 'Nombre', p.precio 'Precio', t.tipo 'Tipo'
+        SELECT p.id_producto 'ID', p.nombre 'Nombre', round (p.precio, 2) 'Precio', t.tipo 'Tipo'
 		FROM PRODUCTOS p join TIPOS t on p.id_tipo = t.id_tipo
+		WHERE (p.nombre like '%' + @input_nombre + '%')
+        AND (p.precio between isnull(@input_precio_min, p.precio) and isnull(@input_precio_max, p.precio))
+        AND p.id_tipo = isnull(@input_id_tipo, p.id_tipo);
 end
 go
-exec [SP_CONSULTAR_PRODUCTOS]
+exec [SP_CONSULTAR_PRODUCTOS] @input_nombre = '', @input_precio_min = 0, @input_precio_max = 999999, @input_id_tipo = 1
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 

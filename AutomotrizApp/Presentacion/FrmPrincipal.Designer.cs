@@ -32,12 +32,12 @@
             this.pnMenuPrincipal = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.pnControles = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnAcercaDe = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnNuevoProducto = new System.Windows.Forms.Button();
             this.btnConsultarProductos = new System.Windows.Forms.Button();
             this.pnUsuario = new System.Windows.Forms.Panel();
             this.lblUsuario = new System.Windows.Forms.Label();
@@ -68,19 +68,19 @@
             this.btnSalir.Location = new System.Drawing.Point(0, 498);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(170, 42);
-            this.btnSalir.TabIndex = 7;
+            this.btnSalir.TabIndex = 0;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // pnControles
             // 
-            this.pnControles.Controls.Add(this.button6);
+            this.pnControles.Controls.Add(this.btnAcercaDe);
             this.pnControles.Controls.Add(this.button5);
             this.pnControles.Controls.Add(this.button4);
             this.pnControles.Controls.Add(this.button3);
             this.pnControles.Controls.Add(this.button2);
-            this.pnControles.Controls.Add(this.button1);
+            this.pnControles.Controls.Add(this.btnNuevoProducto);
             this.pnControles.Controls.Add(this.btnConsultarProductos);
             this.pnControles.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnControles.Location = new System.Drawing.Point(0, 170);
@@ -88,18 +88,18 @@
             this.pnControles.Size = new System.Drawing.Size(170, 308);
             this.pnControles.TabIndex = 2;
             // 
-            // button6
+            // btnAcercaDe
             // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button6.Location = new System.Drawing.Point(0, 252);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(170, 42);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "button7";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnAcercaDe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAcercaDe.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAcercaDe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAcercaDe.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnAcercaDe.Location = new System.Drawing.Point(0, 252);
+            this.btnAcercaDe.Name = "btnAcercaDe";
+            this.btnAcercaDe.Size = new System.Drawing.Size(170, 42);
+            this.btnAcercaDe.TabIndex = 6;
+            this.btnAcercaDe.Text = "Informacion";
+            this.btnAcercaDe.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
@@ -153,18 +153,19 @@
             this.button2.Text = "button3";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnNuevoProducto
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button1.Location = new System.Drawing.Point(0, 42);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(170, 42);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button2";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnNuevoProducto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNuevoProducto.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnNuevoProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoProducto.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnNuevoProducto.Location = new System.Drawing.Point(0, 42);
+            this.btnNuevoProducto.Name = "btnNuevoProducto";
+            this.btnNuevoProducto.Size = new System.Drawing.Size(170, 42);
+            this.btnNuevoProducto.TabIndex = 1;
+            this.btnNuevoProducto.Text = "Nuevo Producto";
+            this.btnNuevoProducto.UseVisualStyleBackColor = true;
+            this.btnNuevoProducto.Click += new System.EventHandler(this.btnNuevoProducto_Click);
             // 
             // btnConsultarProductos
             // 
@@ -176,7 +177,7 @@
             this.btnConsultarProductos.Name = "btnConsultarProductos";
             this.btnConsultarProductos.Size = new System.Drawing.Size(170, 42);
             this.btnConsultarProductos.TabIndex = 0;
-            this.btnConsultarProductos.Text = "Productos";
+            this.btnConsultarProductos.Text = "Consultar Productos";
             this.btnConsultarProductos.UseVisualStyleBackColor = true;
             this.btnConsultarProductos.Click += new System.EventHandler(this.btnConsultarProductos_Click);
             // 
@@ -198,7 +199,7 @@
             this.lblUsuario.Location = new System.Drawing.Point(3, 130);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(164, 37);
-            this.lblUsuario.TabIndex = 2;
+            this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuario";
             this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -226,6 +227,7 @@
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
+            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.pnMenuPrincipal.ResumeLayout(false);
             this.pnControles.ResumeLayout(false);
             this.pnUsuario.ResumeLayout(false);
@@ -242,12 +244,12 @@
         private System.Windows.Forms.Button btnConsultarProductos;
         private System.Windows.Forms.Panel pnControles;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnAcercaDe;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnNuevoProducto;
     }
 }
 

@@ -59,7 +59,7 @@
             this.txtPassword.Location = new System.Drawing.Point(85, 298);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(160, 26);
-            this.txtPassword.TabIndex = 1;
+            this.txtPassword.TabIndex = 2;
             this.txtPassword.Tag = "Contraseña";
             this.txtPassword.Text = "Contraseña";
             this.txtPassword.Enter += new System.EventHandler(this.TextBoxEvento);
@@ -72,7 +72,7 @@
             this.txtUser.Location = new System.Drawing.Point(84, 235);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(160, 26);
-            this.txtUser.TabIndex = 2;
+            this.txtUser.TabIndex = 1;
             this.txtUser.Tag = "Usuario";
             this.txtUser.Text = "Usuario";
             this.txtUser.Enter += new System.EventHandler(this.TextBoxEvento);
@@ -109,7 +109,7 @@
             this.cbPassword.Location = new System.Drawing.Point(251, 304);
             this.cbPassword.Name = "cbPassword";
             this.cbPassword.Size = new System.Drawing.Size(15, 14);
-            this.cbPassword.TabIndex = 6;
+            this.cbPassword.TabIndex = 3;
             this.cbPassword.UseVisualStyleBackColor = true;
             this.cbPassword.CheckedChanged += new System.EventHandler(this.cbPassword_CheckedChanged);
             // 
@@ -130,6 +130,7 @@
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
