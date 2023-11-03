@@ -12,19 +12,17 @@ DROP TABLE TIPOS
 
 
 
-
-
-
-
 --Cambio de formatos
 set dateformat dmy
 
 -- Notas:
 
--- 1. 
--- 2. 
--- 3. 
--- 4. 
+-- Gabi (03/11):
+-- 1. Use el like en los SP para poder tomar parametros vacios o "incompletos" sin que tire error, ej: DNIs que contengan 123
+-- 2. Especifico los campos de las consultas para no usar el *
+-- 3. Modifico los inserts grupales a inserts independientes para que sean mas faciles de manejar
+-- 4. En algunos SPs campos como total es money (no numeric), id_cliente es int (no varchar)
+-- 5. Agregue "SP_CONSULTAR_TIPOS" que faltaba para poder hacer carga de los combo box
 
 
 --Creacion de tablas (por orden)
@@ -89,23 +87,108 @@ REFERENCES PRESUPUESTOS (id_presupuesto))
 --Inserts
 -- ========================================================================================================================================== --
 --Tabla TIPOS (id_tipo, tipo)
-INSERT INTO TIPOS VALUES (1, 'Filtros');
+INSERT INTO TIPOS VALUES (1, 'Frenos');
+INSERT INTO TIPOS VALUES (2, 'Aceite');
+INSERT INTO TIPOS VALUES (3, 'Filtros');
+INSERT INTO TIPOS VALUES (4, 'Suspensión');
+INSERT INTO TIPOS VALUES (5, 'Motor');
+INSERT INTO TIPOS VALUES (6, 'Transmisión');
+INSERT INTO TIPOS VALUES (7, 'Luces');
+INSERT INTO TIPOS VALUES (8, 'Neumáticos');
+INSERT INTO TIPOS VALUES (9, 'Carrocería');
+INSERT INTO TIPOS VALUES (10, 'Interior');
+INSERT INTO TIPOS VALUES (11, 'Sistema de escape');
+INSERT INTO TIPOS VALUES (12, 'Sistema de enfriamiento');
+INSERT INTO TIPOS VALUES (13, 'Dirección');
+INSERT INTO TIPOS VALUES (14, 'Electrónica');
+INSERT INTO TIPOS VALUES (15, 'Accesorios exteriores');
+
 
 
 --Tabla CLIENTES (id_cliente, nombre, apellido, dni, telefono, usuario, pass)
-INSERT INTO CLIENTES VALUES (1, 'Juan', 'Pérez', '12345678A', '123456789', 'test', '123');
+INSERT INTO CLIENTES VALUES (1, 'Juan', 'Pérez', '12345678', '123456789', 'test', '123');
+INSERT INTO CLIENTES VALUES (2, 'María', 'López', '87654321', '987654321', 'maria', '456');
+INSERT INTO CLIENTES VALUES (3, 'Pedro', 'Gómez', '56781234', '654321987', 'pedro', '789');
+INSERT INTO CLIENTES VALUES (4, 'Ana', 'García', '98761234', '123456789', 'ana', '987');
+INSERT INTO CLIENTES VALUES (5, 'Luis', 'Rodríguez', '65437890', '876543210', 'luis', '765');
+INSERT INTO CLIENTES VALUES (6, 'Laura', 'Torres', '12345690', '109876543', 'laura', '543');
+INSERT INTO CLIENTES VALUES (7, 'Javier', 'Fernández', '89012345', '987654321', 'javier', '321');
+INSERT INTO CLIENTES VALUES (8, 'Elena', 'Sánchez', '56789012', '123456789', 'elena', '234');
+INSERT INTO CLIENTES VALUES (9, 'Miguel', 'Martínez', '12345678', '987654321', 'miguel', '123');
+INSERT INTO CLIENTES VALUES (10, 'Sara', 'López', '87654321', '654321987', 'sara', '456');
+INSERT INTO CLIENTES VALUES (11, 'Diego', 'Pérez', '56781234', '123456789', 'diego', '789');
+INSERT INTO CLIENTES VALUES (12, 'Carmen', 'Gómez', '98761234', '987654321', 'carmen', '987');
+INSERT INTO CLIENTES VALUES (13, 'Carlos', 'Torres', '65437890', '876543210', 'carlos', '765');
+INSERT INTO CLIENTES VALUES (14, 'Marta', 'Fernández', '12345690', '109876543', 'marta', '543');
+INSERT INTO CLIENTES VALUES (15, 'Isabel', 'Sánchez', '89012345', '987654321', 'isabel', '321');
+INSERT INTO CLIENTES VALUES (16, 'Jorge', 'Martínez', '56789012', '123456789', 'jorge', '234');
+INSERT INTO CLIENTES VALUES (17, 'Natalia', 'López', '12345678', '987654321', 'natalia', '123');
+INSERT INTO CLIENTES VALUES (18, 'Roberto', 'Pérez', '87654321', '654321987', 'roberto', '456');
+INSERT INTO CLIENTES VALUES (19, 'Patricia', 'Gómez', '56781234', '123456789', 'patricia', '789');
+INSERT INTO CLIENTES VALUES (20, 'Alejandro', 'García', '98761234', '987654321', 'alejandro', '987');
+INSERT INTO CLIENTES VALUES (21, 'Lucía', 'Torres', '65437890', '876543210', 'lucia', '765');
+INSERT INTO CLIENTES VALUES (22, 'Víctor', 'Fernández', '12345690', '109876543', 'victor', '543');
+INSERT INTO CLIENTES VALUES (23, 'Sofía', 'Sánchez', '89012345', '987654321', 'sofia', '321');
+INSERT INTO CLIENTES VALUES (24, 'Raúl', 'Martínez', '56789012', '123456789', 'raul', '234');
+INSERT INTO CLIENTES VALUES (25, 'Marina', 'López', '12345678', '987654321', 'marina', '123');
+INSERT INTO CLIENTES VALUES (26, 'Antonio', 'Pérez', '87654321', '654321987', 'antonio', '456');
+INSERT INTO CLIENTES VALUES (27, 'Teresa', 'Gómez', '56781234', '123456789', 'teresa', '789');
+INSERT INTO CLIENTES VALUES (28, 'Andrés', 'García', '98761234', '987654321', 'andres', '987');
+INSERT INTO CLIENTES VALUES (29, 'Cristina', 'Torres', '65437890', '876543210', 'cristina', '765');
+INSERT INTO CLIENTES VALUES (30, 'Hugo', 'Fernández', '12345690', '109876543', 'hugo', '543');
 
 
 --Tabla PRODUCTOS (id_producto, nombre, precio, id_tipo)
-INSERT INTO PRODUCTOS VALUES (1, 'Filtro de Aceite', 200.0, 1);
+INSERT INTO PRODUCTOS VALUES (1, 'Kit de frenos de alto rendimiento', 15999, 1);
+INSERT INTO PRODUCTOS VALUES (2, 'Aceite de motor sintético premium', 7999.99, 2);
+INSERT INTO PRODUCTOS VALUES (3, 'Filtro de aire de alto flujo', 16999.99, 3);
+INSERT INTO PRODUCTOS VALUES (4, 'Amortiguadores deportivos ajustables', 15499, 4);
+INSERT INTO PRODUCTOS VALUES (5, 'Batería de alto rendimiento', 77999, 8);
+INSERT INTO PRODUCTOS VALUES (6, 'Escape deportivo de acero inoxidable', 55999.99, 11);
+INSERT INTO PRODUCTOS VALUES (7, 'Radiador de enfriamiento de alto flujo', 77999.99, 12);
+INSERT INTO PRODUCTOS VALUES (8, 'Dirección asistida eléctrica', 15999, 13);
+INSERT INTO PRODUCTOS VALUES (9, 'Sistema de sonido premium', 17999.99, 14);
+INSERT INTO PRODUCTOS VALUES (10, 'Kit de iluminación LED', 36999, 7);
+INSERT INTO PRODUCTOS VALUES (11, 'Neumáticos de alto desempeño', 95999.99, 8);
+INSERT INTO PRODUCTOS VALUES (12, 'Parachoques delantero de fibra de carbono', 86999, 9);
+INSERT INTO PRODUCTOS VALUES (13, 'Asientos deportivos de cuero', 107999.99, 10);
+INSERT INTO PRODUCTOS VALUES (14, 'Sistema de escape de alto rendimiento', 106999, 11);
+INSERT INTO PRODUCTOS VALUES (15, 'Sistema de enfriamiento líquido premium', 95999.99, 12);
+INSERT INTO PRODUCTOS VALUES (16, 'Sistema de dirección asistida hidráulica', 95999, 13);
+INSERT INTO PRODUCTOS VALUES (17, 'Unidad de control del motor reprogramable', 76999, 14);
+INSERT INTO PRODUCTOS VALUES (18, 'Faros LED delanteros', 55999.99, 7);
+INSERT INTO PRODUCTOS VALUES (19, 'Neumáticos todoterreno', 105999, 8);
+INSERT INTO PRODUCTOS VALUES (20, 'Puerta delantera de fibra de vidrio', 107999, 9);
 
 
 --Tabla PRESUPUESTOS (id_presupuesto, id_cliente, fecha, total, fecha_baja)
-INSERT INTO PRESUPUESTOS VALUES (1, 1, '28/10/2023', 500.00, NULL);
+INSERT INTO PRESUPUESTOS VALUES (1, 1, '05/10/2023', 48997.99, NULL);
+INSERT INTO PRESUPUESTOS VALUES (2, 2, '02/12/2022', 15499, NULL);
+INSERT INTO PRESUPUESTOS VALUES (3, 3, '02/11/2022', 241999.96, NULL);
+INSERT INTO PRESUPUESTOS VALUES (4, 4, '02/05/2022', 109997, NULL);
+INSERT INTO PRESUPUESTOS VALUES (5, 5, '02/06/2022', 73998, NULL);
+INSERT INTO PRESUPUESTOS VALUES (6, 6, '04/11/2022', 374998.97, NULL);
+INSERT INTO PRESUPUESTOS VALUES (7, 7, '10/01/2022', 215999.98, NULL);
+INSERT INTO PRESUPUESTOS VALUES (8, 8, '08/09/2022', 95999.99, NULL);
+INSERT INTO PRESUPUESTOS VALUES (9, 9, '02/04/2023', 76999, NULL);
+INSERT INTO PRESUPUESTOS VALUES (10, 10, '22/04/2023', 211998, NULL);
 
 
 --Tabla DETALLES (id_presupuesto, id_detalle, id_producto, cantidad)
 INSERT INTO DETALLES VALUES (1, 1, 1, 2);
+INSERT INTO DETALLES VALUES (1, 2, 3, 1);
+INSERT INTO DETALLES VALUES (2, 1, 4, 1);
+INSERT INTO DETALLES VALUES (3, 1, 2, 1);
+INSERT INTO DETALLES VALUES (3, 2, 7, 3);
+INSERT INTO DETALLES VALUES (4, 1, 5, 1);
+INSERT INTO DETALLES VALUES (4, 2, 8, 2);
+INSERT INTO DETALLES VALUES (5, 2, 10, 2);
+INSERT INTO DETALLES VALUES (6, 1, 11, 3);
+INSERT INTO DETALLES VALUES (6, 2, 12, 1);
+INSERT INTO DETALLES VALUES (7, 1, 13, 2);
+INSERT INTO DETALLES VALUES (8, 1, 15, 1);
+INSERT INTO DETALLES VALUES (9, 1, 17, 1);
+INSERT INTO DETALLES VALUES (10, 1, 19, 2);
 
 
 -- ========================================================================================================================================== --
@@ -113,29 +196,173 @@ INSERT INTO DETALLES VALUES (1, 1, 1, 2);
 
 --Procedimientos almacenados
 -- ========================================================================================================================================== --
+go
 --SP para consultar la existencia de un cliente con un nombre de usuario y contraseña especifico
-go
-create proc [SP_Consultar_Login]
-@input_usuario varchar(50) = '',
-@input_pass varchar(50) = ''
+create proc [SP_CONSULTAR_LOGIN]
+		@input_usuario varchar(50) = '',
+		@input_pass varchar(50) = ''
 as
-SELECT top(1) c.nombre + c.apellido 'Nombre Completo', c.dni 'DNI', c.telefono 'Telefono'
-FROM CLIENTES c
-WHERE c.usuario = @input_usuario and c.pass = @input_pass
+begin
+		SELECT top(1) c.nombre + c.apellido 'Nombre Completo', c.dni 'DNI', c.telefono 'Telefono'
+		FROM CLIENTES c
+		WHERE c.usuario = @input_usuario and c.pass = @input_pass
+end
 go
---Ejecutable
-exec [SP_Consultar_Login] @input_usuario = '', @input_pass = ''
+exec [SP_CONSULTAR_LOGIN] @input_usuario = '', @input_pass = ''
 
-
+-----------------------------------------------------------------------------------------------------------------------------------------------
 
 go
-create proc [SP_Consultar_Login]
-@input_usuario varchar(50) = '',
-@input_pass varchar(50) = ''
+--SP para eliminar un presupuesto ingresando el id (cambia la fecha de baja)
+create proc [SP_ELIMINAR_PRESUPUESTO]
+		@input_id_presupuesto int = 0
 as
-SELECT top(1) c.nombre + c.apellido 'Nombre Completo', c.dni 'DNI', c.telefono 'Telefono'
-FROM CLIENTES c
-WHERE c.usuario = @input_usuario and c.pass = @input_pass
+begin
+        UPDATE PRESUPUESTOS
+		SET fecha_baja = GETDATE()
+        WHERE id_presupuesto = @input_id_presupuesto;
+end
 go
---Ejecutable
-exec [SP_Consultar_Login] @input_usuario = '', @input_pass = ''
+exec [SP_ELIMINAR_PRESUPUESTO] @input_id_presupuesto = 0
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+go
+--SP para consultar productos sin parametros de entrada (sirve para los combo box)
+create proc [SP_CONSULTAR_PRODUCTOS]
+as
+begin
+
+        SELECT p.id_producto 'ID', p.nombre 'Nombre', p.precio 'Precio', t.tipo 'Tipo'
+		FROM PRODUCTOS p join TIPOS t on p.id_tipo = t.id_tipo
+end
+go
+exec [SP_CONSULTAR_PRODUCTOS]
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+go
+--SP para consultar tipos sin parametros de entrada (sirve para los combo box)
+create proc [SP_CONSULTAR_TIPOS]
+as
+begin
+
+        SELECT t.id_tipo 'ID', t.tipo 'Tipo'
+		FROM TIPOS t
+end
+go
+exec [SP_CONSULTAR_TIPOS]
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+go
+--SP para consultar presupuestos ingresando un rango de fechas y posible dni del cliente
+create proc [SP_CONSULTAR_PRESUPUESTOS]
+        @input_fecha_min datetime = '01/01/2000',
+		@input_fecha_max datetime = '31/12/3000',
+		@input_dni_cliente varchar(50) = ''
+as
+begin
+        SELECT id_presupuesto, fecha, total, c.nombre + ' '+ apellido, c.dni
+        FROM PRESUPUESTOS p join clientes c on p.id_cliente=c.id_cliente
+        WHERE (fecha between @input_fecha_min and @input_fecha_max)
+        AND (c.dni like '%' + @input_dni_cliente + '%')
+        AND fecha_baja is null;
+end
+go
+exec [SP_CONSULTAR_PRESUPUESTOS] @input_fecha_min = '01/01/2000', @input_fecha_max = '31/12/3000', @input_dni_cliente = ''
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+go
+--SP para insertar maestro
+create proc [SP_INSERTAR_MAESTRO]
+        @input_id_cliente int = '',
+        @input_total money = 0,
+        @output_id_presupuesto int OUTPUT
+as
+begin
+        INSERT INTO PRESUPUESTOS(fecha, id_cliente, total)
+		VALUES (GETDATE(), @input_id_cliente, @input_total);
+		SET @output_id_presupuesto = SCOPE_IDENTITY();
+end
+go
+exec [SP_INSERTAR_MAESTRO] @input_id_cliente = '', @input_total = 0, @output_id_presupuesto = output
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+go
+--SP para conocer el id del proximo presupuesto
+create proc [SP_PROXIMO_ID]
+		@next int OUTPUT
+as
+begin
+        SET @next = (SELECT MAX(id_presupuesto)+1  FROM PRESUPUESTOS);
+end
+go
+exec [SP_PROXIMO_ID] @next = output
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+go
+--SP para modificar un presupuesto
+create proc [SP_ACTUALIZAR_MAESTRO]
+        @input_id_cliente int = 0,
+        @input_total money = 0,
+        @input_id_presupuesto int = 0
+as
+begin
+        UPDATE PRESUPUESTOS SET id_cliente = @input_id_cliente, total = @input_total
+        WHERE id_presupuesto = @input_id_presupuesto;
+
+        DELETE DETALLES
+        WHERE id_presupuesto = @input_id_presupuesto;
+end
+go
+exec [SP_ACTUALIZAR_MAESTRO] @input_id_cliente = '', @input_total = 0, @input_id_presupuesto = 0
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+go
+--SP para insertar detalle
+create proc [SP_INSERTAR_DETALLE]
+        @input_id_presupuesto int,
+        @input_id_detalle int,
+        @input_id_producto int,
+        @input_cantidad int
+as
+begin
+        INSERT INTO DETALLES(id_presupuesto,id_detalle, id_producto, cantidad)
+		VALUES (@input_id_presupuesto, @input_id_detalle, @input_id_producto, @input_cantidad);
+end
+go
+exec [SP_INSERTAR_DETALLE] @input_id_presupuesto = 0, @input_id_detalle = 0, @input_id_producto = 0,@input_cantidad = 0
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+go
+--SP para consultar detalle presupuesto   (Para que sirve este?)
+create proc [SP_CONSULTAR_DETALLES_PRESUPUESTO]
+        @id_presupuesto int
+as
+begin
+        SELECT t.*, t2.id_producto, t2.precio, t3.id_cliente, t3.fecha, t3.total
+        FROM DETALLES t, PRODUCTOS t2, PRESUPUESTOS t3
+        WHERE t.id_producto = t2.id_producto
+        AND t.id_presupuesto = t3.id_presupuesto
+        AND t.id_presupuesto = @id_presupuesto;
+end
+go
+
+
+
+
+
+
+
+
+
+
+
+
+
