@@ -58,6 +58,8 @@ namespace AutomotrizApp
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             lblUsuario.Text = clienteActivo.NombreCompleto.ToString();
+            pnMenuPresupuesto.Height = 42;
+            pnMenuProductos.Height = 42;
         }
 
 
@@ -103,6 +105,36 @@ namespace AutomotrizApp
                             "\n114256 Menta Agustina");
         }
 
-        
+
+        //Expande/contrae el panel que muestra los botones de producto y cambia el color del texto
+        private void btnMenuProductos_Click(object sender, EventArgs e)
+        {
+            if(pnMenuProductos.Size.Height == 126) 
+            {
+                pnMenuProductos.Height =  42;
+                btnMenuProductos.ForeColor = SystemColors.ControlLight;
+            }
+            else
+            {
+                pnMenuProductos.Height = 126;
+                btnMenuProductos.ForeColor = SystemColors.Highlight;
+            }
+        }
+
+
+        //Expande/contrae el panel que muestra los botones de presupuesto y cambia el color del texto
+        private void btnMenuPresupuesto_Click(object sender, EventArgs e)
+        {
+            if (pnMenuPresupuesto.Size.Height == 126)
+            {
+                pnMenuPresupuesto.Height = 42;
+                btnMenuPresupuesto.ForeColor = SystemColors.ControlLight;
+            }
+            else
+            {
+                pnMenuPresupuesto.Height = 126;
+                btnMenuPresupuesto.ForeColor = SystemColors.Highlight;
+            }
+        }
     }
 }

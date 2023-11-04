@@ -20,7 +20,7 @@ namespace AutomotrizApp.Presentacion
 
         //Metodos
         // ================================================================================================================================= //
-        //Limpia el contenido de los controles (txt, cbo y dgv)
+        //Limpia el contenido de los controles (txt y cbo)
         private void LimpiarControles()
         {
             txtNombreProducto.Text = "";

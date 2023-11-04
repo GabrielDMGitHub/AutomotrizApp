@@ -25,12 +25,12 @@ namespace AutomotrizApp.Presentacion
             if (idProducto != 0)
             {
                 idNuevoProducto = idProducto;
-                lblTitulo.Text = "Editar Presupuesto";
+                lblTitulo.Text = "Editar Producto";
             }
             else
             {
                 idNuevoProducto = 99;
-                lblTitulo.Text = "Nuevo Presupuesto";
+                lblTitulo.Text = "Nuevo Producto";
                 // ---> Consultar proximo id para producto y asignarlo a idNuevoProducto
             }
         }

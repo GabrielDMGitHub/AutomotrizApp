@@ -16,5 +16,20 @@ namespace AutomotrizApp.Presentacion
         {
             InitializeComponent();
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmNuevoPresupuesto_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

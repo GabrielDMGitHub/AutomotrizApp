@@ -56,6 +56,7 @@
             this.btnConfirmar.TabIndex = 28;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // lblTitulo
             // 
@@ -169,6 +170,7 @@
             this.btnAgregar.TabIndex = 29;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // cboProducto
             // 
@@ -226,6 +228,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmNuevoPresupuesto";
             this.Text = "FrmNuevoPresupuesto";
+            this.Load += new System.EventHandler(this.FrmNuevoPresupuesto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetallesNuevoPresupuesto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
