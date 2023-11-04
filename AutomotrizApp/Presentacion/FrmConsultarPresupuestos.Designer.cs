@@ -1,6 +1,6 @@
 ﻿namespace AutomotrizApp.Presentacion
 {
-    partial class FrmNuevoProducto
+    partial class FrmConsultarPresupuestos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnConfirmar = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.btnReiniciarFiltros = new System.Windows.Forms.Button();
+            this.btnFiltrar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblTipoProducto = new System.Windows.Forms.Label();
             this.lblPrecioProducto = new System.Windows.Forms.Label();
             this.cboTipoProducto = new System.Windows.Forms.ComboBox();
-            this.txtPrecioProducto = new System.Windows.Forms.TextBox();
+            this.txtPrecioProductoMax = new System.Windows.Forms.TextBox();
+            this.txtPrecioProductoMin = new System.Windows.Forms.TextBox();
             this.lblNombreProducto = new System.Windows.Forms.Label();
             this.txtNombreProducto = new System.Windows.Forms.TextBox();
             this.dgvConsultarProductos = new System.Windows.Forms.DataGridView();
@@ -41,18 +44,27 @@
             this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultarProductos)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnConfirmar
+            // btnReiniciarFiltros
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(683, 485);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(75, 23);
-            this.btnConfirmar.TabIndex = 19;
-            this.btnConfirmar.Text = "Confirmar";
-            this.btnConfirmar.UseVisualStyleBackColor = true;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            this.btnReiniciarFiltros.Location = new System.Drawing.Point(561, 126);
+            this.btnReiniciarFiltros.Name = "btnReiniciarFiltros";
+            this.btnReiniciarFiltros.Size = new System.Drawing.Size(107, 23);
+            this.btnReiniciarFiltros.TabIndex = 15;
+            this.btnReiniciarFiltros.Text = "Reiniciar Filtros";
+            this.btnReiniciarFiltros.UseVisualStyleBackColor = true;
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.Location = new System.Drawing.Point(683, 126);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(75, 23);
+            this.btnFiltrar.TabIndex = 14;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
             // 
             // lblTitulo
             // 
@@ -61,8 +73,9 @@
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.lblTitulo.Location = new System.Drawing.Point(12, 11);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(0, 25);
-            this.lblTitulo.TabIndex = 18;
+            this.lblTitulo.Size = new System.Drawing.Size(358, 25);
+            this.lblTitulo.TabIndex = 19;
+            this.lblTitulo.Text = "Listado de Presupuestos (sin hacer)";
             // 
             // lblTipoProducto
             // 
@@ -72,7 +85,7 @@
             this.lblTipoProducto.Location = new System.Drawing.Point(61, 126);
             this.lblTipoProducto.Name = "lblTipoProducto";
             this.lblTipoProducto.Size = new System.Drawing.Size(31, 15);
-            this.lblTipoProducto.TabIndex = 17;
+            this.lblTipoProducto.TabIndex = 18;
             this.lblTipoProducto.Text = "Tipo";
             // 
             // lblPrecioProducto
@@ -92,14 +105,21 @@
             this.cboTipoProducto.Location = new System.Drawing.Point(98, 125);
             this.cboTipoProducto.Name = "cboTipoProducto";
             this.cboTipoProducto.Size = new System.Drawing.Size(237, 21);
-            this.cboTipoProducto.TabIndex = 15;
+            this.cboTipoProducto.TabIndex = 13;
             // 
-            // txtPrecioProducto
+            // txtPrecioProductoMax
             // 
-            this.txtPrecioProducto.Location = new System.Drawing.Point(98, 90);
-            this.txtPrecioProducto.Name = "txtPrecioProducto";
-            this.txtPrecioProducto.Size = new System.Drawing.Size(237, 20);
-            this.txtPrecioProducto.TabIndex = 13;
+            this.txtPrecioProductoMax.Location = new System.Drawing.Point(235, 90);
+            this.txtPrecioProductoMax.Name = "txtPrecioProductoMax";
+            this.txtPrecioProductoMax.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecioProductoMax.TabIndex = 11;
+            // 
+            // txtPrecioProductoMin
+            // 
+            this.txtPrecioProductoMin.Location = new System.Drawing.Point(98, 90);
+            this.txtPrecioProductoMin.Name = "txtPrecioProductoMin";
+            this.txtPrecioProductoMin.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecioProductoMin.TabIndex = 10;
             // 
             // lblNombreProducto
             // 
@@ -114,10 +134,12 @@
             // 
             // txtNombreProducto
             // 
+            this.txtNombreProducto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtNombreProducto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtNombreProducto.Location = new System.Drawing.Point(98, 55);
             this.txtNombreProducto.Name = "txtNombreProducto";
             this.txtNombreProducto.Size = new System.Drawing.Size(237, 20);
-            this.txtNombreProducto.TabIndex = 11;
+            this.txtNombreProducto.TabIndex = 9;
             // 
             // dgvConsultarProductos
             // 
@@ -130,21 +152,21 @@
             this.idProducto,
             this.nombreProducto,
             this.precioProducto,
-            this.tipoProducto});
+            this.tipoProducto,
+            this.Editar});
             this.dgvConsultarProductos.Location = new System.Drawing.Point(12, 164);
             this.dgvConsultarProductos.Name = "dgvConsultarProductos";
             this.dgvConsultarProductos.ReadOnly = true;
             this.dgvConsultarProductos.RowHeadersVisible = false;
-            this.dgvConsultarProductos.Size = new System.Drawing.Size(746, 300);
-            this.dgvConsultarProductos.TabIndex = 10;
+            this.dgvConsultarProductos.Size = new System.Drawing.Size(746, 346);
+            this.dgvConsultarProductos.TabIndex = 17;
             // 
             // idProducto
             // 
-            this.idProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.idProducto.HeaderText = "ID";
             this.idProducto.Name = "idProducto";
             this.idProducto.ReadOnly = true;
-            this.idProducto.Width = 43;
+            this.idProducto.Visible = false;
             // 
             // nombreProducto
             // 
@@ -154,6 +176,9 @@
             // 
             // precioProducto
             // 
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.precioProducto.DefaultCellStyle = dataGridViewCellStyle1;
             this.precioProducto.HeaderText = "Precio";
             this.precioProducto.Name = "precioProducto";
             this.precioProducto.ReadOnly = true;
@@ -164,25 +189,36 @@
             this.tipoProducto.Name = "tipoProducto";
             this.tipoProducto.ReadOnly = true;
             // 
-            // FrmNuevoProducto
+            // Editar
+            // 
+            this.Editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Editar.HeaderText = "Accion";
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Editar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Editar.Width = 65;
+            // 
+            // FrmConsultarPresupuestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.ClientSize = new System.Drawing.Size(770, 520);
-            this.Controls.Add(this.btnConfirmar);
+            this.Controls.Add(this.btnReiniciarFiltros);
+            this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblTipoProducto);
             this.Controls.Add(this.lblPrecioProducto);
             this.Controls.Add(this.cboTipoProducto);
-            this.Controls.Add(this.txtPrecioProducto);
+            this.Controls.Add(this.txtPrecioProductoMax);
+            this.Controls.Add(this.txtPrecioProductoMin);
             this.Controls.Add(this.lblNombreProducto);
             this.Controls.Add(this.txtNombreProducto);
             this.Controls.Add(this.dgvConsultarProductos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmNuevoProducto";
-            this.Text = "FrmNuevoProducto";
-            this.Load += new System.EventHandler(this.FrmNuevoProducto_Load);
+            this.Name = "FrmConsultarPresupuestos";
+            this.Text = "FrmConsultarPresupuestos";
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultarProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -191,12 +227,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnConfirmar;
+        private System.Windows.Forms.Button btnReiniciarFiltros;
+        private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblTipoProducto;
         private System.Windows.Forms.Label lblPrecioProducto;
         private System.Windows.Forms.ComboBox cboTipoProducto;
-        private System.Windows.Forms.TextBox txtPrecioProducto;
+        private System.Windows.Forms.TextBox txtPrecioProductoMax;
+        private System.Windows.Forms.TextBox txtPrecioProductoMin;
         private System.Windows.Forms.Label lblNombreProducto;
         private System.Windows.Forms.TextBox txtNombreProducto;
         private System.Windows.Forms.DataGridView dgvConsultarProductos;
@@ -204,5 +242,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoProducto;
+        private System.Windows.Forms.DataGridViewButtonColumn Editar;
     }
 }

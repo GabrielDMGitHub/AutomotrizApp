@@ -52,6 +52,12 @@
     <Compile Include="Entidades\Detalle.cs" />
     <Compile Include="Entidades\Presupuesto.cs" />
     <Compile Include="Entidades\Producto.cs" />
+    <Compile Include="Presentacion\FrmConsultarPresupuestos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmConsultarPresupuestos.Designer.cs">
+      <DependentUpon>FrmConsultarPresupuestos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\FrmConsultarProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,12 @@
     </Compile>
     <Compile Include="Presentacion\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmNuevoPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmNuevoPresupuesto.Designer.cs">
+      <DependentUpon>FrmNuevoPresupuesto.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\FrmNuevoProducto.cs">
       <SubType>Form</SubType>
@@ -78,11 +90,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentacion\FrmConsultarPresupuestos.resx">
+      <DependentUpon>FrmConsultarPresupuestos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmConsultarProductos.resx">
       <DependentUpon>FrmConsultarProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmNuevoPresupuesto.resx">
+      <DependentUpon>FrmNuevoPresupuesto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmNuevoProducto.resx">
       <DependentUpon>FrmNuevoProducto.cs</DependentUpon>

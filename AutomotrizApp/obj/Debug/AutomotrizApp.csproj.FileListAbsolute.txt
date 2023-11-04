@@ -23,3 +23,5 @@ C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\o
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\obj\Debug\AutomotrizApp.pdb
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\obj\Debug\AutomotrizApp.Presentacion.FrmConsultarProductos.resources
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\obj\Debug\AutomotrizApp.Presentacion.FrmNuevoProducto.resources
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\obj\Debug\AutomotrizApp.Presentacion.FrmConsultarPresupuestos.resources
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\obj\Debug\AutomotrizApp.Presentacion.FrmNuevoPresupuesto.resources

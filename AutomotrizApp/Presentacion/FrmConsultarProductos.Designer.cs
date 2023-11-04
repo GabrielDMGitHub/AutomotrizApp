@@ -28,8 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvConsultarProductos = new System.Windows.Forms.DataGridView();
+            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.txtNombreProducto = new System.Windows.Forms.TextBox();
             this.lblNombreProducto = new System.Windows.Forms.Label();
             this.txtPrecioProductoMin = new System.Windows.Forms.TextBox();
@@ -39,10 +44,6 @@
             this.lblTipoProducto = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnFiltrar = new System.Windows.Forms.Button();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnReiniciarFiltros = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultarProductos)).BeginInit();
             this.SuspendLayout();
@@ -58,13 +59,53 @@
             this.idProducto,
             this.nombreProducto,
             this.precioProducto,
-            this.tipoProducto});
+            this.tipoProducto,
+            this.Editar});
             this.dgvConsultarProductos.Location = new System.Drawing.Point(12, 162);
             this.dgvConsultarProductos.Name = "dgvConsultarProductos";
             this.dgvConsultarProductos.ReadOnly = true;
             this.dgvConsultarProductos.RowHeadersVisible = false;
             this.dgvConsultarProductos.Size = new System.Drawing.Size(746, 346);
             this.dgvConsultarProductos.TabIndex = 6;
+            this.dgvConsultarProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultarProductos_CellContentClick);
+            // 
+            // idProducto
+            // 
+            this.idProducto.HeaderText = "ID";
+            this.idProducto.Name = "idProducto";
+            this.idProducto.ReadOnly = true;
+            this.idProducto.Visible = false;
+            // 
+            // nombreProducto
+            // 
+            this.nombreProducto.HeaderText = "Nombre";
+            this.nombreProducto.Name = "nombreProducto";
+            this.nombreProducto.ReadOnly = true;
+            // 
+            // precioProducto
+            // 
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.precioProducto.DefaultCellStyle = dataGridViewCellStyle1;
+            this.precioProducto.HeaderText = "Precio";
+            this.precioProducto.Name = "precioProducto";
+            this.precioProducto.ReadOnly = true;
+            // 
+            // tipoProducto
+            // 
+            this.tipoProducto.HeaderText = "Tipo";
+            this.tipoProducto.Name = "tipoProducto";
+            this.tipoProducto.ReadOnly = true;
+            // 
+            // Editar
+            // 
+            this.Editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Editar.HeaderText = "Accion";
+            this.Editar.Name = "Editar";
+            this.Editar.ReadOnly = true;
+            this.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Editar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Editar.Width = 65;
             // 
             // txtNombreProducto
             // 
@@ -151,34 +192,6 @@
             this.btnFiltrar.UseVisualStyleBackColor = true;
             this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
-            // idProducto
-            // 
-            this.idProducto.HeaderText = "ID";
-            this.idProducto.Name = "idProducto";
-            this.idProducto.ReadOnly = true;
-            this.idProducto.Visible = false;
-            // 
-            // nombreProducto
-            // 
-            this.nombreProducto.HeaderText = "Nombre";
-            this.nombreProducto.Name = "nombreProducto";
-            this.nombreProducto.ReadOnly = true;
-            // 
-            // precioProducto
-            // 
-            dataGridViewCellStyle7.Format = "N2";
-            dataGridViewCellStyle7.NullValue = null;
-            this.precioProducto.DefaultCellStyle = dataGridViewCellStyle7;
-            this.precioProducto.HeaderText = "Precio";
-            this.precioProducto.Name = "precioProducto";
-            this.precioProducto.ReadOnly = true;
-            // 
-            // tipoProducto
-            // 
-            this.tipoProducto.HeaderText = "Tipo";
-            this.tipoProducto.Name = "tipoProducto";
-            this.tipoProducto.ReadOnly = true;
-            // 
             // btnReiniciarFiltros
             // 
             this.btnReiniciarFiltros.Location = new System.Drawing.Point(561, 124);
@@ -228,10 +241,11 @@
         private System.Windows.Forms.Label lblTipoProducto;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnFiltrar;
+        private System.Windows.Forms.Button btnReiniciarFiltros;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoProducto;
-        private System.Windows.Forms.Button btnReiniciarFiltros;
+        private System.Windows.Forms.DataGridViewButtonColumn Editar;
     }
 }

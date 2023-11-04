@@ -76,6 +76,17 @@ namespace AutomotrizApp.Presentacion
             LimpiarControles();
         }
 
+        private void dgvConsultarProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvConsultarProductos.CurrentCell.OwningColumn.Name == "Editar")
+            {
+                
+                int idProducto = Convert.ToInt32(dgvConsultarProductos.CurrentRow.Cells["idProducto"].Value);
+                MessageBox.Show("ID: " + idProducto.ToString());
+                FrmPrincipal.instancia.CambiarFormulario(new FrmNuevoProducto(idProducto));
+            }
+        }
+
         // ================================================================================================================================= //
     }
 }

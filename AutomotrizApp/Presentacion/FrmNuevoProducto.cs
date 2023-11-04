@@ -13,13 +13,26 @@ namespace AutomotrizApp.Presentacion
 {
     public partial class FrmNuevoProducto : Form
     {
-        public FrmNuevoProducto()
+        private int idNuevoProducto;
+        public FrmNuevoProducto(int idProducto = 0)
         {
             InitializeComponent();
 
             LimpiarControles();
             DBHelper.ObtenerInstancia().CargarCombo(cboTipoProducto, "SP_CONSULTAR_TIPOS");
             DBHelper.ObtenerInstancia().CargarGrilla(dgvConsultarProductos, null, "SP_CONSULTAR_PRODUCTOS");
+
+            if (idProducto != 0)
+            {
+                idNuevoProducto = idProducto;
+                lblTitulo.Text = "Editar Presupuesto";
+            }
+            else
+            {
+                idNuevoProducto = 99;
+                lblTitulo.Text = "Nuevo Presupuesto";
+                // ---> Consultar proximo id para producto y asignarlo a idNuevoProducto
+            }
         }
 
 
@@ -43,7 +56,7 @@ namespace AutomotrizApp.Presentacion
         //Load
         private void FrmNuevoProducto_Load(object sender, EventArgs e)
         {
-
+            lblTitulo.Text += " (N" + idNuevoProducto + ")";
         }
 
 

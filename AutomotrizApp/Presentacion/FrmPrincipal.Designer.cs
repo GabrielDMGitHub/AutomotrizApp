@@ -35,16 +35,20 @@
             this.btnAcercaDe = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnNuevoPresupuesto = new System.Windows.Forms.Button();
+            this.btnConsultarPresupuestos = new System.Windows.Forms.Button();
             this.btnNuevoProducto = new System.Windows.Forms.Button();
             this.btnConsultarProductos = new System.Windows.Forms.Button();
             this.pnUsuario = new System.Windows.Forms.Panel();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.pnMuestra = new System.Windows.Forms.Panel();
+            this.pbLogo = new System.Windows.Forms.PictureBox();
+            this.Eliminar = new System.Windows.Forms.Label();
             this.pnMenuPrincipal.SuspendLayout();
             this.pnControles.SuspendLayout();
             this.pnUsuario.SuspendLayout();
+            this.pnMuestra.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnMenuPrincipal
@@ -63,7 +67,9 @@
             // 
             this.btnSalir.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnSalir.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSalir.FlatAppearance.BorderSize = 0;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnSalir.Location = new System.Drawing.Point(0, 498);
             this.btnSalir.Name = "btnSalir";
@@ -78,8 +84,8 @@
             this.pnControles.Controls.Add(this.btnAcercaDe);
             this.pnControles.Controls.Add(this.button5);
             this.pnControles.Controls.Add(this.button4);
-            this.pnControles.Controls.Add(this.button3);
-            this.pnControles.Controls.Add(this.button2);
+            this.pnControles.Controls.Add(this.btnNuevoPresupuesto);
+            this.pnControles.Controls.Add(this.btnConsultarPresupuestos);
             this.pnControles.Controls.Add(this.btnNuevoProducto);
             this.pnControles.Controls.Add(this.btnConsultarProductos);
             this.pnControles.Dock = System.Windows.Forms.DockStyle.Top;
@@ -92,7 +98,9 @@
             // 
             this.btnAcercaDe.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAcercaDe.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAcercaDe.FlatAppearance.BorderSize = 0;
             this.btnAcercaDe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAcercaDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAcercaDe.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnAcercaDe.Location = new System.Drawing.Point(0, 252);
             this.btnAcercaDe.Name = "btnAcercaDe";
@@ -100,64 +108,77 @@
             this.btnAcercaDe.TabIndex = 6;
             this.btnAcercaDe.Text = "Informacion";
             this.btnAcercaDe.UseVisualStyleBackColor = true;
+            this.btnAcercaDe.Click += new System.EventHandler(this.btnAcercaDe_Click);
             // 
             // button5
             // 
             this.button5.Dock = System.Windows.Forms.DockStyle.Top;
             this.button5.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.button5.Location = new System.Drawing.Point(0, 210);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(170, 42);
             this.button5.TabIndex = 5;
-            this.button5.Text = "button6";
+            this.button5.Text = ".";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
             this.button4.Dock = System.Windows.Forms.DockStyle.Top;
             this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.button4.Location = new System.Drawing.Point(0, 168);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(170, 42);
             this.button4.TabIndex = 4;
-            this.button4.Text = "button5";
+            this.button4.Text = ".";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnNuevoPresupuesto
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button3.Location = new System.Drawing.Point(0, 126);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(170, 42);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button4";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnNuevoPresupuesto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNuevoPresupuesto.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnNuevoPresupuesto.FlatAppearance.BorderSize = 0;
+            this.btnNuevoPresupuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoPresupuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoPresupuesto.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnNuevoPresupuesto.Location = new System.Drawing.Point(0, 126);
+            this.btnNuevoPresupuesto.Name = "btnNuevoPresupuesto";
+            this.btnNuevoPresupuesto.Size = new System.Drawing.Size(170, 42);
+            this.btnNuevoPresupuesto.TabIndex = 3;
+            this.btnNuevoPresupuesto.Text = "Nuevo Presupuesto";
+            this.btnNuevoPresupuesto.UseVisualStyleBackColor = true;
+            this.btnNuevoPresupuesto.Click += new System.EventHandler(this.btnNuevoPresupuesto_Click);
             // 
-            // button2
+            // btnConsultarPresupuestos
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button2.Location = new System.Drawing.Point(0, 84);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(170, 42);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "button3";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnConsultarPresupuestos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnConsultarPresupuestos.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnConsultarPresupuestos.FlatAppearance.BorderSize = 0;
+            this.btnConsultarPresupuestos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultarPresupuestos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultarPresupuestos.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnConsultarPresupuestos.Location = new System.Drawing.Point(0, 84);
+            this.btnConsultarPresupuestos.Name = "btnConsultarPresupuestos";
+            this.btnConsultarPresupuestos.Size = new System.Drawing.Size(170, 42);
+            this.btnConsultarPresupuestos.TabIndex = 2;
+            this.btnConsultarPresupuestos.Text = "Consultar Presupuestos";
+            this.btnConsultarPresupuestos.UseVisualStyleBackColor = true;
+            this.btnConsultarPresupuestos.Click += new System.EventHandler(this.btnConsultarPresupuestos_Click);
             // 
             // btnNuevoProducto
             // 
             this.btnNuevoProducto.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnNuevoProducto.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnNuevoProducto.FlatAppearance.BorderSize = 0;
             this.btnNuevoProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoProducto.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnNuevoProducto.Location = new System.Drawing.Point(0, 42);
             this.btnNuevoProducto.Name = "btnNuevoProducto";
@@ -171,7 +192,9 @@
             // 
             this.btnConsultarProductos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnConsultarProductos.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnConsultarProductos.FlatAppearance.BorderSize = 0;
             this.btnConsultarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultarProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultarProductos.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnConsultarProductos.Location = new System.Drawing.Point(0, 0);
             this.btnConsultarProductos.Name = "btnConsultarProductos";
@@ -196,9 +219,9 @@
             this.lblUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblUsuario.Location = new System.Drawing.Point(3, 130);
+            this.lblUsuario.Location = new System.Drawing.Point(3, 115);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(164, 37);
+            this.lblUsuario.Size = new System.Drawing.Size(164, 52);
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "Usuario";
             this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -209,10 +232,32 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnMuestra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.pnMuestra.Controls.Add(this.Eliminar);
+            this.pnMuestra.Controls.Add(this.pbLogo);
             this.pnMuestra.Location = new System.Drawing.Point(180, 10);
             this.pnMuestra.Name = "pnMuestra";
             this.pnMuestra.Size = new System.Drawing.Size(770, 520);
             this.pnMuestra.TabIndex = 1;
+            // 
+            // pbLogo
+            // 
+            this.pbLogo.Image = global::AutomotrizApp.Properties.Resources.AutomotrizLogo;
+            this.pbLogo.Location = new System.Drawing.Point(304, 204);
+            this.pbLogo.Name = "pbLogo";
+            this.pbLogo.Size = new System.Drawing.Size(162, 112);
+            this.pbLogo.TabIndex = 4;
+            this.pbLogo.TabStop = false;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.AutoSize = true;
+            this.Eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Eliminar.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.Eliminar.Location = new System.Drawing.Point(268, 171);
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.Size = new System.Drawing.Size(234, 20);
+            this.Eliminar.TabIndex = 5;
+            this.Eliminar.Text = "No se que podriamos poner aca";
             // 
             // FrmPrincipal
             // 
@@ -231,6 +276,9 @@
             this.pnMenuPrincipal.ResumeLayout(false);
             this.pnControles.ResumeLayout(false);
             this.pnUsuario.ResumeLayout(false);
+            this.pnMuestra.ResumeLayout(false);
+            this.pnMuestra.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -247,9 +295,11 @@
         private System.Windows.Forms.Button btnAcercaDe;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnNuevoPresupuesto;
+        private System.Windows.Forms.Button btnConsultarPresupuestos;
         private System.Windows.Forms.Button btnNuevoProducto;
+        private System.Windows.Forms.Label Eliminar;
+        private System.Windows.Forms.PictureBox pbLogo;
     }
 }
 
