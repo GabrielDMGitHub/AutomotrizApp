@@ -87,7 +87,7 @@ namespace AutomotrizApp.Presentacion
             {
 
                 int idPresupuesto = Convert.ToInt32(dgvConsultarPresupuestos.CurrentRow.Cells["idPresupuesto"].Value);
-                MessageBox.Show("ID: " + idPresupuesto.ToString()); //Esto es solo para pruebas
+                MessageBox.Show("Se deberia eliminar el Presupuesto con el ID: " + idPresupuesto.ToString()); //Esto es solo para pruebas
                 // ---> Eliminar un presupuesto del dgv y base de datos (hacer una confirmacion)
             }
         }

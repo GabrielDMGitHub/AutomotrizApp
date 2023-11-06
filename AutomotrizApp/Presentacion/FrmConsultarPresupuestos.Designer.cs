@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnReiniciarFiltros = new System.Windows.Forms.Button();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             this.dniCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaPresupuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalPresupuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultarPresupuestos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,7 +136,7 @@
             this.dniCliente,
             this.fechaPresupuesto,
             this.totalPresupuesto,
-            this.Editar});
+            this.Eliminar});
             this.dgvConsultarPresupuestos.Location = new System.Drawing.Point(12, 162);
             this.dgvConsultarPresupuestos.Name = "dgvConsultarPresupuestos";
             this.dgvConsultarPresupuestos.ReadOnly = true;
@@ -202,9 +202,9 @@
             // 
             // fechaPresupuesto
             // 
-            dataGridViewCellStyle6.Format = "N2";
-            dataGridViewCellStyle6.NullValue = null;
-            this.fechaPresupuesto.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Format = "N2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.fechaPresupuesto.DefaultCellStyle = dataGridViewCellStyle1;
             this.fechaPresupuesto.HeaderText = "Fecha";
             this.fechaPresupuesto.Name = "fechaPresupuesto";
             this.fechaPresupuesto.ReadOnly = true;
@@ -215,15 +215,15 @@
             this.totalPresupuesto.Name = "totalPresupuesto";
             this.totalPresupuesto.ReadOnly = true;
             // 
-            // Editar
+            // Eliminar
             // 
-            this.Editar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Editar.HeaderText = "Accion";
-            this.Editar.Name = "Editar";
-            this.Editar.ReadOnly = true;
-            this.Editar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Editar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Editar.Width = 65;
+            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Eliminar.HeaderText = "Accion";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Eliminar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Eliminar.Width = 65;
             // 
             // FrmConsultarPresupuestos
             // 
@@ -272,6 +272,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dniCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaPresupuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalPresupuesto;
-        private System.Windows.Forms.DataGridViewButtonColumn Editar;
+        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
     }
 }
