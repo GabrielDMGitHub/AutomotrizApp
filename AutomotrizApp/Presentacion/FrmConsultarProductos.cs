@@ -41,7 +41,6 @@ namespace AutomotrizApp.Presentacion
             txtNombreProducto.Focus();
             DBHelper.ObtenerInstancia().CargarCombo(cboTipoProducto, "SP_CONSULTAR_TIPOS");
             DBHelper.ObtenerInstancia().CargarGrilla(dgvConsultarProductos, null, "SP_CONSULTAR_PRODUCTOS");
-            //txtNombreProducto.AutoCompleteSource = ---> Completar mas adelante
         }
 
 
@@ -82,8 +81,18 @@ namespace AutomotrizApp.Presentacion
             {
                 
                 int idProducto = Convert.ToInt32(dgvConsultarProductos.CurrentRow.Cells["idProducto"].Value);
-                MessageBox.Show("ID: " + idProducto.ToString());
+                MessageBox.Show("ID: " + idProducto.ToString()); //Esto es solo para pruebas
                 FrmPrincipal.instancia.CambiarFormulario(new FrmNuevoProducto(idProducto));
+            }
+        }
+
+
+        //Veriica si la tecla presionada es un numero o un "control", si no lo es se ignora
+        private void txtNumerico_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
 

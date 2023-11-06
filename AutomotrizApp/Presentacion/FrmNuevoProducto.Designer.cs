@@ -61,8 +61,9 @@
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.lblTitulo.Location = new System.Drawing.Point(12, 11);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(0, 25);
+            this.lblTitulo.Size = new System.Drawing.Size(166, 25);
             this.lblTitulo.TabIndex = 18;
+            this.lblTitulo.Text = "Nuevo Producto";
             // 
             // lblTipoProducto
             // 
@@ -100,6 +101,7 @@
             this.txtPrecioProducto.Name = "txtPrecioProducto";
             this.txtPrecioProducto.Size = new System.Drawing.Size(237, 20);
             this.txtPrecioProducto.TabIndex = 13;
+            this.txtPrecioProducto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumerico_KeyPress);
             // 
             // lblNombreProducto
             // 

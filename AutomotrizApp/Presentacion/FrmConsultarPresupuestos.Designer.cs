@@ -28,24 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnReiniciarFiltros = new System.Windows.Forms.Button();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.lblTipoProducto = new System.Windows.Forms.Label();
-            this.lblPrecioProducto = new System.Windows.Forms.Label();
-            this.cboTipoProducto = new System.Windows.Forms.ComboBox();
-            this.txtPrecioProductoMax = new System.Windows.Forms.TextBox();
-            this.txtPrecioProductoMin = new System.Windows.Forms.TextBox();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblFecha = new System.Windows.Forms.Label();
             this.lblNombreProducto = new System.Windows.Forms.Label();
-            this.txtNombreProducto = new System.Windows.Forms.TextBox();
-            this.dgvConsultarProductos = new System.Windows.Forms.DataGridView();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtDniCliente = new System.Windows.Forms.TextBox();
+            this.dgvConsultarPresupuestos = new System.Windows.Forms.DataGridView();
+            this.txtTotalMax = new System.Windows.Forms.TextBox();
+            this.txtTotalMin = new System.Windows.Forms.TextBox();
+            this.dtpFechaMin = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaMax = new System.Windows.Forms.DateTimePicker();
+            this.idPresupuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dniCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaPresupuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalPresupuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Editar = new System.Windows.Forms.DataGridViewButtonColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultarProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultarPresupuestos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnReiniciarFiltros
@@ -56,6 +58,7 @@
             this.btnReiniciarFiltros.TabIndex = 15;
             this.btnReiniciarFiltros.Text = "Reiniciar Filtros";
             this.btnReiniciarFiltros.UseVisualStyleBackColor = true;
+            this.btnReiniciarFiltros.Click += new System.EventHandler(this.btnReiniciarFiltros_Click);
             // 
             // btnFiltrar
             // 
@@ -65,6 +68,7 @@
             this.btnFiltrar.TabIndex = 14;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // lblTitulo
             // 
@@ -73,121 +77,143 @@
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.lblTitulo.Location = new System.Drawing.Point(12, 11);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(358, 25);
+            this.lblTitulo.Size = new System.Drawing.Size(250, 25);
             this.lblTitulo.TabIndex = 19;
-            this.lblTitulo.Text = "Listado de Presupuestos (sin hacer)";
+            this.lblTitulo.Text = "Listado de Presupuestos";
             // 
-            // lblTipoProducto
+            // lblTotal
             // 
-            this.lblTipoProducto.AutoSize = true;
-            this.lblTipoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoProducto.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblTipoProducto.Location = new System.Drawing.Point(61, 126);
-            this.lblTipoProducto.Name = "lblTipoProducto";
-            this.lblTipoProducto.Size = new System.Drawing.Size(31, 15);
-            this.lblTipoProducto.TabIndex = 18;
-            this.lblTipoProducto.Text = "Tipo";
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTotal.Location = new System.Drawing.Point(58, 126);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(34, 15);
+            this.lblTotal.TabIndex = 18;
+            this.lblTotal.Text = "Total";
             // 
-            // lblPrecioProducto
+            // lblFecha
             // 
-            this.lblPrecioProducto.AutoSize = true;
-            this.lblPrecioProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecioProducto.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblPrecioProducto.Location = new System.Drawing.Point(50, 91);
-            this.lblPrecioProducto.Name = "lblPrecioProducto";
-            this.lblPrecioProducto.Size = new System.Drawing.Size(42, 15);
-            this.lblPrecioProducto.TabIndex = 16;
-            this.lblPrecioProducto.Text = "Precio";
-            // 
-            // cboTipoProducto
-            // 
-            this.cboTipoProducto.FormattingEnabled = true;
-            this.cboTipoProducto.Location = new System.Drawing.Point(98, 125);
-            this.cboTipoProducto.Name = "cboTipoProducto";
-            this.cboTipoProducto.Size = new System.Drawing.Size(237, 21);
-            this.cboTipoProducto.TabIndex = 13;
-            // 
-            // txtPrecioProductoMax
-            // 
-            this.txtPrecioProductoMax.Location = new System.Drawing.Point(235, 90);
-            this.txtPrecioProductoMax.Name = "txtPrecioProductoMax";
-            this.txtPrecioProductoMax.Size = new System.Drawing.Size(100, 20);
-            this.txtPrecioProductoMax.TabIndex = 11;
-            // 
-            // txtPrecioProductoMin
-            // 
-            this.txtPrecioProductoMin.Location = new System.Drawing.Point(98, 90);
-            this.txtPrecioProductoMin.Name = "txtPrecioProductoMin";
-            this.txtPrecioProductoMin.Size = new System.Drawing.Size(100, 20);
-            this.txtPrecioProductoMin.TabIndex = 10;
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFecha.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblFecha.Location = new System.Drawing.Point(51, 91);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(41, 15);
+            this.lblFecha.TabIndex = 16;
+            this.lblFecha.Text = "Fecha";
             // 
             // lblNombreProducto
             // 
             this.lblNombreProducto.AutoSize = true;
             this.lblNombreProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreProducto.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblNombreProducto.Location = new System.Drawing.Point(40, 56);
+            this.lblNombreProducto.Location = new System.Drawing.Point(64, 56);
             this.lblNombreProducto.Name = "lblNombreProducto";
-            this.lblNombreProducto.Size = new System.Drawing.Size(52, 15);
+            this.lblNombreProducto.Size = new System.Drawing.Size(28, 15);
             this.lblNombreProducto.TabIndex = 12;
-            this.lblNombreProducto.Text = "Nombre";
+            this.lblNombreProducto.Text = "DNI";
             // 
-            // txtNombreProducto
+            // txtDniCliente
             // 
-            this.txtNombreProducto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtNombreProducto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtNombreProducto.Location = new System.Drawing.Point(98, 55);
-            this.txtNombreProducto.Name = "txtNombreProducto";
-            this.txtNombreProducto.Size = new System.Drawing.Size(237, 20);
-            this.txtNombreProducto.TabIndex = 9;
+            this.txtDniCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtDniCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtDniCliente.Location = new System.Drawing.Point(98, 55);
+            this.txtDniCliente.Name = "txtDniCliente";
+            this.txtDniCliente.Size = new System.Drawing.Size(237, 20);
+            this.txtDniCliente.TabIndex = 9;
             // 
-            // dgvConsultarProductos
+            // dgvConsultarPresupuestos
             // 
-            this.dgvConsultarProductos.AllowUserToAddRows = false;
-            this.dgvConsultarProductos.AllowUserToDeleteRows = false;
-            this.dgvConsultarProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvConsultarProductos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvConsultarProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvConsultarProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idProducto,
-            this.nombreProducto,
-            this.precioProducto,
-            this.tipoProducto,
+            this.dgvConsultarPresupuestos.AllowUserToAddRows = false;
+            this.dgvConsultarPresupuestos.AllowUserToDeleteRows = false;
+            this.dgvConsultarPresupuestos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvConsultarPresupuestos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvConsultarPresupuestos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvConsultarPresupuestos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idPresupuesto,
+            this.nombreCliente,
+            this.dniCliente,
+            this.fechaPresupuesto,
+            this.totalPresupuesto,
             this.Editar});
-            this.dgvConsultarProductos.Location = new System.Drawing.Point(12, 164);
-            this.dgvConsultarProductos.Name = "dgvConsultarProductos";
-            this.dgvConsultarProductos.ReadOnly = true;
-            this.dgvConsultarProductos.RowHeadersVisible = false;
-            this.dgvConsultarProductos.Size = new System.Drawing.Size(746, 346);
-            this.dgvConsultarProductos.TabIndex = 17;
+            this.dgvConsultarPresupuestos.Location = new System.Drawing.Point(12, 162);
+            this.dgvConsultarPresupuestos.Name = "dgvConsultarPresupuestos";
+            this.dgvConsultarPresupuestos.ReadOnly = true;
+            this.dgvConsultarPresupuestos.RowHeadersVisible = false;
+            this.dgvConsultarPresupuestos.Size = new System.Drawing.Size(746, 346);
+            this.dgvConsultarPresupuestos.TabIndex = 17;
+            this.dgvConsultarPresupuestos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultarPresupuestos_CellContentClick);
             // 
-            // idProducto
+            // txtTotalMax
             // 
-            this.idProducto.HeaderText = "ID";
-            this.idProducto.Name = "idProducto";
-            this.idProducto.ReadOnly = true;
-            this.idProducto.Visible = false;
+            this.txtTotalMax.Location = new System.Drawing.Point(235, 125);
+            this.txtTotalMax.Name = "txtTotalMax";
+            this.txtTotalMax.Size = new System.Drawing.Size(100, 20);
+            this.txtTotalMax.TabIndex = 21;
+            this.txtTotalMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumerico_KeyPress);
             // 
-            // nombreProducto
+            // txtTotalMin
             // 
-            this.nombreProducto.HeaderText = "Nombre";
-            this.nombreProducto.Name = "nombreProducto";
-            this.nombreProducto.ReadOnly = true;
+            this.txtTotalMin.Location = new System.Drawing.Point(98, 125);
+            this.txtTotalMin.Name = "txtTotalMin";
+            this.txtTotalMin.Size = new System.Drawing.Size(100, 20);
+            this.txtTotalMin.TabIndex = 20;
+            this.txtTotalMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumerico_KeyPress);
             // 
-            // precioProducto
+            // dtpFechaMin
             // 
-            dataGridViewCellStyle1.Format = "N2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.precioProducto.DefaultCellStyle = dataGridViewCellStyle1;
-            this.precioProducto.HeaderText = "Precio";
-            this.precioProducto.Name = "precioProducto";
-            this.precioProducto.ReadOnly = true;
+            this.dtpFechaMin.CustomFormat = "";
+            this.dtpFechaMin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaMin.Location = new System.Drawing.Point(98, 90);
+            this.dtpFechaMin.Name = "dtpFechaMin";
+            this.dtpFechaMin.Size = new System.Drawing.Size(100, 20);
+            this.dtpFechaMin.TabIndex = 22;
             // 
-            // tipoProducto
+            // dtpFechaMax
             // 
-            this.tipoProducto.HeaderText = "Tipo";
-            this.tipoProducto.Name = "tipoProducto";
-            this.tipoProducto.ReadOnly = true;
+            this.dtpFechaMax.CustomFormat = "";
+            this.dtpFechaMax.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaMax.Location = new System.Drawing.Point(235, 90);
+            this.dtpFechaMax.Name = "dtpFechaMax";
+            this.dtpFechaMax.Size = new System.Drawing.Size(100, 20);
+            this.dtpFechaMax.TabIndex = 23;
+            // 
+            // idPresupuesto
+            // 
+            this.idPresupuesto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.idPresupuesto.HeaderText = "ID";
+            this.idPresupuesto.Name = "idPresupuesto";
+            this.idPresupuesto.ReadOnly = true;
+            this.idPresupuesto.Visible = false;
+            this.idPresupuesto.Width = 24;
+            // 
+            // nombreCliente
+            // 
+            this.nombreCliente.HeaderText = "Cliente";
+            this.nombreCliente.Name = "nombreCliente";
+            this.nombreCliente.ReadOnly = true;
+            // 
+            // dniCliente
+            // 
+            this.dniCliente.HeaderText = "DNI";
+            this.dniCliente.Name = "dniCliente";
+            this.dniCliente.ReadOnly = true;
+            // 
+            // fechaPresupuesto
+            // 
+            dataGridViewCellStyle6.Format = "N2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.fechaPresupuesto.DefaultCellStyle = dataGridViewCellStyle6;
+            this.fechaPresupuesto.HeaderText = "Fecha";
+            this.fechaPresupuesto.Name = "fechaPresupuesto";
+            this.fechaPresupuesto.ReadOnly = true;
+            // 
+            // totalPresupuesto
+            // 
+            this.totalPresupuesto.HeaderText = "Total";
+            this.totalPresupuesto.Name = "totalPresupuesto";
+            this.totalPresupuesto.ReadOnly = true;
             // 
             // Editar
             // 
@@ -205,21 +231,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.ClientSize = new System.Drawing.Size(770, 520);
+            this.Controls.Add(this.dtpFechaMax);
+            this.Controls.Add(this.dtpFechaMin);
+            this.Controls.Add(this.txtTotalMax);
+            this.Controls.Add(this.txtTotalMin);
             this.Controls.Add(this.btnReiniciarFiltros);
             this.Controls.Add(this.btnFiltrar);
             this.Controls.Add(this.lblTitulo);
-            this.Controls.Add(this.lblTipoProducto);
-            this.Controls.Add(this.lblPrecioProducto);
-            this.Controls.Add(this.cboTipoProducto);
-            this.Controls.Add(this.txtPrecioProductoMax);
-            this.Controls.Add(this.txtPrecioProductoMin);
+            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.lblNombreProducto);
-            this.Controls.Add(this.txtNombreProducto);
-            this.Controls.Add(this.dgvConsultarProductos);
+            this.Controls.Add(this.txtDniCliente);
+            this.Controls.Add(this.dgvConsultarPresupuestos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmConsultarPresupuestos";
             this.Text = "FrmConsultarPresupuestos";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultarProductos)).EndInit();
+            this.Load += new System.EventHandler(this.FrmConsultarPresupuestos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultarPresupuestos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,18 +258,20 @@
         private System.Windows.Forms.Button btnReiniciarFiltros;
         private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Label lblTipoProducto;
-        private System.Windows.Forms.Label lblPrecioProducto;
-        private System.Windows.Forms.ComboBox cboTipoProducto;
-        private System.Windows.Forms.TextBox txtPrecioProductoMax;
-        private System.Windows.Forms.TextBox txtPrecioProductoMin;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblNombreProducto;
-        private System.Windows.Forms.TextBox txtNombreProducto;
-        private System.Windows.Forms.DataGridView dgvConsultarProductos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precioProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoProducto;
+        private System.Windows.Forms.TextBox txtDniCliente;
+        private System.Windows.Forms.DataGridView dgvConsultarPresupuestos;
+        private System.Windows.Forms.TextBox txtTotalMax;
+        private System.Windows.Forms.TextBox txtTotalMin;
+        private System.Windows.Forms.DateTimePicker dtpFechaMin;
+        private System.Windows.Forms.DateTimePicker dtpFechaMax;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPresupuesto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dniCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaPresupuesto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalPresupuesto;
         private System.Windows.Forms.DataGridViewButtonColumn Editar;
     }
 }

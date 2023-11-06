@@ -31,20 +31,19 @@
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblTipoProducto = new System.Windows.Forms.Label();
-            this.lblCliente = new System.Windows.Forms.Label();
+            this.lblDniCliente = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.dgvDetallesNuevoPresupuesto = new System.Windows.Forms.DataGridView();
-            this.idDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.cboProducto = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.txtDniCliente = new System.Windows.Forms.TextBox();
             this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.cboProducto = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cboCliente = new System.Windows.Forms.ComboBox();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetallesNuevoPresupuesto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,8 +64,9 @@
             this.lblTitulo.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.lblTitulo.Location = new System.Drawing.Point(12, 12);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(0, 25);
+            this.lblTitulo.Size = new System.Drawing.Size(201, 25);
             this.lblTitulo.TabIndex = 27;
+            this.lblTitulo.Text = "Nuevo Presupuesto";
             // 
             // lblTipoProducto
             // 
@@ -79,16 +79,16 @@
             this.lblTipoProducto.TabIndex = 26;
             this.lblTipoProducto.Text = "Cantidad";
             // 
-            // lblCliente
+            // lblDniCliente
             // 
-            this.lblCliente.AutoSize = true;
-            this.lblCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCliente.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblCliente.Location = new System.Drawing.Point(50, 92);
-            this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(42, 15);
-            this.lblCliente.TabIndex = 25;
-            this.lblCliente.Text = "Precio";
+            this.lblDniCliente.AutoSize = true;
+            this.lblDniCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDniCliente.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblDniCliente.Location = new System.Drawing.Point(63, 92);
+            this.lblDniCliente.Name = "lblDniCliente";
+            this.lblDniCliente.Size = new System.Drawing.Size(28, 15);
+            this.lblDniCliente.TabIndex = 25;
+            this.lblDniCliente.Text = "DNI";
             // 
             // lblFecha
             // 
@@ -107,6 +107,7 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(237, 20);
             this.txtCantidad.TabIndex = 21;
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumerico_KeyPress);
             // 
             // dgvDetallesNuevoPresupuesto
             // 
@@ -116,7 +117,6 @@
             this.dgvDetallesNuevoPresupuesto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDetallesNuevoPresupuesto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetallesNuevoPresupuesto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDetalle,
             this.nombreProducto,
             this.precioProducto,
             this.cantidadProducto,
@@ -127,14 +127,53 @@
             this.dgvDetallesNuevoPresupuesto.RowHeadersVisible = false;
             this.dgvDetallesNuevoPresupuesto.Size = new System.Drawing.Size(746, 300);
             this.dgvDetallesNuevoPresupuesto.TabIndex = 20;
+            this.dgvDetallesNuevoPresupuesto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetallesNuevoPresupuesto_CellContentClick);
             // 
-            // idDetalle
+            // btnAgregar
             // 
-            this.idDetalle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.idDetalle.HeaderText = "Nro Detalle";
-            this.idDetalle.Name = "idDetalle";
-            this.idDetalle.ReadOnly = true;
-            this.idDetalle.Width = 85;
+            this.btnAgregar.Location = new System.Drawing.Point(683, 124);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 29;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // cboProducto
+            // 
+            this.cboProducto.FormattingEnabled = true;
+            this.cboProducto.Location = new System.Drawing.Point(98, 125);
+            this.cboProducto.Name = "cboProducto";
+            this.cboProducto.Size = new System.Drawing.Size(237, 21);
+            this.cboProducto.TabIndex = 31;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.label1.Location = new System.Drawing.Point(35, 127);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 15);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Producto";
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.CustomFormat = "";
+            this.dtpFecha.Location = new System.Drawing.Point(98, 57);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(237, 20);
+            this.dtpFecha.TabIndex = 33;
+            this.dtpFecha.Value = new System.DateTime(2023, 11, 6, 0, 0, 0, 0);
+            // 
+            // txtDniCliente
+            // 
+            this.txtDniCliente.Location = new System.Drawing.Point(98, 91);
+            this.txtDniCliente.Name = "txtDniCliente";
+            this.txtDniCliente.Size = new System.Drawing.Size(237, 20);
+            this.txtDniCliente.TabIndex = 34;
+            this.txtDniCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumerico_KeyPress);
             // 
             // nombreProducto
             // 
@@ -162,66 +201,21 @@
             this.Eliminar.ReadOnly = true;
             this.Eliminar.Width = 46;
             // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(683, 124);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 29;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // cboProducto
-            // 
-            this.cboProducto.FormattingEnabled = true;
-            this.cboProducto.Location = new System.Drawing.Point(98, 125);
-            this.cboProducto.Name = "cboProducto";
-            this.cboProducto.Size = new System.Drawing.Size(237, 21);
-            this.cboProducto.TabIndex = 31;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.label1.Location = new System.Drawing.Point(36, 126);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 15);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "Producto";
-            // 
-            // cboCliente
-            // 
-            this.cboCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
-            this.cboCliente.FormattingEnabled = true;
-            this.cboCliente.Location = new System.Drawing.Point(98, 91);
-            this.cboCliente.Name = "cboCliente";
-            this.cboCliente.Size = new System.Drawing.Size(237, 21);
-            this.cboCliente.TabIndex = 32;
-            // 
-            // dtpFecha
-            // 
-            this.dtpFecha.Location = new System.Drawing.Point(98, 57);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(237, 20);
-            this.dtpFecha.TabIndex = 33;
-            // 
             // FrmNuevoPresupuesto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.ClientSize = new System.Drawing.Size(770, 520);
+            this.Controls.Add(this.txtDniCliente);
             this.Controls.Add(this.dtpFecha);
-            this.Controls.Add(this.cboCliente);
             this.Controls.Add(this.cboProducto);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblTipoProducto);
-            this.Controls.Add(this.lblCliente);
+            this.Controls.Add(this.lblDniCliente);
             this.Controls.Add(this.lblFecha);
             this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.dgvDetallesNuevoPresupuesto);
@@ -240,19 +234,18 @@
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblTipoProducto;
-        private System.Windows.Forms.Label lblCliente;
+        private System.Windows.Forms.Label lblDniCliente;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.DataGridView dgvDetallesNuevoPresupuesto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDetalle;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.ComboBox cboProducto;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.TextBox txtDniCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadProducto;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
-        private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.ComboBox cboProducto;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cboCliente;
-        private System.Windows.Forms.DateTimePicker dtpFecha;
     }
 }

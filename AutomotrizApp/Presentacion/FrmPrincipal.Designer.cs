@@ -34,22 +34,24 @@
             this.pnControles = new System.Windows.Forms.Panel();
             this.btnAcercaDe = new System.Windows.Forms.Button();
             this.btnReporte = new System.Windows.Forms.Button();
-            this.btnMenuPresupuesto = new System.Windows.Forms.Button();
+            this.pnMenuPresupuesto = new System.Windows.Forms.Panel();
+            this.btnNuevoPresupuesto = new System.Windows.Forms.Button();
             this.btnConsultarPresupuestos = new System.Windows.Forms.Button();
-            this.btnMenuProductos = new System.Windows.Forms.Button();
+            this.btnMenuPresupuesto = new System.Windows.Forms.Button();
+            this.pnMenuProductos = new System.Windows.Forms.Panel();
+            this.btnNuevoProducto = new System.Windows.Forms.Button();
             this.btnConsultarProductos = new System.Windows.Forms.Button();
+            this.btnMenuProductos = new System.Windows.Forms.Button();
             this.pnUsuario = new System.Windows.Forms.Panel();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.pnMuestra = new System.Windows.Forms.Panel();
-            this.pnMenuProductos = new System.Windows.Forms.Panel();
-            this.btnNuevoProducto = new System.Windows.Forms.Button();
-            this.pnMenuPresupuesto = new System.Windows.Forms.Panel();
-            this.btnNuevoPresupuesto = new System.Windows.Forms.Button();
+            this.pbUserIcon = new System.Windows.Forms.PictureBox();
             this.pnMenuPrincipal.SuspendLayout();
             this.pnControles.SuspendLayout();
-            this.pnUsuario.SuspendLayout();
-            this.pnMenuProductos.SuspendLayout();
             this.pnMenuPresupuesto.SuspendLayout();
+            this.pnMenuProductos.SuspendLayout();
+            this.pnUsuario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbUserIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // pnMenuPrincipal
@@ -128,143 +130,7 @@
             this.btnReporte.Text = "Reporte de ventas";
             this.btnReporte.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReporte.UseVisualStyleBackColor = true;
-            // 
-            // btnMenuPresupuesto
-            // 
-            this.btnMenuPresupuesto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMenuPresupuesto.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnMenuPresupuesto.FlatAppearance.BorderSize = 0;
-            this.btnMenuPresupuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuPresupuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuPresupuesto.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnMenuPresupuesto.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMenuPresupuesto.Location = new System.Drawing.Point(0, 0);
-            this.btnMenuPresupuesto.Name = "btnMenuPresupuesto";
-            this.btnMenuPresupuesto.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnMenuPresupuesto.Size = new System.Drawing.Size(170, 42);
-            this.btnMenuPresupuesto.TabIndex = 3;
-            this.btnMenuPresupuesto.Text = "Presupuesto";
-            this.btnMenuPresupuesto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuPresupuesto.UseVisualStyleBackColor = true;
-            this.btnMenuPresupuesto.Click += new System.EventHandler(this.btnMenuPresupuesto_Click);
-            // 
-            // btnConsultarPresupuestos
-            // 
-            this.btnConsultarPresupuestos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnConsultarPresupuestos.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnConsultarPresupuestos.FlatAppearance.BorderSize = 0;
-            this.btnConsultarPresupuestos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultarPresupuestos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultarPresupuestos.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnConsultarPresupuestos.Location = new System.Drawing.Point(0, 42);
-            this.btnConsultarPresupuestos.Name = "btnConsultarPresupuestos";
-            this.btnConsultarPresupuestos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnConsultarPresupuestos.Size = new System.Drawing.Size(170, 42);
-            this.btnConsultarPresupuestos.TabIndex = 2;
-            this.btnConsultarPresupuestos.Text = "Consultar Presupuestos";
-            this.btnConsultarPresupuestos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultarPresupuestos.UseVisualStyleBackColor = true;
-            this.btnConsultarPresupuestos.Click += new System.EventHandler(this.btnConsultarPresupuestos_Click);
-            // 
-            // btnMenuProductos
-            // 
-            this.btnMenuProductos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMenuProductos.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnMenuProductos.FlatAppearance.BorderSize = 0;
-            this.btnMenuProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMenuProductos.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnMenuProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnMenuProductos.Location = new System.Drawing.Point(0, 0);
-            this.btnMenuProductos.Name = "btnMenuProductos";
-            this.btnMenuProductos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnMenuProductos.Size = new System.Drawing.Size(170, 42);
-            this.btnMenuProductos.TabIndex = 1;
-            this.btnMenuProductos.Text = "Productos";
-            this.btnMenuProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMenuProductos.UseVisualStyleBackColor = true;
-            this.btnMenuProductos.Click += new System.EventHandler(this.btnMenuProductos_Click);
-            // 
-            // btnConsultarProductos
-            // 
-            this.btnConsultarProductos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnConsultarProductos.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnConsultarProductos.FlatAppearance.BorderSize = 0;
-            this.btnConsultarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultarProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultarProductos.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnConsultarProductos.Location = new System.Drawing.Point(0, 42);
-            this.btnConsultarProductos.Name = "btnConsultarProductos";
-            this.btnConsultarProductos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnConsultarProductos.Size = new System.Drawing.Size(170, 42);
-            this.btnConsultarProductos.TabIndex = 2;
-            this.btnConsultarProductos.Text = "Consultar Productos";
-            this.btnConsultarProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnConsultarProductos.UseVisualStyleBackColor = true;
-            this.btnConsultarProductos.Click += new System.EventHandler(this.btnConsultarProductos_Click);
-            // 
-            // pnUsuario
-            // 
-            this.pnUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.pnUsuario.Controls.Add(this.lblUsuario);
-            this.pnUsuario.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnUsuario.Location = new System.Drawing.Point(0, 0);
-            this.pnUsuario.Name = "pnUsuario";
-            this.pnUsuario.Size = new System.Drawing.Size(170, 155);
-            this.pnUsuario.TabIndex = 1;
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.lblUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.lblUsuario.Location = new System.Drawing.Point(0, 103);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(170, 52);
-            this.lblUsuario.TabIndex = 0;
-            this.lblUsuario.Text = "Usuario";
-            this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // pnMuestra
-            // 
-            this.pnMuestra.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnMuestra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.pnMuestra.Location = new System.Drawing.Point(180, 10);
-            this.pnMuestra.Name = "pnMuestra";
-            this.pnMuestra.Size = new System.Drawing.Size(770, 520);
-            this.pnMuestra.TabIndex = 1;
-            // 
-            // pnMenuProductos
-            // 
-            this.pnMenuProductos.Controls.Add(this.btnNuevoProducto);
-            this.pnMenuProductos.Controls.Add(this.btnConsultarProductos);
-            this.pnMenuProductos.Controls.Add(this.btnMenuProductos);
-            this.pnMenuProductos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnMenuProductos.Location = new System.Drawing.Point(0, 0);
-            this.pnMenuProductos.Name = "pnMenuProductos";
-            this.pnMenuProductos.Size = new System.Drawing.Size(170, 126);
-            this.pnMenuProductos.TabIndex = 0;
-            // 
-            // btnNuevoProducto
-            // 
-            this.btnNuevoProducto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnNuevoProducto.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnNuevoProducto.FlatAppearance.BorderSize = 0;
-            this.btnNuevoProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoProducto.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnNuevoProducto.Location = new System.Drawing.Point(0, 84);
-            this.btnNuevoProducto.Name = "btnNuevoProducto";
-            this.btnNuevoProducto.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnNuevoProducto.Size = new System.Drawing.Size(170, 42);
-            this.btnNuevoProducto.TabIndex = 0;
-            this.btnNuevoProducto.Text = "Nuevo Producto";
-            this.btnNuevoProducto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoProducto.UseVisualStyleBackColor = true;
-            this.btnNuevoProducto.Click += new System.EventHandler(this.btnNuevoProducto_Click);
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
             // 
             // pnMenuPresupuesto
             // 
@@ -295,6 +161,154 @@
             this.btnNuevoPresupuesto.UseVisualStyleBackColor = true;
             this.btnNuevoPresupuesto.Click += new System.EventHandler(this.btnNuevoPresupuesto_Click);
             // 
+            // btnConsultarPresupuestos
+            // 
+            this.btnConsultarPresupuestos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnConsultarPresupuestos.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnConsultarPresupuestos.FlatAppearance.BorderSize = 0;
+            this.btnConsultarPresupuestos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultarPresupuestos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultarPresupuestos.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnConsultarPresupuestos.Location = new System.Drawing.Point(0, 42);
+            this.btnConsultarPresupuestos.Name = "btnConsultarPresupuestos";
+            this.btnConsultarPresupuestos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnConsultarPresupuestos.Size = new System.Drawing.Size(170, 42);
+            this.btnConsultarPresupuestos.TabIndex = 2;
+            this.btnConsultarPresupuestos.Text = "Consultar Presupuestos";
+            this.btnConsultarPresupuestos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultarPresupuestos.UseVisualStyleBackColor = true;
+            this.btnConsultarPresupuestos.Click += new System.EventHandler(this.btnConsultarPresupuestos_Click);
+            // 
+            // btnMenuPresupuesto
+            // 
+            this.btnMenuPresupuesto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMenuPresupuesto.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnMenuPresupuesto.FlatAppearance.BorderSize = 0;
+            this.btnMenuPresupuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuPresupuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuPresupuesto.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnMenuPresupuesto.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMenuPresupuesto.Location = new System.Drawing.Point(0, 0);
+            this.btnMenuPresupuesto.Name = "btnMenuPresupuesto";
+            this.btnMenuPresupuesto.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnMenuPresupuesto.Size = new System.Drawing.Size(170, 42);
+            this.btnMenuPresupuesto.TabIndex = 3;
+            this.btnMenuPresupuesto.Text = "Presupuesto";
+            this.btnMenuPresupuesto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenuPresupuesto.UseVisualStyleBackColor = true;
+            this.btnMenuPresupuesto.Click += new System.EventHandler(this.btnMenuPresupuesto_Click);
+            // 
+            // pnMenuProductos
+            // 
+            this.pnMenuProductos.Controls.Add(this.btnNuevoProducto);
+            this.pnMenuProductos.Controls.Add(this.btnConsultarProductos);
+            this.pnMenuProductos.Controls.Add(this.btnMenuProductos);
+            this.pnMenuProductos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnMenuProductos.Location = new System.Drawing.Point(0, 0);
+            this.pnMenuProductos.Name = "pnMenuProductos";
+            this.pnMenuProductos.Size = new System.Drawing.Size(170, 126);
+            this.pnMenuProductos.TabIndex = 0;
+            // 
+            // btnNuevoProducto
+            // 
+            this.btnNuevoProducto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnNuevoProducto.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnNuevoProducto.FlatAppearance.BorderSize = 0;
+            this.btnNuevoProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoProducto.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnNuevoProducto.Location = new System.Drawing.Point(0, 84);
+            this.btnNuevoProducto.Name = "btnNuevoProducto";
+            this.btnNuevoProducto.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnNuevoProducto.Size = new System.Drawing.Size(170, 42);
+            this.btnNuevoProducto.TabIndex = 0;
+            this.btnNuevoProducto.Text = "Nuevo Producto";
+            this.btnNuevoProducto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoProducto.UseVisualStyleBackColor = true;
+            this.btnNuevoProducto.Click += new System.EventHandler(this.btnNuevoProducto_Click);
+            // 
+            // btnConsultarProductos
+            // 
+            this.btnConsultarProductos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnConsultarProductos.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnConsultarProductos.FlatAppearance.BorderSize = 0;
+            this.btnConsultarProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultarProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConsultarProductos.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnConsultarProductos.Location = new System.Drawing.Point(0, 42);
+            this.btnConsultarProductos.Name = "btnConsultarProductos";
+            this.btnConsultarProductos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnConsultarProductos.Size = new System.Drawing.Size(170, 42);
+            this.btnConsultarProductos.TabIndex = 2;
+            this.btnConsultarProductos.Text = "Consultar Productos";
+            this.btnConsultarProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultarProductos.UseVisualStyleBackColor = true;
+            this.btnConsultarProductos.Click += new System.EventHandler(this.btnConsultarProductos_Click);
+            // 
+            // btnMenuProductos
+            // 
+            this.btnMenuProductos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMenuProductos.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnMenuProductos.FlatAppearance.BorderSize = 0;
+            this.btnMenuProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuProductos.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnMenuProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMenuProductos.Location = new System.Drawing.Point(0, 0);
+            this.btnMenuProductos.Name = "btnMenuProductos";
+            this.btnMenuProductos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnMenuProductos.Size = new System.Drawing.Size(170, 42);
+            this.btnMenuProductos.TabIndex = 1;
+            this.btnMenuProductos.Text = "Productos";
+            this.btnMenuProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenuProductos.UseVisualStyleBackColor = true;
+            this.btnMenuProductos.Click += new System.EventHandler(this.btnMenuProductos_Click);
+            // 
+            // pnUsuario
+            // 
+            this.pnUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.pnUsuario.Controls.Add(this.pbUserIcon);
+            this.pnUsuario.Controls.Add(this.lblUsuario);
+            this.pnUsuario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnUsuario.Location = new System.Drawing.Point(0, 0);
+            this.pnUsuario.Name = "pnUsuario";
+            this.pnUsuario.Size = new System.Drawing.Size(170, 155);
+            this.pnUsuario.TabIndex = 1;
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lblUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.lblUsuario.Location = new System.Drawing.Point(0, 110);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.lblUsuario.Size = new System.Drawing.Size(170, 45);
+            this.lblUsuario.TabIndex = 0;
+            this.lblUsuario.Text = "Usuario";
+            this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // pnMuestra
+            // 
+            this.pnMuestra.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnMuestra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.pnMuestra.Location = new System.Drawing.Point(180, 10);
+            this.pnMuestra.Name = "pnMuestra";
+            this.pnMuestra.Size = new System.Drawing.Size(770, 520);
+            this.pnMuestra.TabIndex = 1;
+            // 
+            // pbUserIcon
+            // 
+            this.pbUserIcon.Image = global::AutomotrizApp.Properties.Resources.UserIcon;
+            this.pbUserIcon.Location = new System.Drawing.Point(36, 10);
+            this.pbUserIcon.Name = "pbUserIcon";
+            this.pbUserIcon.Size = new System.Drawing.Size(98, 98);
+            this.pbUserIcon.TabIndex = 1;
+            this.pbUserIcon.TabStop = false;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,9 +325,10 @@
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.pnMenuPrincipal.ResumeLayout(false);
             this.pnControles.ResumeLayout(false);
-            this.pnUsuario.ResumeLayout(false);
-            this.pnMenuProductos.ResumeLayout(false);
             this.pnMenuPresupuesto.ResumeLayout(false);
+            this.pnMenuProductos.ResumeLayout(false);
+            this.pnUsuario.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbUserIcon)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -336,6 +351,7 @@
         private System.Windows.Forms.Button btnNuevoProducto;
         private System.Windows.Forms.Panel pnMenuPresupuesto;
         private System.Windows.Forms.Button btnNuevoPresupuesto;
+        private System.Windows.Forms.PictureBox pbUserIcon;
     }
 }
 

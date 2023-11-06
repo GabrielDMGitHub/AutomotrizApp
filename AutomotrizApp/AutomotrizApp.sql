@@ -21,10 +21,14 @@ set dateformat dmy
 -- 1. Use el like en los SP para poder tomar parametros vacios o "incompletos" sin que tire error, ej: DNIs que contengan 123
 -- 2. Especifico los campos de las consultas para no usar el *
 -- 3. Modifico los inserts grupales a inserts independientes para que sean mas faciles de manejar
--- 4. En algunos SPs campos como total es money (no numeric), id_cliente es int (no varchar)
+-- 4. Cambio algunos SPs, campos como total es money (no numeric) e id_cliente es int (no varchar)
 -- 5. Agregue "SP_CONSULTAR_TIPOS" que faltaba para poder hacer carga de los combo box
 -- 6. Modifique SP_CONSULTAR_PRODUCTOS para que acepte parametros de entrada y filtre
 
+
+-- Gabi (06/11)
+-- 1. Agregue "SP_INSERTAR_PRODUCTO" como parte del ABMC
+-- 2. Falta "SP_ACTUALIZAR_PRODUCTO"
 
 --Creacion de tablas (por orden)
 -- ========================================================================================================================================== --
@@ -208,22 +212,34 @@ begin
 		WHERE c.usuario = @input_usuario and c.pass = @input_pass
 end
 go
-exec [SP_CONSULTAR_LOGIN] @input_usuario = '', @input_pass = ''
+--exec [SP_CONSULTAR_LOGIN] @input_usuario = '', @input_pass = ''
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 go
---SP para eliminar un presupuesto ingresando el id (cambia la fecha de baja)
-create proc [SP_ELIMINAR_PRESUPUESTO]
-		@input_id_presupuesto int = 0
+--SP para conocer el id del proximo presupuesto
+create proc [SP_PROXIMO_ID_PRESUPUESTO]
+		@next int OUTPUT
 as
 begin
-        UPDATE PRESUPUESTOS
-		SET fecha_baja = GETDATE()
-        WHERE id_presupuesto = @input_id_presupuesto;
+        SET @next = (SELECT MAX(p.id_presupuesto)+1  FROM PRESUPUESTOS p);
 end
 go
-exec [SP_ELIMINAR_PRESUPUESTO] @input_id_presupuesto = 0
+--exec [SP_PROXIMO_ID] @next = output
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+go
+--SP para consultar tipos sin parametros de entrada (sirve para los combo box)
+create proc [SP_CONSULTAR_TIPOS]
+as
+begin
+
+        SELECT t.id_tipo 'ID', t.tipo 'Tipo'
+		FROM TIPOS t
+end
+go
+--exec [SP_CONSULTAR_TIPOS]
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -244,40 +260,61 @@ begin
         AND p.id_tipo = isnull(@input_id_tipo, p.id_tipo);
 end
 go
-exec [SP_CONSULTAR_PRODUCTOS] @input_nombre = '', @input_precio_min = 0, @input_precio_max = 999999, @input_id_tipo = 1
+--exec [SP_CONSULTAR_PRODUCTOS] @input_nombre = '', @input_precio_min = 0, @input_precio_max = 999999, @input_id_tipo = 1
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 go
---SP para consultar tipos sin parametros de entrada (sirve para los combo box)
-create proc [SP_CONSULTAR_TIPOS]
+--SP para consultar productos sin parametros de entrada (sirve para los combo box)
+create proc [SP_INSERTAR_PRODUCTOS]
+		@input_id_producto int,
+		@input_nombre varchar(50),
+		@input_precio money,
+		@input_id_tipo int
 as
 begin
-
-        SELECT t.id_tipo 'ID', t.tipo 'Tipo'
-		FROM TIPOS t
+		INSERT INTO PRODUCTOS
+		VALUES (@input_id_producto, @input_nombre, @input_precio, @input_id_tipo);
 end
 go
-exec [SP_CONSULTAR_TIPOS]
+--exec [SP_CONSULTAR_PRODUCTOS] @input_nombre = '', @input_precio_min = 0, @input_precio_max = 999999, @input_id_tipo = 1
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+go
+--SP para eliminar un presupuesto ingresando el id (cambia la fecha de baja)
+create proc [SP_ELIMINAR_PRESUPUESTO]
+		@input_id_presupuesto int = 0
+as
+begin
+        UPDATE PRESUPUESTOS
+		SET fecha_baja = GETDATE()
+        WHERE id_presupuesto = @input_id_presupuesto;
+end
+go
+--exec [SP_ELIMINAR_PRESUPUESTO] @input_id_presupuesto = 0
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 go
 --SP para consultar presupuestos ingresando un rango de fechas y posible dni del cliente
 create proc [SP_CONSULTAR_PRESUPUESTOS]
-        @input_fecha_min datetime = '01/01/2000',
-		@input_fecha_max datetime = '31/12/3000',
-		@input_dni_cliente varchar(50) = ''
+		@input_dni_cliente varchar(50) = '',
+        @input_fecha_min datetime = null,
+		@input_fecha_max datetime = null,
+		@input_total_min money = null,
+		@input_total_max money = null
 as
 begin
-        SELECT id_presupuesto, fecha, total, c.nombre + ' '+ apellido, c.dni
-        FROM PRESUPUESTOS p join clientes c on p.id_cliente=c.id_cliente
-        WHERE (fecha between @input_fecha_min and @input_fecha_max)
-        AND (c.dni like '%' + @input_dni_cliente + '%')
-        AND fecha_baja is null;
+        SELECT id_presupuesto 'ID', c.nombre + ' '+ apellido 'Cliente', c.dni 'DNI', fecha 'Fecha', total 'Total'
+        FROM PRESUPUESTOS p join CLIENTES c on p.id_cliente=c.id_cliente
+        WHERE (c.dni like '%' + @input_dni_cliente + '%')
+		AND (p.fecha between isnull(@input_fecha_min, p.fecha) and isnull(@input_fecha_max, p.fecha))
+        AND (p.total between isnull(@input_total_min, p.total) and isnull(@input_total_max, p.total))
+        AND p.fecha_baja is null;
 end
 go
-exec [SP_CONSULTAR_PRESUPUESTOS] @input_fecha_min = '01/01/2000', @input_fecha_max = '31/12/3000', @input_dni_cliente = ''
+--exec [SP_CONSULTAR_PRESUPUESTOS] @input_dni_cliente = '', @input_fecha_min = '01/01/2000', @input_fecha_max = '01/01/3000', @input_total_min = 0, @input_total_max = 9999999
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -294,20 +331,7 @@ begin
 		SET @output_id_presupuesto = SCOPE_IDENTITY();
 end
 go
-exec [SP_INSERTAR_MAESTRO] @input_id_cliente = '', @input_total = 0, @output_id_presupuesto = output
-
------------------------------------------------------------------------------------------------------------------------------------------------
-
-go
---SP para conocer el id del proximo presupuesto
-create proc [SP_PROXIMO_ID]
-		@next int OUTPUT
-as
-begin
-        SET @next = (SELECT MAX(id_presupuesto)+1  FROM PRESUPUESTOS);
-end
-go
-exec [SP_PROXIMO_ID] @next = output
+--exec [SP_INSERTAR_MAESTRO] @input_id_cliente = '', @input_total = 0, @output_id_presupuesto = output
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -326,7 +350,7 @@ begin
         WHERE id_presupuesto = @input_id_presupuesto;
 end
 go
-exec [SP_ACTUALIZAR_MAESTRO] @input_id_cliente = '', @input_total = 0, @input_id_presupuesto = 0
+--exec [SP_ACTUALIZAR_MAESTRO] @input_id_cliente = '', @input_total = 0, @input_id_presupuesto = 0
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -343,7 +367,7 @@ begin
 		VALUES (@input_id_presupuesto, @input_id_detalle, @input_id_producto, @input_cantidad);
 end
 go
-exec [SP_INSERTAR_DETALLE] @input_id_presupuesto = 0, @input_id_detalle = 0, @input_id_producto = 0,@input_cantidad = 0
+--exec [SP_INSERTAR_DETALLE] @input_id_presupuesto = 0, @input_id_detalle = 0, @input_id_producto = 0,@input_cantidad = 0
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 

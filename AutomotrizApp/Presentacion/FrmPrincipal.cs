@@ -136,5 +136,10 @@ namespace AutomotrizApp
                 btnMenuPresupuesto.ForeColor = SystemColors.Highlight;
             }
         }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Falta crear Un reporte para mostrar\n(Agus tiene que hacerlo, pasarmelo y lo agrego)");
+        }
     }
 }

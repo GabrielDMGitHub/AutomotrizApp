@@ -14,6 +14,7 @@ namespace AutomotrizApp.Presentacion
     public partial class FrmNuevoProducto : Form
     {
         private int idNuevoProducto;
+        private bool Editar;
         public FrmNuevoProducto(int idProducto = 0)
         {
             InitializeComponent();
@@ -26,12 +27,13 @@ namespace AutomotrizApp.Presentacion
             {
                 idNuevoProducto = idProducto;
                 lblTitulo.Text = "Editar Producto";
+                Editar = true;
             }
             else
             {
+                // ---> Consultar proximo id para producto ([SP_PROXIMO_ID_PRODUCTO]) y asignarlo a idNuevoProducto
                 idNuevoProducto = 99;
-                lblTitulo.Text = "Nuevo Producto";
-                // ---> Consultar proximo id para producto y asignarlo a idNuevoProducto
+                Editar = false;
             }
         }
 
@@ -51,7 +53,7 @@ namespace AutomotrizApp.Presentacion
 
 
 
-        //Metodos
+        //Eventos
         // ================================================================================================================================= //
         //Load
         private void FrmNuevoProducto_Load(object sender, EventArgs e)
@@ -60,13 +62,30 @@ namespace AutomotrizApp.Presentacion
         }
 
 
-        //
+        //Inicia insert o update con la base de datos
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
-
+            if (Editar)
+            {
+                // ---> Inicio update usando idNuevoProducto como PK a editar
+            }
+            else
+            {
+                // ---> Inicio insert usando idNuevoProducto como PK a insertar
+            }
+            MessageBox.Show("Falta por hacer el insert y update");
         }
 
-        
+
+        //Veriica si la tecla presionada es un numero o un "control", si no lo es se ignora
+        private void txtNumerico_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
         // ================================================================================================================================= //
     }
 }

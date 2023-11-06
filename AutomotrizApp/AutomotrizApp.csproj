@@ -131,7 +131,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Recursos\UserIcon.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Recursos\AutomotrizLogo.png" />
   </ItemGroup>
