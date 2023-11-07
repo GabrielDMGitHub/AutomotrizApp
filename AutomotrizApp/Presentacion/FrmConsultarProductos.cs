@@ -89,21 +89,16 @@ namespace AutomotrizApp.Presentacion
 
                 Producto producto = new Producto(idProducto, nombreProducto, precioProducto, tipoProducto);
 
-                MessageBox.Show("Editar ID: " + idProducto.ToString()); //Esto es solo para pruebas
                 FrmPrincipal.instancia.CambiarFormulario(new FrmNuevoProducto(producto));
             }
 
             //Eliminar un producto
             if (dgvConsultarProductos.CurrentCell.OwningColumn.Name == "Eliminar")
             {
-                
                 int idProducto = Convert.ToInt32(dgvConsultarProductos.CurrentRow.Cells["idProducto"].Value);
-                MessageBox.Show("Eliminar ID: " + idProducto.ToString()); //Esto es solo para pruebas
-
                 List<Parametro> parametro = new List<Parametro>() { new Parametro("@input_id_producto", idProducto) };
 
                 DBHelper.ObtenerInstancia().ConsultarSP("SP_ELIMINAR_PRODUCTOS", parametro);
-                
             }
         }
 

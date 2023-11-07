@@ -19,10 +19,6 @@ namespace AutomotrizApp.Presentacion
         public FrmNuevoPresupuesto()
         {
             InitializeComponent();
-
-            // ---> Consultar proximo id para presupuesto ([SP_PROXIMO_ID_PRESUPUESTO]) y asignarlo a idNuevoPresupuesto
-            idNuevoPresupuesto = 99;
-
         }
 
         //Metodos
@@ -99,7 +95,6 @@ namespace AutomotrizApp.Presentacion
             txtCantidad.Text = "0";
         }
 
-
         // ================================================================================================================================= //
 
 
@@ -112,9 +107,11 @@ namespace AutomotrizApp.Presentacion
             LimpiarControles();
             CargarComboProductos();
 
+            // ---> Consultar proximo id para presupuesto ([SP_PROXIMO_ID_PRESUPUESTO]) y asignarlo a idNuevoPresupuesto
+            idNuevoPresupuesto = 99;
+
             lblTitulo.Text += " (N" + idNuevoPresupuesto + ")";
             txtDniCliente.Text = FrmPrincipal.clienteActivo.Dni; //Carga el DNI del cliente que inicio sesion
-
         }
 
 
@@ -160,11 +157,8 @@ namespace AutomotrizApp.Presentacion
                     if (fila.Index == indice)
                     {
                         dgvDetallesNuevoPresupuesto.Rows.Remove(fila);
-
-
                     }
                 }
-
             }
         }
 

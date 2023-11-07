@@ -10,6 +10,19 @@ DROP TABLE PRODUCTOS
 DROP TABLE CLIENTES
 DROP TABLE TIPOS
 
+--Drop de SP
+DROP PROC [SP_CONSULTAR_LOGIN]
+DROP PROC [SP_PROXIMO_ID_PRESUPUESTO]
+DROP PROC [SP_CONSULTAR_TIPOS]
+DROP PROC [SP_CONSULTAR_PRODUCTOS]
+DROP PROC [SP_INSERTAR_PRODUCTOS]
+DROP PROC [SP_ACTUALIZAR_PRODUCTOS]
+DROP PROC [SP_ELIMINAR_PRODUCTOS]
+DROP PROC [SP_CONSULTAR_PRESUPUESTOS]
+DROP PROC [SP_INSERTAR_PRESUPUESTOS]
+DROP PROC [SP_ACTUALIZAR_PRESUPUESTOS]
+DROP PROC [SP_ELIMINAR_PRESUPUESTOS]
+DROP PROC [SP_INSERTAR_DETALLES]
 
 
 --Cambio de formatos
@@ -211,8 +224,8 @@ begin
 		FROM CLIENTES c
 		WHERE c.usuario = @input_usuario and c.pass = @input_pass
 end
+--exec [SP_CONSULTAR_LOGIN] @input_usuario = 'test', @input_pass = '123'
 go
---exec [SP_CONSULTAR_LOGIN] @input_usuario = '', @input_pass = ''
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -224,8 +237,8 @@ as
 begin
         SET @next = (SELECT MAX(p.id_presupuesto)+1  FROM PRESUPUESTOS p);
 end
+--exec [SP_PROXIMO_ID] @next = @output output
 go
---exec [SP_PROXIMO_ID] @next = output
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -234,12 +247,11 @@ go
 create proc [SP_CONSULTAR_TIPOS]
 as
 begin
-
         SELECT t.id_tipo 'ID', t.tipo 'Tipo'
 		FROM TIPOS t
 end
-go
 --exec [SP_CONSULTAR_TIPOS]
+go
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -252,32 +264,31 @@ create proc [SP_CONSULTAR_PRODUCTOS]
 		@input_id_tipo int = null
 as
 begin
-
         SELECT p.id_producto 'ID', p.nombre 'Nombre', round (p.precio, 2) 'Precio', t.tipo 'Tipo'
 		FROM PRODUCTOS p join TIPOS t on p.id_tipo = t.id_tipo
 		WHERE (p.nombre like '%' + @input_nombre + '%')
         AND (p.precio between isnull(@input_precio_min, p.precio) and isnull(@input_precio_max, p.precio))
         AND p.id_tipo = isnull(@input_id_tipo, p.id_tipo);
 end
-go
 --exec [SP_CONSULTAR_PRODUCTOS] @input_nombre = '', @input_precio_min = 0, @input_precio_max = 999999, @input_id_tipo = 1
+go
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 go
---SP para consultar productos sin parametros de entrada (sirve para los combo box)
+--SP para cargar un nuevo producto tomando todos los parametros de entrada
 create proc [SP_INSERTAR_PRODUCTOS]
-		@input_id_producto int,
-		@input_nombre varchar(50),
-		@input_precio money,
-		@input_id_tipo int
+		@input_id_producto int = null,
+		@input_nombre varchar(50) = null,
+		@input_precio money = null,
+		@input_id_tipo int = null
 as
 begin
 		INSERT INTO PRODUCTOS
 		VALUES (@input_id_producto, @input_nombre, @input_precio, @input_id_tipo);
 end
-go
 --exec [SP_CONSULTAR_PRODUCTOS] @input_nombre = '', @input_precio_min = 0, @input_precio_max = 999999, @input_id_tipo = 1
+go
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -289,40 +300,30 @@ create proc [SP_ACTUALIZAR_PRODUCTOS]
 		@input_precio money = null,
 		@input_id_tipo int = null
 as
+begin
 		UPDATE PRODUCTOS
 		SET 
 		nombre = isnull(@input_nombre, nombre),
 		precio = isnull(@input_precio, precio),
 		id_tipo = isnull(@input_id_tipo, id_tipo)
-WHERE id_producto = @input_id_producto
-go
+		WHERE id_producto = @input_id_producto
+end
 --exec [SP_ACTUALIZAR_PRODUCTOS] @input_id_producto = 1, @input_nombre = null, @input_precio = 17000, @input_id_tipo = 1 
+go
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 go
+--SP para eliminar productos, toma el id como parametro para eliminar dicho producto
 create proc [SP_ELIMINAR_PRODUCTOS]
-@input_id_producto int
-as
-DELETE FROM PRODUCTOS
-WHERE id_producto = @input_id_producto
-go
-
------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-go
---SP para eliminar un presupuesto ingresando el id (cambia la fecha de baja)
-create proc [SP_ELIMINAR_PRESUPUESTO]
-		@input_id_presupuesto int = 0
+		@input_id_producto int = null
 as
 begin
-        UPDATE PRESUPUESTOS
-		SET fecha_baja = GETDATE()
-        WHERE id_presupuesto = @input_id_presupuesto;
+		DELETE FROM PRODUCTOS
+		WHERE id_producto = @input_id_producto
 end
+--exec [SP_ELIMINAR_PRODUCTOS] @input_id_producto = 0
 go
---exec [SP_ELIMINAR_PRESUPUESTO] @input_id_presupuesto = 0
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -343,77 +344,78 @@ begin
         AND (p.total between isnull(@input_total_min, p.total) and isnull(@input_total_max, p.total))
         AND p.fecha_baja is null;
 end
-go
 --exec [SP_CONSULTAR_PRESUPUESTOS] @input_dni_cliente = '', @input_fecha_min = '01/01/2000', @input_fecha_max = '01/01/3000', @input_total_min = 0, @input_total_max = 9999999
+go
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 go
---SP para insertar maestro
-create proc [SP_INSERTAR_MAESTRO]
-        @input_id_cliente int = '',
-        @input_total money = 0,
-        @output_id_presupuesto int OUTPUT
+--SP para crear un nuevo presupuesto
+create proc [SP_INSERTAR_PRESUPUESTOS]
+		@input_id_cliente int = null,
+		@input_total money = null,
+		@output_id_presupuesto int OUTPUT
 as
 begin
-        INSERT INTO PRESUPUESTOS(fecha, id_cliente, total)
-		VALUES (GETDATE(), @input_id_cliente, @input_total);
+		INSERT INTO PRESUPUESTOS(id_presupuesto,fecha, id_cliente, total)
+		VALUES (@output_id_presupuesto,GETDATE(), @input_id_cliente, @input_total);
 		SET @output_id_presupuesto = SCOPE_IDENTITY();
 end
+--exec [SP_INSERTAR_PRESUPUESTO] @input_id_cliente = 0, @input_total = 0, @output_id_presupuesto = output
 go
---exec [SP_INSERTAR_MAESTRO] @input_id_cliente = '', @input_total = 0, @output_id_presupuesto = output
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 go
---SP para modificar un presupuesto
-create proc [SP_ACTUALIZAR_MAESTRO]
-        @input_id_cliente int = 0,
-        @input_total money = 0,
-        @input_id_presupuesto int = 0
+--SP para modificar un presupuesto (Este no lo vamos a usar, los presupuestos no se deberian de modificar nunca)
+create proc [SP_ACTUALIZAR_PRESUPUESTOS]
+        @input_id_cliente int = null,
+        @input_total money = null,
+        @input_id_presupuesto int = null
 as
 begin
-        UPDATE PRESUPUESTOS SET id_cliente = @input_id_cliente, total = @input_total
-        WHERE id_presupuesto = @input_id_presupuesto;
-
-        DELETE DETALLES
+        UPDATE PRESUPUESTOS
+		SET 
+		id_cliente = isnull(@input_id_cliente, id_cliente),
+		total = isnull(@input_total, total)
         WHERE id_presupuesto = @input_id_presupuesto;
 end
-go
 --exec [SP_ACTUALIZAR_MAESTRO] @input_id_cliente = '', @input_total = 0, @input_id_presupuesto = 0
+go
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+go
+--SP para eliminar un presupuesto ingresando el id (cambia la fecha de baja)
+create proc [SP_ELIMINAR_PRESUPUESTOS]
+		@input_id_presupuesto int = null
+as
+begin
+        UPDATE PRESUPUESTOS
+		SET fecha_baja = GETDATE()
+        WHERE id_presupuesto = @input_id_presupuesto;
+end
+--exec [SP_ELIMINAR_PRESUPUESTO] @input_id_presupuesto = 0
+go
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 go
 --SP para insertar detalle
-create proc [SP_INSERTAR_DETALLE]
-        @input_id_presupuesto int,
-        @input_id_detalle int,
-        @input_id_producto int,
-        @input_cantidad int
+create proc [SP_INSERTAR_DETALLES]
+        @input_id_presupuesto int = null,
+        @input_id_detalle int = null,
+        @input_id_producto int = null,
+        @input_cantidad int = null
 as
 begin
         INSERT INTO DETALLES(id_presupuesto,id_detalle, id_producto, cantidad)
 		VALUES (@input_id_presupuesto, @input_id_detalle, @input_id_producto, @input_cantidad);
 end
-go
 --exec [SP_INSERTAR_DETALLE] @input_id_presupuesto = 0, @input_id_detalle = 0, @input_id_producto = 0,@input_cantidad = 0
+go
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
-
-go
---SP para consultar detalle presupuesto   (Para que sirve este?)
-create proc [SP_CONSULTAR_DETALLES_PRESUPUESTO]
-        @id_presupuesto int
-as
-begin
-        SELECT t.*, t2.id_producto, t2.precio, t3.id_cliente, t3.fecha, t3.total
-        FROM DETALLES t, PRODUCTOS t2, PRESUPUESTOS t3
-        WHERE t.id_producto = t2.id_producto
-        AND t.id_presupuesto = t3.id_presupuesto
-        AND t.id_presupuesto = @id_presupuesto;
-end
-go
 
 
 

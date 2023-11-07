@@ -85,12 +85,11 @@ namespace AutomotrizApp.Presentacion
         {
             if (dgvConsultarPresupuestos.CurrentCell.OwningColumn.Name == "Eliminar")
             {
-
                 int idPresupuesto = Convert.ToInt32(dgvConsultarPresupuestos.CurrentRow.Cells["idPresupuesto"].Value);
                 List<Parametro> parametro = new List<Parametro>() { new Parametro("@input_id_presupuesto", idPresupuesto) };
 
                 //Elimina de la base de datos el presupuesto
-                //DBHelper.ObtenerInstancia().ConsultarSP("[SP_ELIMINAR_PRESUPUESTO]", parametro);
+                DBHelper.ObtenerInstancia().ConsultarSP("[SP_ELIMINAR_PRESUPUESTOS]", parametro);
                 MessageBox.Show("Se eliminó correctamente");
 
                 //Elimina del DGV

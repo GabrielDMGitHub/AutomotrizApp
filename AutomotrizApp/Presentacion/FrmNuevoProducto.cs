@@ -51,7 +51,6 @@ namespace AutomotrizApp.Presentacion
             DBHelper.ObtenerInstancia().CargarCombo(cboTipoProducto, "SP_CONSULTAR_TIPOS");
             DBHelper.ObtenerInstancia().CargarGrilla(dgvConsultarProductos, null, "SP_CONSULTAR_PRODUCTOS");
 
-
             //Define si el formulario dira de ser usado para editar o crear un presupuesto
             if (producto != null)
             {
@@ -116,10 +115,7 @@ namespace AutomotrizApp.Presentacion
                 lista.Add(new Parametro("@input_id_tipo", cboTipoProducto.SelectedValue));
 
                 DBHelper.ObtenerInstancia().ConsultarSP(nombreSP, lista);
-
             }
-            
-            MessageBox.Show("Falta por hacer el insert y update");
         }
 
 
