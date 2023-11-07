@@ -109,10 +109,11 @@ namespace AutomotrizApp.Presentacion
         //Load
         private void FrmNuevoPresupuesto_Load(object sender, EventArgs e)
         {
-            lblTitulo.Text += " (N" + idNuevoPresupuesto + ")";
             LimpiarControles();
             CargarComboProductos();
 
+            lblTitulo.Text += " (N" + idNuevoPresupuesto + ")";
+            txtDniCliente.Text = FrmPrincipal.clienteActivo.Dni; //Carga el DNI del cliente que inicio sesion
 
         }
 
@@ -159,6 +160,8 @@ namespace AutomotrizApp.Presentacion
                     if (fila.Index == indice)
                     {
                         dgvDetallesNuevoPresupuesto.Rows.Remove(fila);
+
+
                     }
                 }
 
@@ -166,7 +169,7 @@ namespace AutomotrizApp.Presentacion
         }
 
 
-        //Veriica si la tecla presionada es un numero o un "control", si no lo es se ignora
+        //Veriica si la tecla presionada es un numero o un "backspace", si no lo es, se ignora
         private void txtNumerico_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))

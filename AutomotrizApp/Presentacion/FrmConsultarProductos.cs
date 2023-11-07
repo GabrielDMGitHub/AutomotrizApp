@@ -1,4 +1,5 @@
 ﻿using AutomotrizApp.Datos;
+using AutomotrizApp.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -77,17 +78,37 @@ namespace AutomotrizApp.Presentacion
 
         private void dgvConsultarProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //Editar un producto
             if (dgvConsultarProductos.CurrentCell.OwningColumn.Name == "Editar")
+            {
+                //Crear producto con los datos de la fila
+                int idProducto = Convert.ToInt32(dgvConsultarProductos.CurrentRow.Cells["idProducto"].Value);
+                string nombreProducto = Convert.ToString(dgvConsultarProductos.CurrentRow.Cells["nombreProducto"].Value);
+                float precioProducto = Convert.ToSingle(dgvConsultarProductos.CurrentRow.Cells["precioProducto"].Value);
+                string tipoProducto = Convert.ToString(dgvConsultarProductos.CurrentRow.Cells["tipoProducto"].Value);
+
+                Producto producto = new Producto(idProducto, nombreProducto, precioProducto, tipoProducto);
+
+                MessageBox.Show("Editar ID: " + idProducto.ToString()); //Esto es solo para pruebas
+                FrmPrincipal.instancia.CambiarFormulario(new FrmNuevoProducto(producto));
+            }
+
+            //Eliminar un producto
+            if (dgvConsultarProductos.CurrentCell.OwningColumn.Name == "Eliminar")
             {
                 
                 int idProducto = Convert.ToInt32(dgvConsultarProductos.CurrentRow.Cells["idProducto"].Value);
-                MessageBox.Show("ID: " + idProducto.ToString()); //Esto es solo para pruebas
-                FrmPrincipal.instancia.CambiarFormulario(new FrmNuevoProducto(idProducto));
+                MessageBox.Show("Eliminar ID: " + idProducto.ToString()); //Esto es solo para pruebas
+
+                List<Parametro> parametro = new List<Parametro>() { new Parametro("@input_id_producto", idProducto) };
+
+                DBHelper.ObtenerInstancia().ConsultarSP("SP_ELIMINAR_PRODUCTOS", parametro);
+                
             }
         }
 
 
-        //Veriica si la tecla presionada es un numero o un "control", si no lo es se ignora
+        //Veriica si la tecla presionada es un numero o un "backspace", si no lo es, se ignora
         private void txtNumerico_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))

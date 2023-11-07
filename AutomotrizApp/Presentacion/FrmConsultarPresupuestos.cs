@@ -87,13 +87,19 @@ namespace AutomotrizApp.Presentacion
             {
 
                 int idPresupuesto = Convert.ToInt32(dgvConsultarPresupuestos.CurrentRow.Cells["idPresupuesto"].Value);
-                MessageBox.Show("Se deberia eliminar el Presupuesto con el ID: " + idPresupuesto.ToString()); //Esto es solo para pruebas
-                // ---> Eliminar un presupuesto del dgv y base de datos (hacer una confirmacion)
+                List<Parametro> parametro = new List<Parametro>() { new Parametro("@input_id_presupuesto", idPresupuesto) };
+
+                //Elimina de la base de datos el presupuesto
+                //DBHelper.ObtenerInstancia().ConsultarSP("[SP_ELIMINAR_PRESUPUESTO]", parametro);
+                MessageBox.Show("Se eliminó correctamente");
+
+                //Elimina del DGV
+                dgvConsultarPresupuestos.Rows.Remove(dgvConsultarPresupuestos.CurrentRow);
             }
         }
 
 
-        //Veriica si la tecla presionada es un numero o un "control", si no lo es se ignora
+        //Veriica si la tecla presionada es un numero o un "backspace", si no lo es, se ignora
         private void txtNumerico_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))

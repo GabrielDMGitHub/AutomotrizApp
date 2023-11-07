@@ -102,7 +102,8 @@ namespace AutomotrizApp
             MessageBox.Show("Responsables: Grupo 12\n" +
                             "\n113857 De Maussion Gabriel" +
                             "\n114136 Moyano Tello Lucia Amancay" +
-                            "\n114256 Menta Agustina");
+                            "\n114256 Menta Agustina" + 
+                            "\n(Se que esta feo, luego lo mejoro)");
         }
 
 

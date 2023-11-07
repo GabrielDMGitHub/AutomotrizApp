@@ -282,6 +282,36 @@ go
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 go
+--SP para actualizar los datos de un producto, toma como entrada el id a editar y los campos a actualizar
+create proc [SP_ACTUALIZAR_PRODUCTOS]
+		@input_id_producto int = null,
+		@input_nombre varchar(50) = null,
+		@input_precio money = null,
+		@input_id_tipo int = null
+as
+		UPDATE PRODUCTOS
+		SET 
+		nombre = isnull(@input_nombre, nombre),
+		precio = isnull(@input_precio, precio),
+		id_tipo = isnull(@input_id_tipo, id_tipo)
+WHERE id_producto = @input_id_producto
+go
+--exec [SP_ACTUALIZAR_PRODUCTOS] @input_id_producto = 1, @input_nombre = null, @input_precio = 17000, @input_id_tipo = 1 
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+go
+create proc [SP_ELIMINAR_PRODUCTOS]
+@input_id_producto int
+as
+DELETE FROM PRODUCTOS
+WHERE id_producto = @input_id_producto
+go
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+go
 --SP para eliminar un presupuesto ingresando el id (cambia la fecha de baja)
 create proc [SP_ELIMINAR_PRESUPUESTO]
 		@input_id_presupuesto int = 0
