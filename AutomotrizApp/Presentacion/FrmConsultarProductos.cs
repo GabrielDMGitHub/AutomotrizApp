@@ -74,6 +74,7 @@ namespace AutomotrizApp.Presentacion
         private void btnReiniciarFiltros_Click(object sender, EventArgs e)
         {
             LimpiarControles();
+            btnFiltrar_Click(sender, e);
         }
 
         private void dgvConsultarProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
