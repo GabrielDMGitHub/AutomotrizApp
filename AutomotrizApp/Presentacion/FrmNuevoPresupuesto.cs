@@ -15,7 +15,9 @@ namespace AutomotrizApp.Presentacion
 {
     public partial class FrmNuevoPresupuesto : Form
     {
-        private Presupuesto nuevoPresupuesto = new Presupuesto();
+        private Presupuesto nuevoPresupuesto;
+        private Cliente clienteNuevoPresupuesto;
+
         public FrmNuevoPresupuesto()
         {
             InitializeComponent();
@@ -26,18 +28,60 @@ namespace AutomotrizApp.Presentacion
         //Valida si la carga de datos es correcta antes de intentar grabarlos en la base de datos
         private bool ValidarConfirmar()
         {
-            if(txtDniCliente.Text == "")
-            {
-                MessageBox.Show("Error\nIngrese el dni de un cliente...");
-                return false;
-            }
-            if(dgvDetallesNuevoPresupuesto.RowCount == 0) 
+            if (dgvDetallesNuevoPresupuesto.RowCount == 0)
             {
                 MessageBox.Show("Error\nAgregue al menos un producto...");
                 return false;
             }
+            if (txtDniCliente.Text == "")
+            {
+                MessageBox.Show("Error\nIngrese el dni de un cliente...");
+                return false;
+            }
+            else
+            {
+                return ConsultarCliente();
+            }
+        }
 
-            return true;
+
+        //Convierte los datos de una fila en atributos de un objeto cliente
+        private bool ConsultarCliente()
+        {
+            List<Parametro> parametro = new List<Parametro>() { new Parametro("@input_dni_cliente", txtDniCliente.Text) };
+            DataTable tClientes = DBHelper.ObtenerInstancia().ConsultarSP("SP_CONSULTAR_CLIENTES", parametro);
+
+            if (tClientes.Rows.Count == 0)
+            {
+                MessageBox.Show("Error\nNo se encontro un cliente con el DNI:\n\"" + txtDniCliente.Text + "\"");
+                return false;
+            }
+            else
+            {
+                if (tClientes.Rows.Count > 1)
+                {
+                    foreach (DataRow row in tClientes.Rows)
+                    {
+                        if (MessageBox.Show("El cliente que esta buscando es:\n\"" + Convert.ToString(row["Nombre Completo"]) + "\"?", "Error. Multiples clientes encontrados", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            clienteNuevoPresupuesto.Id = Convert.ToInt32(row["ID"]);
+                            clienteNuevoPresupuesto.NombreCompleto = Convert.ToString(row["Nombre Completo"]);
+                            clienteNuevoPresupuesto.Dni = Convert.ToString(row["DNI"]);
+                            clienteNuevoPresupuesto.Telefono = Convert.ToString(row["Telefono"]);
+                            return true;
+                        }
+                    }
+                }
+                else
+                {
+                    clienteNuevoPresupuesto.Id = Convert.ToInt32(tClientes.Rows[0]["ID"]);
+                    clienteNuevoPresupuesto.NombreCompleto = Convert.ToString(tClientes.Rows[0]["Nombre Completo"]);
+                    clienteNuevoPresupuesto.Dni = Convert.ToString(tClientes.Rows[0]["DNI"]);
+                    clienteNuevoPresupuesto.Telefono = Convert.ToString(tClientes.Rows[0]["Telefono"]);
+                    return true;
+                }
+            }
+            return false;
         }
 
 
@@ -86,13 +130,18 @@ namespace AutomotrizApp.Presentacion
         }
 
 
-        //Limpia el contenido de los controles (txt y cbo)
+        //Limpia el contenido de los controles (txt, cbo y dgv)
         private void LimpiarControles()
         {
             dtpFecha.Value = DateTime.Today;
             txtDniCliente.Text = "";
             cboProducto.SelectedIndex = -1;
             txtCantidad.Text = "1";
+            lblTotalValor.Text = "0";
+            dgvDetallesNuevoPresupuesto.Rows.Clear();
+
+            nuevoPresupuesto = new Presupuesto();
+            clienteNuevoPresupuesto = new Cliente();
         }
 
         // ================================================================================================================================= //
@@ -138,8 +187,17 @@ namespace AutomotrizApp.Presentacion
         {
             if (ValidarConfirmar())
             {
-                // ---> Aqui inicia la transaccion
-                MessageBox.Show("Falta por hacer");
+                nuevoPresupuesto.ClientePresupuesto = clienteNuevoPresupuesto;
+                if (DBHelper.ObtenerInstancia().Transaccion(nuevoPresupuesto))
+                {
+                    MessageBox.Show("El Presupuesto se cargo con exito.");
+                    LimpiarControles();
+                }
+                else
+                {
+                    MessageBox.Show("El Presupuesto no se pudo cargar.");
+                }
+                
             }
         }
 

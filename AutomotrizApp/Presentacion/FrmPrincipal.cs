@@ -66,7 +66,10 @@ namespace AutomotrizApp
         //Cierra el programa completo
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            // ---> Agregar confirmacion al salir 
+            //if (MessageBox.Show("¿Está seguro que desea salir?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            //{
+            //    Application.Exit();
+            //}
             Application.Exit();
         }
 

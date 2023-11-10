@@ -137,5 +137,14 @@
   <ItemGroup>
     <None Include="Recursos\AutomotrizLogo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\PassHideIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\PassShowIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Recursos\ExitIcon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

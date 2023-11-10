@@ -229,8 +229,9 @@
             this.lblTotalValor.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.lblTotalValor.Location = new System.Drawing.Point(565, 489);
             this.lblTotalValor.Name = "lblTotalValor";
-            this.lblTotalValor.Size = new System.Drawing.Size(0, 16);
+            this.lblTotalValor.Size = new System.Drawing.Size(14, 16);
             this.lblTotalValor.TabIndex = 36;
+            this.lblTotalValor.Text = "0";
             // 
             // FrmNuevoPresupuesto
             // 

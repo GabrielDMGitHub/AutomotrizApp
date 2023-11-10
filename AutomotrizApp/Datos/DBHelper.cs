@@ -131,71 +131,73 @@ namespace AutomotrizApp.Datos
         // <--- Falta por hacer
 
         //Transaccion
-        //public bool Transaccion(Presupuesto presupuesto)
-        //{
-        //    bool resultado = true;
-        //    SqlTransaction t = null;
-        //    try
-        //    {
+        public bool Transaccion(Presupuesto presupuesto)
+        {
+            bool resultado = true;
+            SqlTransaction t = null;
+            try
+            {
+                //Iniciar la conexion
+                conexion.Open();
+                t = conexion.BeginTransaction();
 
-        //        //Inicializar y asignar el tipo de comando a la conexion
-
-        //        SqlCommand comando = new SqlCommand();
-        //        comando.Connection = conexion;
-        //        comando.CommandType = CommandType.StoredProcedure;
-        //        comando.CommandText = "SP_INSERTAR_PRESUPUESTO";
-        //        comando.Transaction = t;
-        //        conexion.Open();
-
-        //        //Carga de parametros
-        //        comando.Parameters.Add();
+                //Inicializar y asignar el tipo de comando a la conexion
+                SqlCommand cmdPresupuesto = new SqlCommand("[SP_INSERTAR_PRESUPUESTOS]", conexion, t);
+                cmdPresupuesto.CommandType = CommandType.StoredProcedure;
 
 
+                //Carga de parametros de entrada
+                cmdPresupuesto.Parameters.AddWithValue("@input_id_cliente", presupuesto.ClientePresupuesto.Id);
+                cmdPresupuesto.Parameters.AddWithValue("@input_total", presupuesto.CalcularTotal());
+
+                //Toma de parametros de salida
+                SqlParameter output = new SqlParameter();
+                output.ParameterName = "@output_id_presupuesto";
+                output.SqlDbType = SqlDbType.Int;
+                output.Direction = ParameterDirection.Output;
+                cmdPresupuesto.Parameters.Add(output);
 
 
-        //        comando.Parameters.AddWithValue("@cliente", oPresupuesto.Cliente);
-        //        comando.Parameters.AddWithValue("@dto", oPresupuesto.Descuento);
-        //        comando.Parameters.AddWithValue("@total", oPresupuesto.CalcularTotal());
+                //Ejecuta alta del Presupuesto
+                cmdPresupuesto.ExecuteNonQuery();
 
-        //        SqlParameter parametro = new SqlParameter();
-        //        parametro.ParameterName = "@presupuesto_nro";
-        //        parametro.SqlDbType = SqlDbType.Int;
-        //        parametro.Direction = ParameterDirection.Output;
-        //        comando.Parameters.Add(parametro);
 
-        //        comando.ExecuteNonQuery();
+                presupuesto.Id = Convert.ToInt32(output.Value);
+                SqlCommand cmdDetalle;
 
-        //        int presupuestoNro = (int)parametro.Value;
-        //        int detalleNro = 1;
-        //        SqlCommand cmdDetalle;
+                for (int i = 0; i < presupuesto.Detalles.Count; i++)
+                {
+                    //Inicializar y asignar el tipo de comando a la conexion
+                    cmdDetalle = new SqlCommand("[SP_INSERTAR_DETALLES]", conexion, t);
+                    cmdDetalle.CommandType = CommandType.StoredProcedure;
 
-        //        foreach (DetallePresupuesto dp in oPresupuesto.Detalles)
-        //        {
-        //            cmdDetalle = new SqlCommand("SP_INSERTAR_DETALLE", conexion, t);
-        //            cmdDetalle.CommandType = CommandType.StoredProcedure;
-        //            cmdDetalle.Parameters.AddWithValue("@presupuesto_nro", presupuestoNro);
-        //            cmdDetalle.Parameters.AddWithValue("@detalle", detalleNro);
-        //            cmdDetalle.Parameters.AddWithValue("@id_producto", dp.Producto.ProductoNro);
-        //            cmdDetalle.Parameters.AddWithValue("@cantidad", dp.Cantidad);
-        //            cmdDetalle.ExecuteNonQuery();
-        //            detalleNro++;
-        //        }
-        //        t.Commit();
-        //    }
-        //    catch
-        //    {
-        //        if (t != null)
-        //            t.Rollback();
-        //        resultado = false;
-        //    }
-        //    finally
-        //    {
-        //        if (conexion != null && conexion.State == ConnectionState.Open)
-        //            conexion.Close();
-        //    }
+                    //Carga de parametros de entrada
+                    cmdDetalle.Parameters.AddWithValue("@input_id_presupuesto", presupuesto.Id);
+                    cmdDetalle.Parameters.AddWithValue("@input_id_detalle", i+1);
+                    cmdDetalle.Parameters.AddWithValue("@input_id_producto", presupuesto.Detalles[i].ProductoDetalle.Id);
+                    cmdDetalle.Parameters.AddWithValue("@input_cantidad", presupuesto.Detalles[i].Cantidad);
 
-        //    return resultado;
-        //}
+                    cmdDetalle.ExecuteNonQuery();
+                }
+                t.Commit();
+            }
+            catch
+            {
+
+                if (t != null)
+                {
+                    t.Rollback();
+                }
+                resultado = false;
+            }
+            finally
+            {
+                //Cierra la conexion independientemente si la transaccion se realizo o no con exito
+                if (conexion != null && conexion.State == ConnectionState.Open)
+                    conexion.Close();
+            }
+            return resultado;
+        }
 
 
 
