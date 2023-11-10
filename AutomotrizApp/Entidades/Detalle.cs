@@ -27,6 +27,13 @@ namespace AutomotrizApp.Entidades
 
 
         //Metodos
+        public float CalcularSubTotal()
+        {
+            float subTotal;
 
+            subTotal = ProductoDetalle.Precio * Cantidad;
+
+            return subTotal;
+        }
     }
 }

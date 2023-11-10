@@ -31,7 +31,7 @@ namespace AutomotrizApp.Presentacion
         private void LimpiarControles()
         {
             txtNombreProducto.Text = "";
-            txtPrecioProducto.Text = "";
+            txtPrecioProducto.Text = "0";
             cboTipoProducto.Items.Clear();
             dgvConsultarProductos.Rows.Clear();
         }
@@ -54,8 +54,7 @@ namespace AutomotrizApp.Presentacion
             //Define si el formulario dira de ser usado para editar o crear un presupuesto
             if (producto != null)
             {
-                lblTitulo.Text = "Editar Producto";
-                idNuevoProducto = producto.Id;
+                lblTitulo.Text = "Editar Producto (N" + producto.Id + ")";
 
                 txtNombreProducto.Text = producto.Nombre;
                 txtPrecioProducto.Text = Convert.ToString(producto.Precio);
@@ -65,8 +64,8 @@ namespace AutomotrizApp.Presentacion
             {
                 int proximaId = 99; // ---> Consultar proximo id para producto ([SP_PROXIMO_ID_PRODUCTO]) y asignarlo a idNuevoProducto
                 idNuevoProducto = proximaId;
+                lblTitulo.Text += " (N" + idNuevoProducto + ")";
             }
-            lblTitulo.Text += " (N" + idNuevoProducto + ")";
         }
 
 
@@ -78,9 +77,9 @@ namespace AutomotrizApp.Presentacion
                 MessageBox.Show("Error\nIngrese el nombre del producto...");
                 return false;
             }
-            if (txtPrecioProducto.Text == "") // ---> No se si vale la pena validar que sea menor que 0
+            if (txtPrecioProducto.Text == "" || Convert.ToInt32(txtPrecioProducto.Text) <= 0)
             {
-                MessageBox.Show("Error\nIngrese el precio del producto...");
+                MessageBox.Show("Error\nIngrese un precio valido...");
                 return false;
             }
             if(cboTipoProducto.SelectedIndex == -1) 

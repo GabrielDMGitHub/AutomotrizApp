@@ -95,10 +95,14 @@ namespace AutomotrizApp.Presentacion
             //Eliminar un producto
             if (dgvConsultarProductos.CurrentCell.OwningColumn.Name == "Eliminar")
             {
-                int idProducto = Convert.ToInt32(dgvConsultarProductos.CurrentRow.Cells["idProducto"].Value);
-                List<Parametro> parametro = new List<Parametro>() { new Parametro("@input_id_producto", idProducto) };
+                if(MessageBox.Show("¿Está seguro que desea eliminar:\n\"" + Convert.ToString(dgvConsultarProductos.CurrentRow.Cells["nombreProducto"].Value) + "\" del listado?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int idProducto = Convert.ToInt32(dgvConsultarProductos.CurrentRow.Cells["idProducto"].Value);
+                    List<Parametro> parametro = new List<Parametro>() { new Parametro("@input_id_producto", idProducto) };
 
-                DBHelper.ObtenerInstancia().ConsultarSP("SP_ELIMINAR_PRODUCTOS", parametro);
+                    DBHelper.ObtenerInstancia().ConsultarSP("SP_ELIMINAR_PRODUCTOS", parametro); //Elimina de la base de datos
+                    dgvConsultarProductos.Rows.Remove(dgvConsultarProductos.CurrentRow); //Elimina del listado
+                }
             }
         }
 

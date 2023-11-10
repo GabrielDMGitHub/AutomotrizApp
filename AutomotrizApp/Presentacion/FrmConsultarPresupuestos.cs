@@ -85,15 +85,14 @@ namespace AutomotrizApp.Presentacion
         {
             if (dgvConsultarPresupuestos.CurrentCell.OwningColumn.Name == "Eliminar")
             {
-                int idPresupuesto = Convert.ToInt32(dgvConsultarPresupuestos.CurrentRow.Cells["idPresupuesto"].Value);
-                List<Parametro> parametro = new List<Parametro>() { new Parametro("@input_id_presupuesto", idPresupuesto) };
+                if (MessageBox.Show("¿Está seguro que desea eliminar el presupuesto de:\n\"" + Convert.ToString(dgvConsultarPresupuestos.CurrentRow.Cells["nombreCliente"].Value) + "\" por un total de $" + Convert.ToString(dgvConsultarPresupuestos.CurrentRow.Cells["totalPresupuesto"].Value) + " del listado?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int idPresupuesto = Convert.ToInt32(dgvConsultarPresupuestos.CurrentRow.Cells["idPresupuesto"].Value);
+                    List<Parametro> parametro = new List<Parametro>() { new Parametro("@input_id_presupuesto", idPresupuesto) };
 
-                //Elimina de la base de datos el presupuesto
-                DBHelper.ObtenerInstancia().ConsultarSP("[SP_ELIMINAR_PRESUPUESTOS]", parametro);
-                MessageBox.Show("Se eliminó correctamente");
-
-                //Elimina del DGV
-                dgvConsultarPresupuestos.Rows.Remove(dgvConsultarPresupuestos.CurrentRow);
+                    DBHelper.ObtenerInstancia().ConsultarSP("[SP_ELIMINAR_PRESUPUESTOS]", parametro); //Elimina de la base de datos
+                    dgvConsultarPresupuestos.Rows.Remove(dgvConsultarPresupuestos.CurrentRow); //Elimina del listado
+                }
             }
         }
 

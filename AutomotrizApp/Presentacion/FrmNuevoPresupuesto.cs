@@ -15,7 +15,7 @@ namespace AutomotrizApp.Presentacion
 {
     public partial class FrmNuevoPresupuesto : Form
     {
-        private int idNuevoPresupuesto;
+        private Presupuesto nuevoPresupuesto = new Presupuesto();
         public FrmNuevoPresupuesto()
         {
             InitializeComponent();
@@ -92,7 +92,7 @@ namespace AutomotrizApp.Presentacion
             dtpFecha.Value = DateTime.Today;
             txtDniCliente.Text = "";
             cboProducto.SelectedIndex = -1;
-            txtCantidad.Text = "0";
+            txtCantidad.Text = "1";
         }
 
         // ================================================================================================================================= //
@@ -107,10 +107,6 @@ namespace AutomotrizApp.Presentacion
             LimpiarControles();
             CargarComboProductos();
 
-            // ---> Consultar proximo id para presupuesto ([SP_PROXIMO_ID_PRESUPUESTO]) y asignarlo a idNuevoPresupuesto
-            idNuevoPresupuesto = 99;
-
-            lblTitulo.Text += " (N" + idNuevoPresupuesto + ")";
             txtDniCliente.Text = FrmPrincipal.clienteActivo.Dni; //Carga el DNI del cliente que inicio sesion
         }
 
@@ -124,13 +120,16 @@ namespace AutomotrizApp.Presentacion
                 int cantidad = Convert.ToInt32(txtCantidad.Text);
 
                 Detalle detalle = new Detalle(producto, cantidad);
+                nuevoPresupuesto.AgregarDetalle(detalle); //Agrega el detalle al objeto
 
-                dgvDetallesNuevoPresupuesto.Rows.Add(   detalle.ProductoDetalle.Nombre, 
-                                                        detalle.ProductoDetalle.Precio, 
-                                                        detalle.Cantidad, 
-                                                        "Eliminar");
+                dgvDetallesNuevoPresupuesto.Rows.Add(   detalle.ProductoDetalle.Nombre,
+                                                        detalle.ProductoDetalle.Precio,
+                                                        detalle.Cantidad,
+                                                        detalle.CalcularSubTotal(),
+                                                        "Eliminar");                    //Agrega el detalle a la grilla
+
+                lblTotalValor.Text = Convert.ToString(nuevoPresupuesto.CalcularTotal()); //Actualiza el total del presupuesto
             }
-
         }
 
 
@@ -150,14 +149,13 @@ namespace AutomotrizApp.Presentacion
         {
             if (dgvDetallesNuevoPresupuesto.CurrentCell.OwningColumn.Name == "Eliminar")
             {
-                int indice = Convert.ToInt32(dgvDetallesNuevoPresupuesto.CurrentRow.Index);
-
-                foreach(DataGridViewRow fila in dgvDetallesNuevoPresupuesto.Rows) 
+                // <--- Confirmacion
+                if (MessageBox.Show("¿Está seguro que desea eliminar:\n\"" + Convert.ToString(dgvDetallesNuevoPresupuesto.CurrentRow.Cells["nombreProducto"].Value) + "\" del listado?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (fila.Index == indice)
-                    {
-                        dgvDetallesNuevoPresupuesto.Rows.Remove(fila);
-                    }
+                    nuevoPresupuesto.EliminarDetalle(dgvDetallesNuevoPresupuesto.CurrentRow.Index); //Elimina el detalle del objeto
+                    dgvDetallesNuevoPresupuesto.Rows.Remove(dgvDetallesNuevoPresupuesto.CurrentRow); //Elimina el detalle de la lista
+
+                    lblTotalValor.Text = Convert.ToString(nuevoPresupuesto.CalcularTotal()); //Actualiza el total del presupuesto
                 }
             }
         }
