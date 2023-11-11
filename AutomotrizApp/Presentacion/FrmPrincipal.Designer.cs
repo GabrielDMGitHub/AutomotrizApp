@@ -107,7 +107,7 @@
             this.btnAcercaDe.Name = "btnAcercaDe";
             this.btnAcercaDe.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnAcercaDe.Size = new System.Drawing.Size(170, 42);
-            this.btnAcercaDe.TabIndex = 6;
+            this.btnAcercaDe.TabIndex = 1;
             this.btnAcercaDe.Text = "Informacion";
             this.btnAcercaDe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAcercaDe.UseVisualStyleBackColor = true;
@@ -126,7 +126,7 @@
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnReporte.Size = new System.Drawing.Size(170, 42);
-            this.btnReporte.TabIndex = 5;
+            this.btnReporte.TabIndex = 0;
             this.btnReporte.Text = "Reporte de ventas";
             this.btnReporte.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReporte.UseVisualStyleBackColor = true;
@@ -155,7 +155,7 @@
             this.btnNuevoPresupuesto.Name = "btnNuevoPresupuesto";
             this.btnNuevoPresupuesto.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.btnNuevoPresupuesto.Size = new System.Drawing.Size(170, 42);
-            this.btnNuevoPresupuesto.TabIndex = 5;
+            this.btnNuevoPresupuesto.TabIndex = 2;
             this.btnNuevoPresupuesto.Text = "Nuevo Presupuesto";
             this.btnNuevoPresupuesto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNuevoPresupuesto.UseVisualStyleBackColor = true;
@@ -173,7 +173,7 @@
             this.btnConsultarPresupuestos.Name = "btnConsultarPresupuestos";
             this.btnConsultarPresupuestos.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.btnConsultarPresupuestos.Size = new System.Drawing.Size(170, 42);
-            this.btnConsultarPresupuestos.TabIndex = 2;
+            this.btnConsultarPresupuestos.TabIndex = 1;
             this.btnConsultarPresupuestos.Text = "Consultar Presupuestos";
             this.btnConsultarPresupuestos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConsultarPresupuestos.UseVisualStyleBackColor = true;
@@ -192,7 +192,7 @@
             this.btnMenuPresupuesto.Name = "btnMenuPresupuesto";
             this.btnMenuPresupuesto.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnMenuPresupuesto.Size = new System.Drawing.Size(170, 42);
-            this.btnMenuPresupuesto.TabIndex = 3;
+            this.btnMenuPresupuesto.TabIndex = 0;
             this.btnMenuPresupuesto.Text = "Presupuesto";
             this.btnMenuPresupuesto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuPresupuesto.UseVisualStyleBackColor = true;
@@ -221,7 +221,7 @@
             this.btnNuevoProducto.Name = "btnNuevoProducto";
             this.btnNuevoProducto.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.btnNuevoProducto.Size = new System.Drawing.Size(170, 42);
-            this.btnNuevoProducto.TabIndex = 0;
+            this.btnNuevoProducto.TabIndex = 2;
             this.btnNuevoProducto.Text = "Nuevo Producto";
             this.btnNuevoProducto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnNuevoProducto.UseVisualStyleBackColor = true;
@@ -239,7 +239,7 @@
             this.btnConsultarProductos.Name = "btnConsultarProductos";
             this.btnConsultarProductos.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
             this.btnConsultarProductos.Size = new System.Drawing.Size(170, 42);
-            this.btnConsultarProductos.TabIndex = 2;
+            this.btnConsultarProductos.TabIndex = 1;
             this.btnConsultarProductos.Text = "Consultar Productos";
             this.btnConsultarProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConsultarProductos.UseVisualStyleBackColor = true;
@@ -258,7 +258,7 @@
             this.btnMenuProductos.Name = "btnMenuProductos";
             this.btnMenuProductos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnMenuProductos.Size = new System.Drawing.Size(170, 42);
-            this.btnMenuProductos.TabIndex = 1;
+            this.btnMenuProductos.TabIndex = 0;
             this.btnMenuProductos.Text = "Productos";
             this.btnMenuProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMenuProductos.UseVisualStyleBackColor = true;

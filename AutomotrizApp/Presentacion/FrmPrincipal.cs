@@ -23,6 +23,7 @@ namespace AutomotrizApp
         public FrmNuevoProducto NuevoProducto = new FrmNuevoProducto();
         public FrmConsultarPresupuestos ConsultarPresupuestos = new FrmConsultarPresupuestos();
         public FrmNuevoPresupuesto NuevoPresupuesto = new FrmNuevoPresupuesto();
+        public FrmAcercaDe AcercaDe = new FrmAcercaDe();
 
         public static Cliente clienteActivo;
         public static FrmPrincipal instancia;
@@ -63,6 +64,33 @@ namespace AutomotrizApp
         }
 
 
+        //Botones del menu
+        private void btnConsultarProductos_Click(object sender, EventArgs e)
+        {
+            CambiarFormulario(ConsultarProductos);
+        }
+
+        private void btnNuevoProducto_Click(object sender, EventArgs e)
+        {
+            CambiarFormulario(NuevoProducto);
+        }
+
+        private void btnConsultarPresupuestos_Click(object sender, EventArgs e)
+        {
+            CambiarFormulario(ConsultarPresupuestos);
+        }
+
+        private void btnNuevoPresupuesto_Click(object sender, EventArgs e)
+        {
+            CambiarFormulario(NuevoPresupuesto);
+        }
+
+        private void btnAcercaDe_Click(object sender, EventArgs e)
+        {
+            CambiarFormulario(AcercaDe);
+        }
+
+
         //Cierra el programa completo
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -71,42 +99,6 @@ namespace AutomotrizApp
             //    Application.Exit();
             //}
             Application.Exit();
-        }
-
-
-        //Botones del menu
-        private void btnConsultarProductos_Click(object sender, EventArgs e)
-        {
-            CambiarFormulario(ConsultarProductos);
-        }
-
-
-        private void btnNuevoProducto_Click(object sender, EventArgs e)
-        {
-            CambiarFormulario(NuevoProducto);
-        }
-
-
-        private void btnConsultarPresupuestos_Click(object sender, EventArgs e)
-        {
-            CambiarFormulario(ConsultarPresupuestos);
-        }
-
-
-        private void btnNuevoPresupuesto_Click(object sender, EventArgs e)
-        {
-            CambiarFormulario(NuevoPresupuesto);
-        }
-
-
-        //Se que esta feo, lo dejo asi por ahora
-        private void btnAcercaDe_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Responsables: Grupo 12\n" +
-                            "\n113857 De Maussion Gabriel" +
-                            "\n114136 Moyano Tello Lucia Amancay" +
-                            "\n114256 Menta Agustina" + 
-                            "\n(Se que esta feo, luego lo mejoro)");
         }
 
 

@@ -43,8 +43,10 @@ namespace AutomotrizApp.Presentacion
         private void FrmConsultarPresupuestos_Load(object sender, EventArgs e)
         {
             LimpiarControles();
-            txtDniCliente.Focus();
+
             DBHelper.ObtenerInstancia().CargarGrilla(dgvConsultarPresupuestos, null, "SP_CONSULTAR_PRESUPUESTOS");
+
+            txtDniCliente.Focus();
         }
 
 

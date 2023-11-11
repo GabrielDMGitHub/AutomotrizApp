@@ -98,6 +98,14 @@ namespace AutomotrizApp.Presentacion
                 MessageBox.Show("Error\nIngrese la cantidad del producto...");
                 return false;
             }
+            foreach (DataGridViewRow row in dgvDetallesNuevoPresupuesto.Rows)
+            {
+                if (Convert.ToString(row.Cells["nombreProducto"].Value) == Convert.ToString(cboProducto.Text))
+                {
+                    MessageBox.Show("Error\nEl producto ya está en la lista...");
+                    return false;
+                }
+            }
             return true;
         }
 
@@ -154,9 +162,11 @@ namespace AutomotrizApp.Presentacion
         private void FrmNuevoPresupuesto_Load(object sender, EventArgs e)
         {
             LimpiarControles();
-            CargarComboProductos();
 
+            CargarComboProductos();
             txtDniCliente.Text = FrmPrincipal.clienteActivo.Dni; //Carga el DNI del cliente que inicio sesion
+
+            txtDniCliente.Focus();
         }
 
 

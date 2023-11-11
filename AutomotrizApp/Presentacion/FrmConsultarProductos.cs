@@ -39,9 +39,11 @@ namespace AutomotrizApp.Presentacion
         private void FrmConsultarProductos_Load(object sender, EventArgs e)
         {
             LimpiarControles();
-            txtNombreProducto.Focus();
+            
             DBHelper.ObtenerInstancia().CargarCombo(cboTipoProducto, "SP_CONSULTAR_TIPOS");
             DBHelper.ObtenerInstancia().CargarGrilla(dgvConsultarProductos, null, "SP_CONSULTAR_PRODUCTOS");
+
+            txtNombreProducto.Focus();
         }
 
 

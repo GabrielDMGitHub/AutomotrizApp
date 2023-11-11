@@ -128,8 +128,6 @@ namespace AutomotrizApp.Datos
         }
 
 
-        // <--- Falta por hacer
-
         //Transaccion
         public bool Transaccion(Presupuesto presupuesto)
         {
@@ -145,7 +143,6 @@ namespace AutomotrizApp.Datos
                 SqlCommand cmdPresupuesto = new SqlCommand("[SP_INSERTAR_PRESUPUESTOS]", conexion, t);
                 cmdPresupuesto.CommandType = CommandType.StoredProcedure;
 
-
                 //Carga de parametros de entrada
                 cmdPresupuesto.Parameters.AddWithValue("@input_id_cliente", presupuesto.ClientePresupuesto.Id);
                 cmdPresupuesto.Parameters.AddWithValue("@input_total", presupuesto.CalcularTotal());
@@ -156,7 +153,6 @@ namespace AutomotrizApp.Datos
                 output.SqlDbType = SqlDbType.Int;
                 output.Direction = ParameterDirection.Output;
                 cmdPresupuesto.Parameters.Add(output);
-
 
                 //Ejecuta alta del Presupuesto
                 cmdPresupuesto.ExecuteNonQuery();
@@ -199,26 +195,7 @@ namespace AutomotrizApp.Datos
             return resultado;
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        // ================================================================================================================================= //
 
 
     }

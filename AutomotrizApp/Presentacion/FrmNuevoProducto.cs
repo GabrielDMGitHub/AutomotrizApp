@@ -48,8 +48,11 @@ namespace AutomotrizApp.Presentacion
         private void FrmNuevoProducto_Load(object sender, EventArgs e)
         {
             LimpiarControles();
+
             DBHelper.ObtenerInstancia().CargarCombo(cboTipoProducto, "SP_CONSULTAR_TIPOS");
             DBHelper.ObtenerInstancia().CargarGrilla(dgvConsultarProductos, null, "SP_CONSULTAR_PRODUCTOS");
+
+            txtNombreProducto.Focus();
 
             //Define si el formulario dira de ser usado para editar o crear un presupuesto
             if (producto != null)
