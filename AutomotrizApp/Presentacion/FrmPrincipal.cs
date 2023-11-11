@@ -59,8 +59,10 @@ namespace AutomotrizApp
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             lblUsuario.Text = clienteActivo.NombreCompleto.ToString();
+            lblReloj.Text = DateTime.Now.ToString("HH:mm:ss");
             pnMenuPresupuesto.Height = 42;
             pnMenuProductos.Height = 42;
+            tmrReloj.Start();
         }
 
 
@@ -83,6 +85,11 @@ namespace AutomotrizApp
         private void btnNuevoPresupuesto_Click(object sender, EventArgs e)
         {
             CambiarFormulario(NuevoPresupuesto);
+        }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Falta crear Un reporte para mostrar\n(Agus tiene que hacerlo, pasarmelo y lo agrego)");
         }
 
         private void btnAcercaDe_Click(object sender, EventArgs e)
@@ -133,9 +140,9 @@ namespace AutomotrizApp
             }
         }
 
-        private void btnReporte_Click(object sender, EventArgs e)
+        private void tmrReloj_Tick(object sender, EventArgs e)
         {
-            MessageBox.Show("Falta crear Un reporte para mostrar\n(Agus tiene que hacerlo, pasarmelo y lo agrego)");
+            lblReloj.Text = DateTime.Now.ToString("HH:mm:ss");
         }
     }
 }
