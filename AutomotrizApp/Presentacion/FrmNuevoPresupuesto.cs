@@ -159,7 +159,7 @@ namespace AutomotrizApp.Presentacion
         //Eventos
         // ================================================================================================================================= //
         //Load
-        private void FrmNuevoPresupuesto_Load(object sender, EventArgs e)
+        private void FrmNuevoPresupuesto_Load(object sender = null, EventArgs e = null)
         {
             LimpiarControles();
 

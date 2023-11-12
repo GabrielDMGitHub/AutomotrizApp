@@ -46,7 +46,7 @@ namespace AutomotrizApp.Presentacion
         //Eventos
         // ================================================================================================================================= //
         //Load
-        private void FrmNuevoProducto_Load(object sender, EventArgs e)
+        private void FrmNuevoProducto_Load(object sender = null, EventArgs e = null)
         {
             LimpiarControles();
 
@@ -66,9 +66,9 @@ namespace AutomotrizApp.Presentacion
             }
             else
             {
-                int proximaId = 99; // ---> Consultar proximo id para producto ([SP_PROXIMO_ID_PRODUCTO]) y asignarlo a idNuevoProducto
-                idNuevoProducto = proximaId;
-                lblTitulo.Text += " (N" + idNuevoProducto + ")";
+                DataTable tabla = DBHelper.ObtenerInstancia().ConsultarSP("[SP_PROXIMO_ID_PRODUCTOS]");
+                idNuevoProducto = Convert.ToInt32(tabla.Rows[0][0]);
+                lblTitulo.Text = "Nuevo Producto (N" + idNuevoProducto + ")";
             }
         }
 
@@ -108,7 +108,7 @@ namespace AutomotrizApp.Presentacion
                 if (cboTipoProducto.SelectedIndex != -1) { lista.Add(new Parametro("@input_id_tipo", cboTipoProducto.SelectedValue)); }
 
                 DBHelper.ObtenerInstancia().ConsultarSP("SP_ACTUALIZAR_PRODUCTOS", lista);
-                MessageBox.Show("Funciona update");
+                MessageBox.Show("El producto se actualizo correctamente");
                 FrmPrincipal.instancia.CambiarFormulario(FrmPrincipal.instancia.ConsultarProductos);
             }
             else
@@ -121,10 +121,10 @@ namespace AutomotrizApp.Presentacion
                     lista.Add(new Parametro("@input_id_tipo", cboTipoProducto.SelectedValue));
 
                     DBHelper.ObtenerInstancia().ConsultarSP("SP_INSERTAR_PRODUCTOS", lista);
-                    MessageBox.Show("Funciona insert");
+                    MessageBox.Show("El producto se creo correctamente");
                 }
             }
-            DBHelper.ObtenerInstancia().CargarGrilla(dgvConsultarProductos, null, "SP_CONSULTAR_PRODUCTOS");
+            FrmNuevoProducto_Load();
         }
 
 

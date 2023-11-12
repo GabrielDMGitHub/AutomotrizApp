@@ -56,7 +56,7 @@ namespace AutomotrizApp
         //Eventos
         // ================================================================================================================================= //
         //Load
-        private void FrmPrincipal_Load(object sender, EventArgs e)
+        private void FrmPrincipal_Load(object sender = null, EventArgs e = null)
         {
             lblUsuario.Text = clienteActivo.NombreCompleto.ToString();
             lblReloj.Text = DateTime.Now.ToString("HH:mm:ss");

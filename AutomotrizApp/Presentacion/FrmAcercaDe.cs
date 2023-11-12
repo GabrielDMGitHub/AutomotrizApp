@@ -16,5 +16,10 @@ namespace AutomotrizApp.Presentacion
         {
             InitializeComponent();
         }
+
+        private void FrmAcercaDe_Load(object sender = null, EventArgs e = null)
+        {
+
+        }
     }
 }

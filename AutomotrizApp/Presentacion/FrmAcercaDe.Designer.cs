@@ -140,6 +140,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmAcercaDe";
             this.Text = "FrmAcercaDe";
+            this.Load += new System.EventHandler(this.FrmAcercaDe_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
