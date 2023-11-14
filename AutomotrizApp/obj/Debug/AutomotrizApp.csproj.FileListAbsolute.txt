@@ -167,10 +167,6 @@ C:\Users\gabyd\Desktop\AutomotrizApp-conAPI\AutomotrizApp\obj\Debug\AutomotrizAp
 C:\Users\gabyd\Desktop\AutomotrizApp-conAPI\AutomotrizApp\obj\Debug\AutomotrizApp.csproj.CopyComplete
 C:\Users\gabyd\Desktop\AutomotrizApp-conAPI\AutomotrizApp\obj\Debug\AutomotrizApp.exe
 C:\Users\gabyd\Desktop\AutomotrizApp-conAPI\AutomotrizApp\obj\Debug\AutomotrizApp.pdb
-C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\bin\Debug\SqlServerTypes\x64\msvcr120.dll
-C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
-C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\bin\Debug\SqlServerTypes\x86\msvcr120.dll
-C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\bin\Debug\Microsoft.ReportViewer.Common.dll
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\bin\Debug\Microsoft.ReportViewer.Design.dll
@@ -221,3 +217,19 @@ C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\b
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\obj\Debug\AutomotrizApp.Presentacion.ReporteVenta.FrmReporteVentas.resources
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\obj\Debug\AutomotrizApp.csproj.CopyComplete
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\bin\Debug\x86\SqlServerSpatial160.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\bin\Debug\x64\SqlServerSpatial160.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\bin\Debug\Newtonsoft.Json.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\bin\Debug\System.Data.SqlClient.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\bin\Debug\Newtonsoft.Json.xml
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\bin\Debug\System.Data.SqlClient.xml
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\bin\Debug\de\Microsoft.SqlServer.Types.resources.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\bin\Debug\es\Microsoft.SqlServer.Types.resources.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\bin\Debug\fr\Microsoft.SqlServer.Types.resources.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\bin\Debug\it\Microsoft.SqlServer.Types.resources.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\bin\Debug\ja\Microsoft.SqlServer.Types.resources.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\bin\Debug\ko\Microsoft.SqlServer.Types.resources.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\bin\Debug\pt\Microsoft.SqlServer.Types.resources.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\bin\Debug\ru\Microsoft.SqlServer.Types.resources.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\bin\Debug\zh-Hans\Microsoft.SqlServer.Types.resources.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizApp\bin\Debug\zh-Hant\Microsoft.SqlServer.Types.resources.dll

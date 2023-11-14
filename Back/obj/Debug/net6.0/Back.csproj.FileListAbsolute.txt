@@ -1,0 +1,17 @@
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\Back\bin\Debug\net6.0\Back.deps.json
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\Back\bin\Debug\net6.0\Back.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\Back\bin\Debug\net6.0\Back.pdb
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\Back\bin\Debug\net6.0\System.Windows.Forms.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\Back\bin\Debug\net6.0\Accessibility.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\Back\bin\Debug\net6.0\System.Deployment.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\Back\bin\Debug\net6.0\System.Runtime.Serialization.Formatters.Soap.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\Back\obj\Debug\net6.0\Back.csproj.AssemblyReference.cache
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\Back\obj\Debug\net6.0\Back.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\Back\obj\Debug\net6.0\Back.AssemblyInfoInputs.cache
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\Back\obj\Debug\net6.0\Back.AssemblyInfo.cs
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\Back\obj\Debug\net6.0\Back.csproj.CoreCompileInputs.cache
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\Back\obj\Debug\net6.0\Back.csproj.CopyComplete
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\Back\obj\Debug\net6.0\Back.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\Back\obj\Debug\net6.0\refint\Back.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\Back\obj\Debug\net6.0\Back.pdb
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\Back\obj\Debug\net6.0\ref\Back.dll

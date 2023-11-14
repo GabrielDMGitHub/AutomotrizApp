@@ -52,6 +52,10 @@
               "target": "Package",
               "version": "[150.1586.0, )"
             },
+            "Microsoft.SqlServer.Types": {
+              "target": "Package",
+              "version": "[160.1000.6, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"

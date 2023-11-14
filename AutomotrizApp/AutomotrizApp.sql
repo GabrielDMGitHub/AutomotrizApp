@@ -356,7 +356,7 @@ create proc [SP_CONSULTAR_PRESUPUESTOS]
 		@input_total_max money = null
 as
 begin
-        SELECT id_presupuesto 'ID', c.nombre + ' '+ apellido 'Cliente', c.dni 'DNI', fecha 'Fecha', total 'Total'
+        SELECT id_presupuesto 'ID', c.nombre + ' ' + apellido 'Cliente', c.dni 'DNI', fecha 'Fecha', total 'Total'
         FROM PRESUPUESTOS p join CLIENTES c on p.id_cliente=c.id_cliente
         WHERE (c.dni like '%' + @input_dni_cliente + '%')
 		AND (p.fecha between isnull(@input_fecha_min, p.fecha) and isnull(@input_fecha_max, p.fecha))
@@ -456,9 +456,6 @@ end
 go
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
 
 
 
