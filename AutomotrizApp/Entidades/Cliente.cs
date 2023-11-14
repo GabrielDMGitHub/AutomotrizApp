@@ -13,6 +13,8 @@ namespace AutomotrizApp.Entidades
         string nombreCompleto;
         string dni;
         string telefono;
+        string usuario;
+        string pass;
 
 
         //Propiedades
@@ -20,7 +22,8 @@ namespace AutomotrizApp.Entidades
         public string NombreCompleto    { get { return nombreCompleto; }    set { nombreCompleto = value; } }
         public string Dni               { get { return dni; }               set { dni = value; } }
         public string Telefono          { get { return telefono; }          set { telefono = value; } }
-
+        public string Usuario { get; set; }
+        public string Pass { get; set; }
 
         //Constructor
         public Cliente(int Id = -1, string NombreCompleto = "(Sin especificar)", string Dni = "(Sin especificar)", string Telefono = "(Sin especificar)")

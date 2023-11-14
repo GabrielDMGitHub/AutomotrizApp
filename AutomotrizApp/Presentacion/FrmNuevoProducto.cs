@@ -34,7 +34,6 @@ namespace AutomotrizApp.Presentacion
             txtNombreProducto.Text = "";
             txtPrecioProducto.Text = "0";
             cboTipoProducto.SelectedIndex = -1;
-            dgvConsultarProductos.Rows.Clear();
         }
 
 
@@ -48,6 +47,7 @@ namespace AutomotrizApp.Presentacion
         //Load
         private void FrmNuevoProducto_Load(object sender = null, EventArgs e = null)
         {
+            dgvConsultarProductos.Rows.Clear();
             LimpiarControles();
 
             DBHelper.ObtenerInstancia().CargarCombo(cboTipoProducto, "SP_CONSULTAR_TIPOS");
@@ -76,7 +76,7 @@ namespace AutomotrizApp.Presentacion
         //Valida el ingreso de datos de los campos del form
         private bool ValidarConfirmar()
         {
-            if(txtNombreProducto.Text == "")
+            if (txtNombreProducto.Text == "")
             {
                 MessageBox.Show("Error\nIngrese el nombre del producto...");
                 return false;
@@ -86,7 +86,7 @@ namespace AutomotrizApp.Presentacion
                 MessageBox.Show("Error\nIngrese un precio valido...");
                 return false;
             }
-            if(cboTipoProducto.SelectedIndex == -1) 
+            if (cboTipoProducto.SelectedIndex == -1)
             {
                 MessageBox.Show("Error\nIngrese el tipo de producto...");
                 return false;
@@ -109,7 +109,7 @@ namespace AutomotrizApp.Presentacion
 
                 DBHelper.ObtenerInstancia().ConsultarSP("SP_ACTUALIZAR_PRODUCTOS", lista);
                 MessageBox.Show("El producto se actualizo correctamente");
-                FrmPrincipal.instancia.CambiarFormulario(FrmPrincipal.instancia.ConsultarProductos);
+                FrmPrincipal.instancia.CambiarFormulario(FrmPrincipal.instancia.ConsultarProductos = new FrmConsultarProductos());
             }
             else
             {
@@ -122,9 +122,23 @@ namespace AutomotrizApp.Presentacion
 
                     DBHelper.ObtenerInstancia().ConsultarSP("SP_INSERTAR_PRODUCTOS", lista);
                     MessageBox.Show("El producto se creo correctamente");
+                    FrmNuevoProducto_Load();
                 }
             }
-            FrmNuevoProducto_Load();
+        }
+
+
+        //Evento para cancelar la creacion y reiniciar los campos
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            if (producto != null)
+            {
+                FrmPrincipal.instancia.CambiarFormulario(FrmPrincipal.instancia.ConsultarProductos = new FrmConsultarProductos());
+            }
+            else
+            {
+                LimpiarControles();
+            }
         }
 
 
@@ -136,6 +150,7 @@ namespace AutomotrizApp.Presentacion
                 e.Handled = true;
             }
         }
+
 
         // ================================================================================================================================= //
     }

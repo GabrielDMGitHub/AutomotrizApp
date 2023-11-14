@@ -27,7 +27,7 @@ namespace AutomotrizApp.Presentacion
         {
             txtDniCliente.Text = "";
             dtpFechaMin.Value = new DateTime(2000, 1, 1);
-            dtpFechaMax.Value = DateTime.Today;
+            dtpFechaMax.Value = DateTime.Today.AddDays(1);
             txtTotalMin.Text = "";
             txtTotalMax.Text = "";
         }
@@ -42,6 +42,7 @@ namespace AutomotrizApp.Presentacion
         //Load
         private void FrmConsultarPresupuestos_Load(object sender = null, EventArgs e = null)
         {
+            dgvConsultarPresupuestos.Rows.Clear();
             LimpiarControles();
 
             DBHelper.ObtenerInstancia().CargarGrilla(dgvConsultarPresupuestos, null, "SP_CONSULTAR_PRESUPUESTOS");
@@ -50,7 +51,7 @@ namespace AutomotrizApp.Presentacion
         }
 
 
-        private void btnFiltrar_Click(object sender, EventArgs e)
+        private void btnFiltrar_Click(object sender = null, EventArgs e = null)
         {
             List<Parametro> lista = new List<Parametro>();
 
@@ -80,7 +81,7 @@ namespace AutomotrizApp.Presentacion
         private void btnReiniciarFiltros_Click(object sender, EventArgs e)
         {
             LimpiarControles();
-            btnFiltrar_Click(sender, e);
+            btnFiltrar_Click();
         }
 
 

@@ -38,8 +38,9 @@ namespace AutomotrizApp.Presentacion
         //Load
         private void FrmConsultarProductos_Load(object sender = null, EventArgs e = null)
         {
+            dgvConsultarProductos.Rows.Clear();
             LimpiarControles();
-            
+
             DBHelper.ObtenerInstancia().CargarCombo(cboTipoProducto, "SP_CONSULTAR_TIPOS");
             DBHelper.ObtenerInstancia().CargarGrilla(dgvConsultarProductos, null, "SP_CONSULTAR_PRODUCTOS");
 
@@ -75,8 +76,7 @@ namespace AutomotrizApp.Presentacion
 
         private void btnReiniciarFiltros_Click(object sender, EventArgs e)
         {
-            LimpiarControles();
-            btnFiltrar_Click(sender, e);
+            FrmConsultarProductos_Load();
         }
 
         private void dgvConsultarProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -98,7 +98,7 @@ namespace AutomotrizApp.Presentacion
             //Eliminar un producto
             if (dgvConsultarProductos.CurrentCell.OwningColumn.Name == "Eliminar")
             {
-                if(MessageBox.Show("¿Está seguro que desea eliminar:\n\"" + Convert.ToString(dgvConsultarProductos.CurrentRow.Cells["nombreProducto"].Value) + "\" del listado?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("¿Está seguro que desea eliminar:\n\"" + Convert.ToString(dgvConsultarProductos.CurrentRow.Cells["nombreProducto"].Value) + "\" del listado?", "Confirmar Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     int idProducto = Convert.ToInt32(dgvConsultarProductos.CurrentRow.Cells["idProducto"].Value);
                     List<Parametro> parametro = new List<Parametro>() { new Parametro("@input_id_producto", idProducto) };

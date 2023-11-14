@@ -47,6 +47,7 @@
             this.txtDniCliente = new System.Windows.Forms.TextBox();
             this.lblTotalTexto = new System.Windows.Forms.Label();
             this.lblTotalValor = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetallesNuevoPresupuesto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -233,12 +234,23 @@
             this.lblTotalValor.TabIndex = 36;
             this.lblTotalValor.Text = "0";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(12, 482);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 39;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // FrmNuevoPresupuesto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.ClientSize = new System.Drawing.Size(770, 520);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblTotalValor);
             this.Controls.Add(this.lblTotalTexto);
             this.Controls.Add(this.txtDniCliente);
@@ -284,5 +296,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
         private System.Windows.Forms.Label lblTotalTexto;
         private System.Windows.Forms.Label lblTotalValor;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

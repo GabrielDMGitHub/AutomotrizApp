@@ -88,12 +88,12 @@ namespace AutomotrizApp.Presentacion
         //Valida si la carga de datos es correcta antes de agregar un detalle al dgv
         private bool ValidarAgregar()
         {
-            if(cboProducto.SelectedIndex == -1) 
+            if (cboProducto.SelectedIndex == -1)
             {
                 MessageBox.Show("Error\nSeleccione un producto...");
                 return false;
             }
-            if(txtCantidad.Text == "" || txtCantidad.Text == "0")
+            if (txtCantidad.Text == "" || txtCantidad.Text == "0")
             {
                 MessageBox.Show("Error\nIngrese la cantidad del producto...");
                 return false;
@@ -181,7 +181,7 @@ namespace AutomotrizApp.Presentacion
                 Detalle detalle = new Detalle(producto, cantidad);
                 nuevoPresupuesto.AgregarDetalle(detalle); //Agrega el detalle al objeto
 
-                dgvDetallesNuevoPresupuesto.Rows.Add(   detalle.ProductoDetalle.Nombre,
+                dgvDetallesNuevoPresupuesto.Rows.Add(detalle.ProductoDetalle.Nombre,
                                                         detalle.ProductoDetalle.Precio,
                                                         detalle.Cantidad,
                                                         detalle.CalcularSubTotal(),
@@ -207,8 +207,15 @@ namespace AutomotrizApp.Presentacion
                 {
                     MessageBox.Show("El Presupuesto no se pudo cargar.");
                 }
-                
+
             }
+        }
+
+
+        //Evento para cancelar la creacion y reiniciar los campos
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimpiarControles();
         }
 
 

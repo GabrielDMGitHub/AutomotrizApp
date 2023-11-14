@@ -18,8 +18,32 @@ namespace AutomotrizApp.Datos
         private static DBHelper instancia;
         // ================================================================================================================================= //
 
+        //Cerrar conexion
+        public void CerrarConexion()
+        {
+            conexion.Close();
+        }
 
+        //Obtener conexion
+        public SqlConnection ObtenerConexion()
+        {
+            return this.conexion;
+        }
 
+        //Comando y reader
+        SqlCommand cmd = new SqlCommand();
+        public SqlCommand Comando
+        {
+            get { return cmd; }
+            set { cmd = value; }
+        }
+
+        SqlDataReader reader;
+        public SqlDataReader Reader
+        {
+            get { return reader; }
+            set { reader = value; }
+        }
         //Constructor e instancia
         // ================================================================================================================================= //
         private DBHelper(SqlConnection Conexion = null)
@@ -195,6 +219,16 @@ namespace AutomotrizApp.Datos
             return resultado;
         }
 
+        //Leer sp de la base de datos
+        public SqlDataReader LeerDB(string procedure)
+        {
+            conexion.Open();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = procedure;
+            SqlDataReader reader = cmd.ExecuteReader();
+            cmd.Parameters.Clear();
+            return reader;
+        }
         // ================================================================================================================================= //
 
 

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using AutomotrizApp.Entidades;
 using AutomotrizApp.Datos;
 using System.Data.SqlClient;
+using AutomotrizApp.Presentacion.ReporteVenta;
 
 namespace AutomotrizApp
 {
@@ -24,6 +25,7 @@ namespace AutomotrizApp
         public FrmConsultarPresupuestos ConsultarPresupuestos = new FrmConsultarPresupuestos();
         public FrmNuevoPresupuesto NuevoPresupuesto = new FrmNuevoPresupuesto();
         public FrmAcercaDe AcercaDe = new FrmAcercaDe();
+        public FrmReporteVentas ReporteVentas = new FrmReporteVentas();
 
         public static Cliente clienteActivo;
         public static FrmPrincipal instancia;
@@ -89,7 +91,7 @@ namespace AutomotrizApp
 
         private void btnReporte_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Falta crear Un reporte para mostrar\n(Agus tiene que hacerlo, pasarmelo y lo agrego)");
+            CambiarFormulario(ReporteVentas);
         }
 
         private void btnAcercaDe_Click(object sender, EventArgs e)

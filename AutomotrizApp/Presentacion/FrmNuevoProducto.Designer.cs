@@ -41,6 +41,7 @@
             this.nombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConsultarProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,12 +167,22 @@
             this.tipoProducto.Name = "tipoProducto";
             this.tipoProducto.ReadOnly = true;
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(12, 485);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 39;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
             // FrmNuevoProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
             this.ClientSize = new System.Drawing.Size(770, 520);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.lblTipoProducto);
@@ -206,5 +217,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoProducto;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }
