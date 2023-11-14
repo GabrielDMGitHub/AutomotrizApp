@@ -49,11 +49,6 @@
     <Compile Update="Presentacion\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\Reportes\DSreporte.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>DSreporte.xsd</DependentUpon>
-    </Compile>
     <Compile Update="Presentacion\ReporteVenta\DSReporte.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -77,10 +72,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Presentacion\Reportes\DSreporte.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSreporte.Designer.cs</LastGenOutput>
-    </None>
     <None Update="Presentacion\ReporteVenta\DSReporte.xsd">
       <SubType>Designer</SubType>
       <LastGenOutput>DSReporte.Designer.cs</LastGenOutput>

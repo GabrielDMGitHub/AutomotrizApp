@@ -34,7 +34,7 @@
             this.dtpFechaMin = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaMax = new System.Windows.Forms.DateTimePicker();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.rvReporteVenta = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.rvReporteVenta = new Microsoft.Reporting.WinForms.ReportViewer(); // Esto tira error
             this.SuspendLayout();
             // 
             // lblTitulo
@@ -93,7 +93,7 @@
             // 
             // rvReporteVenta
             // 
-            this.rvReporteVenta.LocalReport.ReportEmbeddedResource = "AutomotrizApp.Presentacion.ReporteVenta.RptVenta.rdlc";
+            this.rvReporteVenta.LocalReport.ReportEmbeddedResource = "AutomotrizFront.Presentacion.ReporteVenta.RptVenta.rdlc";
             this.rvReporteVenta.Location = new System.Drawing.Point(12, 88);
             this.rvReporteVenta.Name = "rvReporteVenta";
             this.rvReporteVenta.ServerReport.BearerToken = null;
