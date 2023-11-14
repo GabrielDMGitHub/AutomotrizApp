@@ -64,6 +64,7 @@ namespace AutomotrizApp
             lblReloj.Text = DateTime.Now.ToString("HH:mm:ss");
             pnMenuPresupuesto.Height = 42;
             pnMenuProductos.Height = 42;
+            pnMenuReportes.Height = 42;
             tmrReloj.Start();
         }
 
@@ -89,9 +90,19 @@ namespace AutomotrizApp
             CambiarFormulario(NuevoPresupuesto);
         }
 
-        private void btnReporte_Click(object sender, EventArgs e)
+        private void btnReporte1_Click(object sender, EventArgs e)
         {
             CambiarFormulario(ReporteVentas);
+        }
+
+        private void btnReporte2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReporte3_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnAcercaDe_Click(object sender, EventArgs e)
@@ -142,9 +153,26 @@ namespace AutomotrizApp
             }
         }
 
+
+        //Expande/contrae el panel que muestra los botones de reportes y cambia el color del texto
+        private void btnMenuReportes_Click(object sender, EventArgs e)
+        {
+            if (pnMenuReportes.Size.Height == 168)
+            {
+                pnMenuReportes.Height = 42;
+                btnMenuReportes.ForeColor = SystemColors.ControlLight;
+            }
+            else
+            {
+                pnMenuReportes.Height = 168;
+                btnMenuReportes.ForeColor = SystemColors.Highlight;
+            }
+        }
+
         private void tmrReloj_Tick(object sender, EventArgs e)
         {
             lblReloj.Text = DateTime.Now.ToString("HH:mm:ss");
         }
+
     }
 }

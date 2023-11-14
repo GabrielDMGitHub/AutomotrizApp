@@ -34,7 +34,7 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.pnControles = new System.Windows.Forms.Panel();
             this.btnAcercaDe = new System.Windows.Forms.Button();
-            this.btnReporte = new System.Windows.Forms.Button();
+            this.btnMenuReportes = new System.Windows.Forms.Button();
             this.pnMenuPresupuesto = new System.Windows.Forms.Panel();
             this.btnNuevoPresupuesto = new System.Windows.Forms.Button();
             this.btnConsultarPresupuestos = new System.Windows.Forms.Button();
@@ -47,8 +47,12 @@
             this.pbUserIcon = new System.Windows.Forms.PictureBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.pnMuestra = new System.Windows.Forms.Panel();
-            this.tmrReloj = new System.Windows.Forms.Timer(this.components);
             this.lblReloj = new System.Windows.Forms.Label();
+            this.tmrReloj = new System.Windows.Forms.Timer(this.components);
+            this.pnMenuReportes = new System.Windows.Forms.Panel();
+            this.btnReporte1 = new System.Windows.Forms.Button();
+            this.btnReporte2 = new System.Windows.Forms.Button();
+            this.btnReporte3 = new System.Windows.Forms.Button();
             this.pnMenuPrincipal.SuspendLayout();
             this.pnControles.SuspendLayout();
             this.pnMenuPresupuesto.SuspendLayout();
@@ -56,6 +60,7 @@
             this.pnUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserIcon)).BeginInit();
             this.pnMuestra.SuspendLayout();
+            this.pnMenuReportes.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnMenuPrincipal
@@ -90,7 +95,7 @@
             // 
             this.pnControles.AutoScroll = true;
             this.pnControles.Controls.Add(this.btnAcercaDe);
-            this.pnControles.Controls.Add(this.btnReporte);
+            this.pnControles.Controls.Add(this.pnMenuReportes);
             this.pnControles.Controls.Add(this.pnMenuPresupuesto);
             this.pnControles.Controls.Add(this.pnMenuProductos);
             this.pnControles.Location = new System.Drawing.Point(0, 155);
@@ -107,34 +112,34 @@
             this.btnAcercaDe.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAcercaDe.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnAcercaDe.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAcercaDe.Location = new System.Drawing.Point(0, 294);
+            this.btnAcercaDe.Location = new System.Drawing.Point(0, 420);
             this.btnAcercaDe.Name = "btnAcercaDe";
             this.btnAcercaDe.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnAcercaDe.Size = new System.Drawing.Size(187, 42);
+            this.btnAcercaDe.Size = new System.Drawing.Size(170, 42);
             this.btnAcercaDe.TabIndex = 1;
             this.btnAcercaDe.Text = "Acerca de";
             this.btnAcercaDe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAcercaDe.UseVisualStyleBackColor = true;
             this.btnAcercaDe.Click += new System.EventHandler(this.btnAcercaDe_Click);
             // 
-            // btnReporte
+            // btnMenuReportes
             // 
-            this.btnReporte.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReporte.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnReporte.FlatAppearance.BorderSize = 0;
-            this.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporte.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReporte.Location = new System.Drawing.Point(0, 252);
-            this.btnReporte.Name = "btnReporte";
-            this.btnReporte.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnReporte.Size = new System.Drawing.Size(187, 42);
-            this.btnReporte.TabIndex = 0;
-            this.btnReporte.Text = "Reporte de ventas";
-            this.btnReporte.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporte.UseVisualStyleBackColor = true;
-            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
+            this.btnMenuReportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMenuReportes.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnMenuReportes.FlatAppearance.BorderSize = 0;
+            this.btnMenuReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuReportes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMenuReportes.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnMenuReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnMenuReportes.Location = new System.Drawing.Point(0, 0);
+            this.btnMenuReportes.Name = "btnMenuReportes";
+            this.btnMenuReportes.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnMenuReportes.Size = new System.Drawing.Size(170, 42);
+            this.btnMenuReportes.TabIndex = 0;
+            this.btnMenuReportes.Text = "Reportes";
+            this.btnMenuReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMenuReportes.UseVisualStyleBackColor = true;
+            this.btnMenuReportes.Click += new System.EventHandler(this.btnMenuReportes_Click);
             // 
             // pnMenuPresupuesto
             // 
@@ -144,7 +149,7 @@
             this.pnMenuPresupuesto.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnMenuPresupuesto.Location = new System.Drawing.Point(0, 126);
             this.pnMenuPresupuesto.Name = "pnMenuPresupuesto";
-            this.pnMenuPresupuesto.Size = new System.Drawing.Size(187, 126);
+            this.pnMenuPresupuesto.Size = new System.Drawing.Size(170, 126);
             this.pnMenuPresupuesto.TabIndex = 4;
             // 
             // btnNuevoPresupuesto
@@ -158,7 +163,7 @@
             this.btnNuevoPresupuesto.Location = new System.Drawing.Point(0, 84);
             this.btnNuevoPresupuesto.Name = "btnNuevoPresupuesto";
             this.btnNuevoPresupuesto.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.btnNuevoPresupuesto.Size = new System.Drawing.Size(187, 42);
+            this.btnNuevoPresupuesto.Size = new System.Drawing.Size(170, 42);
             this.btnNuevoPresupuesto.TabIndex = 2;
             this.btnNuevoPresupuesto.Text = "Nuevo Presupuesto";
             this.btnNuevoPresupuesto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -176,7 +181,7 @@
             this.btnConsultarPresupuestos.Location = new System.Drawing.Point(0, 42);
             this.btnConsultarPresupuestos.Name = "btnConsultarPresupuestos";
             this.btnConsultarPresupuestos.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.btnConsultarPresupuestos.Size = new System.Drawing.Size(187, 42);
+            this.btnConsultarPresupuestos.Size = new System.Drawing.Size(170, 42);
             this.btnConsultarPresupuestos.TabIndex = 1;
             this.btnConsultarPresupuestos.Text = "Consultar Presupuestos";
             this.btnConsultarPresupuestos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -195,7 +200,7 @@
             this.btnMenuPresupuesto.Location = new System.Drawing.Point(0, 0);
             this.btnMenuPresupuesto.Name = "btnMenuPresupuesto";
             this.btnMenuPresupuesto.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnMenuPresupuesto.Size = new System.Drawing.Size(187, 42);
+            this.btnMenuPresupuesto.Size = new System.Drawing.Size(170, 42);
             this.btnMenuPresupuesto.TabIndex = 0;
             this.btnMenuPresupuesto.Text = "Presupuesto";
             this.btnMenuPresupuesto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -210,7 +215,7 @@
             this.pnMenuProductos.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnMenuProductos.Location = new System.Drawing.Point(0, 0);
             this.pnMenuProductos.Name = "pnMenuProductos";
-            this.pnMenuProductos.Size = new System.Drawing.Size(187, 126);
+            this.pnMenuProductos.Size = new System.Drawing.Size(170, 126);
             this.pnMenuProductos.TabIndex = 0;
             // 
             // btnNuevoProducto
@@ -224,7 +229,7 @@
             this.btnNuevoProducto.Location = new System.Drawing.Point(0, 84);
             this.btnNuevoProducto.Name = "btnNuevoProducto";
             this.btnNuevoProducto.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.btnNuevoProducto.Size = new System.Drawing.Size(187, 42);
+            this.btnNuevoProducto.Size = new System.Drawing.Size(170, 42);
             this.btnNuevoProducto.TabIndex = 2;
             this.btnNuevoProducto.Text = "Nuevo Producto";
             this.btnNuevoProducto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -242,7 +247,7 @@
             this.btnConsultarProductos.Location = new System.Drawing.Point(0, 42);
             this.btnConsultarProductos.Name = "btnConsultarProductos";
             this.btnConsultarProductos.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
-            this.btnConsultarProductos.Size = new System.Drawing.Size(187, 42);
+            this.btnConsultarProductos.Size = new System.Drawing.Size(170, 42);
             this.btnConsultarProductos.TabIndex = 1;
             this.btnConsultarProductos.Text = "Consultar Productos";
             this.btnConsultarProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -261,7 +266,7 @@
             this.btnMenuProductos.Location = new System.Drawing.Point(0, 0);
             this.btnMenuProductos.Name = "btnMenuProductos";
             this.btnMenuProductos.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnMenuProductos.Size = new System.Drawing.Size(187, 42);
+            this.btnMenuProductos.Size = new System.Drawing.Size(170, 42);
             this.btnMenuProductos.TabIndex = 0;
             this.btnMenuProductos.Text = "Productos";
             this.btnMenuProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -314,11 +319,6 @@
             this.pnMuestra.Size = new System.Drawing.Size(770, 520);
             this.pnMuestra.TabIndex = 1;
             // 
-            // tmrReloj
-            // 
-            this.tmrReloj.Interval = 1000;
-            this.tmrReloj.Tick += new System.EventHandler(this.tmrReloj_Tick);
-            // 
             // lblReloj
             // 
             this.lblReloj.AutoSize = true;
@@ -329,6 +329,77 @@
             this.lblReloj.Size = new System.Drawing.Size(417, 108);
             this.lblReloj.TabIndex = 0;
             this.lblReloj.Text = "00:00:00";
+            // 
+            // tmrReloj
+            // 
+            this.tmrReloj.Interval = 1000;
+            this.tmrReloj.Tick += new System.EventHandler(this.tmrReloj_Tick);
+            // 
+            // pnMenuReportes
+            // 
+            this.pnMenuReportes.Controls.Add(this.btnReporte3);
+            this.pnMenuReportes.Controls.Add(this.btnReporte2);
+            this.pnMenuReportes.Controls.Add(this.btnReporte1);
+            this.pnMenuReportes.Controls.Add(this.btnMenuReportes);
+            this.pnMenuReportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnMenuReportes.Location = new System.Drawing.Point(0, 252);
+            this.pnMenuReportes.Name = "pnMenuReportes";
+            this.pnMenuReportes.Size = new System.Drawing.Size(170, 168);
+            this.pnMenuReportes.TabIndex = 5;
+            // 
+            // btnReporte1
+            // 
+            this.btnReporte1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReporte1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnReporte1.FlatAppearance.BorderSize = 0;
+            this.btnReporte1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporte1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporte1.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnReporte1.Location = new System.Drawing.Point(0, 42);
+            this.btnReporte1.Name = "btnReporte1";
+            this.btnReporte1.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btnReporte1.Size = new System.Drawing.Size(170, 42);
+            this.btnReporte1.TabIndex = 3;
+            this.btnReporte1.Text = "Reporte 1";
+            this.btnReporte1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporte1.UseVisualStyleBackColor = true;
+            this.btnReporte1.Click += new System.EventHandler(this.btnReporte1_Click);
+            // 
+            // btnReporte2
+            // 
+            this.btnReporte2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReporte2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnReporte2.FlatAppearance.BorderSize = 0;
+            this.btnReporte2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporte2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporte2.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnReporte2.Location = new System.Drawing.Point(0, 84);
+            this.btnReporte2.Name = "btnReporte2";
+            this.btnReporte2.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btnReporte2.Size = new System.Drawing.Size(170, 42);
+            this.btnReporte2.TabIndex = 4;
+            this.btnReporte2.Text = "Reporte 2";
+            this.btnReporte2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporte2.UseVisualStyleBackColor = true;
+            this.btnReporte2.Click += new System.EventHandler(this.btnReporte2_Click);
+            // 
+            // btnReporte3
+            // 
+            this.btnReporte3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReporte3.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnReporte3.FlatAppearance.BorderSize = 0;
+            this.btnReporte3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporte3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporte3.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnReporte3.Location = new System.Drawing.Point(0, 126);
+            this.btnReporte3.Name = "btnReporte3";
+            this.btnReporte3.Padding = new System.Windows.Forms.Padding(25, 0, 0, 0);
+            this.btnReporte3.Size = new System.Drawing.Size(170, 42);
+            this.btnReporte3.TabIndex = 5;
+            this.btnReporte3.Text = "Reporte 3";
+            this.btnReporte3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporte3.UseVisualStyleBackColor = true;
+            this.btnReporte3.Click += new System.EventHandler(this.btnReporte3_Click);
             // 
             // FrmPrincipal
             // 
@@ -352,6 +423,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbUserIcon)).EndInit();
             this.pnMuestra.ResumeLayout(false);
             this.pnMuestra.PerformLayout();
+            this.pnMenuReportes.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -366,7 +438,7 @@
         private System.Windows.Forms.Panel pnControles;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnAcercaDe;
-        private System.Windows.Forms.Button btnReporte;
+        private System.Windows.Forms.Button btnMenuReportes;
         private System.Windows.Forms.Button btnMenuPresupuesto;
         private System.Windows.Forms.Button btnConsultarPresupuestos;
         private System.Windows.Forms.Button btnMenuProductos;
@@ -377,6 +449,10 @@
         private System.Windows.Forms.PictureBox pbUserIcon;
         private System.Windows.Forms.Label lblReloj;
         private System.Windows.Forms.Timer tmrReloj;
+        private System.Windows.Forms.Panel pnMenuReportes;
+        private System.Windows.Forms.Button btnReporte3;
+        private System.Windows.Forms.Button btnReporte2;
+        private System.Windows.Forms.Button btnReporte1;
     }
 }
 

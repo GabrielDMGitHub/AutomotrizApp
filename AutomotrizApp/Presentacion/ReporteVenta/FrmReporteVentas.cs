@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AutomotrizApp.Datos;
 
 namespace AutomotrizApp.Presentacion.ReporteVenta
 {
@@ -18,30 +19,31 @@ namespace AutomotrizApp.Presentacion.ReporteVenta
             InitializeComponent();
         }
 
+        //
         private void FrmReporteVentas_Load(object sender, EventArgs e)
         {
+            rvReporteVenta.RefreshReport();
+            
+            dtpFechaMin.Value = new DateTime(2000, 1, 1);
+            dtpFechaMax.Value = DateTime.Today.AddDays(1);
 
-            //this.rvReporte.RefreshReport();
-            this.rvReporteVenta.RefreshReport();
-            this.rvReporteVenta.RefreshReport();
+            btnBuscar_Click();
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+
+        //
+        private void btnBuscar_Click(object sender = null, EventArgs e = null)
         {
-            SqlConnection cnn = new SqlConnection(@"Data Source=GALER-PC\SQLEXPRESS;Initial Catalog=AutomotrizApp;Integrated Security=True");
-            cnn.Open();
-            SqlCommand cmd = new SqlCommand("VentasPorTipo", cnn);
-            cmd.Parameters.AddWithValue("@FechaInicio", dtpDesde.Value);
-            cmd.Parameters.AddWithValue("@FechaFin", dtpHasta.Value);
-            cmd.CommandType = CommandType.StoredProcedure;
+            List<Parametro> lParametros = new List<Parametro>();
+            lParametros.Add(new Parametro("@input_fecha_min", dtpFechaMin.Value));
+            lParametros.Add(new Parametro("@input_fecha_max", dtpFechaMax.Value));
+
             DataTable tabla = new DataTable();
-            tabla.Load(cmd.ExecuteReader());
+            tabla = DBHelper.ObtenerInstancia().ConsultarSP("SP_REPORTE_VENTAS_X_TIPO", lParametros);
 
             rvReporteVenta.LocalReport.DataSources.Clear();
             rvReporteVenta.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", tabla));
             rvReporteVenta.RefreshReport();
-
-            cnn.Close();
         }
     }
 }

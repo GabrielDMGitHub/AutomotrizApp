@@ -31,8 +31,8 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblHasta = new System.Windows.Forms.Label();
             this.lblDesde = new System.Windows.Forms.Label();
-            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
-            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaMin = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaMax = new System.Windows.Forms.DateTimePicker();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.rvReporteVenta = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
@@ -40,6 +40,7 @@
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
+            this.lblTitulo.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.lblTitulo.Location = new System.Drawing.Point(13, 13);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(151, 13);
@@ -49,6 +50,7 @@
             // lblHasta
             // 
             this.lblHasta.AutoSize = true;
+            this.lblHasta.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.lblHasta.Location = new System.Drawing.Point(326, 52);
             this.lblHasta.Name = "lblHasta";
             this.lblHasta.Size = new System.Drawing.Size(71, 13);
@@ -58,25 +60,26 @@
             // lblDesde
             // 
             this.lblDesde.AutoSize = true;
+            this.lblDesde.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.lblDesde.Location = new System.Drawing.Point(13, 52);
             this.lblDesde.Name = "lblDesde";
             this.lblDesde.Size = new System.Drawing.Size(72, 13);
             this.lblDesde.TabIndex = 2;
             this.lblDesde.Text = "Fecha desde:";
             // 
-            // dtpDesde
+            // dtpFechaMin
             // 
-            this.dtpDesde.Location = new System.Drawing.Point(91, 46);
-            this.dtpDesde.Name = "dtpDesde";
-            this.dtpDesde.Size = new System.Drawing.Size(200, 20);
-            this.dtpDesde.TabIndex = 3;
+            this.dtpFechaMin.Location = new System.Drawing.Point(91, 46);
+            this.dtpFechaMin.Name = "dtpFechaMin";
+            this.dtpFechaMin.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaMin.TabIndex = 3;
             // 
-            // dtpHasta
+            // dtpFechaMax
             // 
-            this.dtpHasta.Location = new System.Drawing.Point(403, 46);
-            this.dtpHasta.Name = "dtpHasta";
-            this.dtpHasta.Size = new System.Drawing.Size(200, 20);
-            this.dtpHasta.TabIndex = 4;
+            this.dtpFechaMax.Location = new System.Drawing.Point(403, 46);
+            this.dtpFechaMax.Name = "dtpFechaMax";
+            this.dtpFechaMax.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaMax.TabIndex = 4;
             // 
             // btnBuscar
             // 
@@ -91,24 +94,26 @@
             // rvReporteVenta
             // 
             this.rvReporteVenta.LocalReport.ReportEmbeddedResource = "AutomotrizApp.Presentacion.ReporteVenta.RptVenta.rdlc";
-            this.rvReporteVenta.Location = new System.Drawing.Point(16, 88);
+            this.rvReporteVenta.Location = new System.Drawing.Point(12, 88);
             this.rvReporteVenta.Name = "rvReporteVenta";
             this.rvReporteVenta.ServerReport.BearerToken = null;
-            this.rvReporteVenta.Size = new System.Drawing.Size(751, 284);
+            this.rvReporteVenta.Size = new System.Drawing.Size(746, 420);
             this.rvReporteVenta.TabIndex = 6;
             // 
             // FrmReporteVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.ClientSize = new System.Drawing.Size(770, 520);
             this.Controls.Add(this.rvReporteVenta);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.dtpHasta);
-            this.Controls.Add(this.dtpDesde);
+            this.Controls.Add(this.dtpFechaMax);
+            this.Controls.Add(this.dtpFechaMin);
             this.Controls.Add(this.lblDesde);
             this.Controls.Add(this.lblHasta);
             this.Controls.Add(this.lblTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmReporteVentas";
             this.Text = "FrmReporteVentas";
             this.Load += new System.EventHandler(this.FrmReporteVentas_Load);
@@ -122,8 +127,8 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblHasta;
         private System.Windows.Forms.Label lblDesde;
-        private System.Windows.Forms.DateTimePicker dtpDesde;
-        private System.Windows.Forms.DateTimePicker dtpHasta;
+        private System.Windows.Forms.DateTimePicker dtpFechaMin;
+        private System.Windows.Forms.DateTimePicker dtpFechaMax;
         private System.Windows.Forms.Button btnBuscar;
         private Microsoft.Reporting.WinForms.ReportViewer rvReporteVenta;
     }

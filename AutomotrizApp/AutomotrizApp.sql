@@ -24,6 +24,7 @@ DROP PROC [SP_INSERTAR_PRESUPUESTOS]
 DROP PROC [SP_ACTUALIZAR_PRESUPUESTOS]
 DROP PROC [SP_ELIMINAR_PRESUPUESTOS]
 DROP PROC [SP_INSERTAR_DETALLES]
+DROP PROC [SP_REPORTE_VENTAS_X_TIPO]
 
 
 --Cambio de formatos
@@ -431,6 +432,27 @@ begin
 		VALUES (@input_id_presupuesto, @input_id_detalle, @input_id_producto, @input_cantidad);
 end
 --exec [SP_INSERTAR_DETALLE] @input_id_presupuesto = 0, @input_id_detalle = 0, @input_id_producto = 0,@input_cantidad = 0
+go
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+go
+--
+create proc [SP_REPORTE_VENTAS_X_TIPO]
+		@input_fecha_min datetime = null,
+		@input_fecha_max datetime = null
+as
+begin
+		SELECT t.tipo 'TipoProducto', sum(p.precio * d.cantidad) 'TotalVenta', pr.fecha
+		FROM PRESUPUESTOS pr
+		INNER JOIN DETALLES d on pr.id_presupuesto = d.id_presupuesto
+		INNER JOIN PRODUCTOS p on d.id_producto = p.id_producto
+		INNER JOIN TIPOS t on p.id_tipo = t.id_tipo
+		WHERE pr.fecha between @input_fecha_min and @input_fecha_max
+		GROUP BY t.tipo, pr.fecha
+		order by TotalVenta desc
+end
+--
 go
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
