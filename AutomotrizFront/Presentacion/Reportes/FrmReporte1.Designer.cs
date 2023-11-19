@@ -33,10 +33,12 @@
             // 
             // rvReporte
             // 
-            rvReporte.Location = new Point(0, 0);
+            rvReporte.BackColor = Color.FromArgb(35, 35, 35);
+            rvReporte.Location = new Point(10, 10);
             rvReporte.Name = "ReportViewer";
             rvReporte.ServerReport.BearerToken = null;
-            rvReporte.Size = new Size(898, 400);
+            rvReporte.ShowToolBar = false;
+            rvReporte.Size = new Size(878, 580);
             rvReporte.TabIndex = 0;
             // 
             // FrmReporte1
