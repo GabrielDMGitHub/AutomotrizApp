@@ -9,14 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Presentacion\ReporteVenta\RptVenta.rdlc" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Presentacion\ReporteVenta\RptVenta.rdlc" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.Winforms" Version="150.1586.0" />
     <PackageReference Include="Microsoft.SqlServer.Types" Version="160.1000.6" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
@@ -24,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AutomotrizApp\AutomotrizApp.csproj" />
     <ProjectReference Include="..\AutomotrizBack\AutomotrizBack.csproj" />
   </ItemGroup>
 
@@ -49,14 +42,6 @@
     <Compile Update="Presentacion\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\ReporteVenta\DSReporte.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>DSReporte.xsd</DependentUpon>
-    </Compile>
-    <Compile Update="Presentacion\ReporteVenta\FrmReporteVentas.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -69,14 +54,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Presentacion\ReporteVenta\DSReporte.xsd">
-      <SubType>Designer</SubType>
-      <LastGenOutput>DSReporte.Designer.cs</LastGenOutput>
-      <Generator>MSDataSetGenerator</Generator>
-    </None>
   </ItemGroup>
 
 </Project>

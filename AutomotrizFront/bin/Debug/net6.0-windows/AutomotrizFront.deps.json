@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "AutomotrizFront/1.0.0": {
         "dependencies": {
+          "AutomotrizApp": "1.0.0",
           "AutomotrizBack": "1.0.0",
           "Microsoft.ReportingServices.ReportViewerControl.Winforms": "150.1586.0",
           "Microsoft.SqlServer.Types": "160.1000.6",
@@ -313,6 +314,11 @@
         }
       },
       "System.Security.Principal.Windows/4.7.0": {},
+      "AutomotrizApp/1.0.0": {
+        "runtime": {
+          "AutomotrizApp.exe": {}
+        }
+      },
       "AutomotrizBack/1.0.0": {
         "dependencies": {
           "Microsoft.ReportingServices.ReportViewerControl.Winforms": "150.1586.0",
@@ -422,6 +428,11 @@
       "sha512": "sha512-ojD0PX0XhneCsUbAZVKdb7h/70vyYMDYs85lwEI+LngEONe/17A0cFaRFqZU+sOEidcVswYWikYOQ9PPfjlbtQ==",
       "path": "system.security.principal.windows/4.7.0",
       "hashPath": "system.security.principal.windows.4.7.0.nupkg.sha512"
+    },
+    "AutomotrizApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "AutomotrizBack/1.0.0": {
       "type": "project",

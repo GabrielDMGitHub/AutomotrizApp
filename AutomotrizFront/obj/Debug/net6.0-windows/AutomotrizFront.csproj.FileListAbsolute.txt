@@ -79,7 +79,6 @@ C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\obj\Debug\net6.0-windows\AutomotrizFront.Presentacion.FrmNuevoPresupuesto.resources
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\obj\Debug\net6.0-windows\AutomotrizFront.Presentacion.FrmNuevoProducto.resources
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\obj\Debug\net6.0-windows\AutomotrizFront.FrmPrincipal.resources
-C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\obj\Debug\net6.0-windows\AutomotrizFront.Presentacion.ReporteVenta.FrmReporteVentas.resources
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\obj\Debug\net6.0-windows\AutomotrizFront.Properties.Resources.resources
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\obj\Debug\net6.0-windows\AutomotrizFront.csproj.GenerateResource.cache
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\obj\Debug\net6.0-windows\AutomotrizFront.GeneratedMSBuildEditorConfig.editorconfig
@@ -92,3 +91,8 @@ C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\obj\Debug\net6.0-windows\AutomotrizFront.pdb
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\obj\Debug\net6.0-windows\AutomotrizFront.genruntimeconfig.cache
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\obj\Debug\net6.0-windows\ref\AutomotrizFront.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\bin\Debug\net6.0-windows\x86\SqlServerSpatial160.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\bin\Debug\net6.0-windows\x64\SqlServerSpatial160.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\bin\Debug\net6.0-windows\AutomotrizApp.exe
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\bin\Debug\net6.0-windows\AutomotrizApp.pdb
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\bin\Debug\net6.0-windows\AutomotrizApp.exe.config
