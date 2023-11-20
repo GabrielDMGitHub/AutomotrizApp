@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutomotrizBack.Datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,26 @@ namespace AutomotrizFront.Presentacion.Reportes.Reporte2
         private void FrmReporte1_Load(object sender, EventArgs e)
         {
             rvReporte.LocalReport.ReportEmbeddedResource = "AutomotrizFront.Presentacion.Reportes.Reporte2.Reporte2.rdlc";
+            rvReporte.RefreshReport();
+
+            btnBuscar_Click();
+        }
+
+        private void btnBuscar_Click(object sender = null, EventArgs e = null)
+        {
+            List<Parametro> lParametros = new List<Parametro>();
+            if (txtDniCliente.Text != "")
+            {
+                lParametros.Add(new Parametro("@input_dni_cliente", txtDniCliente.Text));
+            }
+            else { lParametros = null; }
+
+
+            DataTable tabla = new DataTable();
+            tabla = DBHelper.ObtenerInstancia().ConsultarSP("SP_REPORTE_COMPRAS_X_CIENTE", lParametros);
+
+            rvReporte.LocalReport.DataSources.Clear();
+            rvReporte.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", tabla));
             rvReporte.RefreshReport();
         }
     }

@@ -19,8 +19,8 @@ namespace AutomotrizFront.Presentacion.Reportes.Reporte3
 
         private void FrmReporte3_Load(object sender, EventArgs e)
         {
-            rvReporte3.LocalReport.ReportEmbeddedResource = "AutomotrizFront.Presentacion.Reportes.Reporte3.Reporte3.rdlc";
-            rvReporte3.RefreshReport();
+            rvReporte.LocalReport.ReportEmbeddedResource = "AutomotrizFront.Presentacion.Reportes.Reporte3.Reporte3.rdlc";
+            rvReporte.RefreshReport();
         }
     }
 }

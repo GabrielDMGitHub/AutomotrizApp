@@ -11,4 +11,12 @@
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <None Update="AutomotrizAppDataSet2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Update="Presentacion\Reportes\Reporte2\DSReporte2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
 </Project>

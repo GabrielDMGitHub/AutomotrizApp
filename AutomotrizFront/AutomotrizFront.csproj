@@ -40,6 +40,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="AutomotrizAppDataSet2.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AutomotrizAppDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Update="Presentacion\FrmAcercaDe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,10 +66,10 @@
     <Compile Update="Presentacion\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\Reportes\Reporte2\DSReporte.Designer.cs">
+    <Compile Update="Presentacion\Reportes\Reporte2\DSReporte2.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>DSReporte.xsd</DependentUpon>
+      <DependentUpon>DSReporte2.xsd</DependentUpon>
     </Compile>
     <Compile Update="Presentacion\Reportes\Reporte2\FrmReporteVentas.cs">
       <SubType>Form</SubType>
@@ -84,10 +89,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Presentacion\Reportes\Reporte2\DSReporte.xsd">
-      <SubType>Designer</SubType>
-      <LastGenOutput>DSReporte.Designer.cs</LastGenOutput>
+    <None Update="AutomotrizAppDataSet2.xsd">
       <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>AutomotrizAppDataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Presentacion\Reportes\Reporte2\DSReporte2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSReporte2.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

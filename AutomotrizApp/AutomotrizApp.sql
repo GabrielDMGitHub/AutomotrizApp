@@ -469,13 +469,12 @@ begin
 		JOIN PRESUPUESTOS pr on c.id_cliente = pr.id_cliente
 		JOIN DETALLES d on pr.id_presupuesto = d.id_presupuesto
 		JOIN PRODUCTOS p on d.id_producto = p.id_producto
-		WHERE c.dni = isnull(@input_dni_cliente, c.dni)
+		WHERE CONVERT(VARCHAR(50), c.dni) like '%' + isnull(CONVERT(VARCHAR(50), @input_dni_cliente), CONVERT(VARCHAR(50), c.dni)) + '%'
 		GROUP BY c.dni, c.nombre, c.apellido
 		ORDER BY 'Total' desc
 end
--- exec [SP_REPORTE_COMPRAS_X_CIENTE] 12345678
+-- exec [SP_REPORTE_COMPRAS_X_CIENTE] 
 go
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
-
 

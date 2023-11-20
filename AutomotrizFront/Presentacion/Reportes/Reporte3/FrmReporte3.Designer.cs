@@ -28,18 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            rvReporte3 = new Microsoft.Reporting.WinForms.ReportViewer();
+            pnReporte = new Panel();
+            rvReporte = new Microsoft.Reporting.WinForms.ReportViewer();
+            lblTitulo = new Label();
+            pnReporte.SuspendLayout();
             SuspendLayout();
             // 
-            // rvReporte3
+            // pnReporte
             // 
-            rvReporte3.BackColor = Color.FromArgb(35, 35, 35);
-            rvReporte3.Location = new Point(10, 10);
-            rvReporte3.Name = "ReportViewer";
-            rvReporte3.ServerReport.BearerToken = null;
-            rvReporte3.ShowToolBar = false;
-            rvReporte3.Size = new Size(878, 580);
-            rvReporte3.TabIndex = 0;
+            pnReporte.AutoScroll = true;
+            pnReporte.AutoSize = true;
+            pnReporte.Controls.Add(rvReporte);
+            pnReporte.Location = new Point(12, 144);
+            pnReporte.Name = "pnReporte";
+            pnReporte.Size = new Size(874, 444);
+            pnReporte.TabIndex = 7;
+            // 
+            // rvReporte
+            // 
+            rvReporte.BackColor = Color.FromArgb(35, 35, 35);
+            rvReporte.Dock = DockStyle.Fill;
+            rvReporte.Location = new Point(0, 0);
+            rvReporte.Name = "ReportViewer";
+            rvReporte.ServerReport.BearerToken = null;
+            rvReporte.ShowToolBar = false;
+            rvReporte.Size = new Size(874, 444);
+            rvReporte.TabIndex = 0;
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTitulo.ForeColor = SystemColors.ControlLight;
+            lblTitulo.Location = new Point(13, 9);
+            lblTitulo.Margin = new Padding(4, 0, 4, 0);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(485, 37);
+            lblTitulo.TabIndex = 8;
+            lblTitulo.Text = "Ventas por tipos de autopartes";
             // 
             // FrmReporte3
             // 
@@ -47,16 +73,21 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(43, 43, 43);
             ClientSize = new Size(898, 600);
-            Controls.Add(rvReporte3);
+            Controls.Add(lblTitulo);
+            Controls.Add(pnReporte);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmReporte3";
             Text = "FrmReporte3";
             Load += FrmReporte3_Load;
+            pnReporte.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer rvReporte3;
+        private Panel pnReporte;
+        private Microsoft.Reporting.WinForms.ReportViewer rvReporte;
+        private Label lblTitulo;
     }
 }
