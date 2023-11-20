@@ -9,11 +9,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Presentacion\Reportes\Reporte1.rdlc" />
+    <Compile Remove="Presentacion\ReporteVenta\**" />
+    <EmbeddedResource Remove="Presentacion\ReporteVenta\**" />
+    <None Remove="Presentacion\ReporteVenta\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Presentacion\Reportes\Reporte1.rdlc" />
+    <None Remove="Presentacion\Reportes\Reporte1.rdlc" />
+    <None Remove="Presentacion\Reportes\Reporte1\RptVenta.rdlc" />
+    <None Remove="Presentacion\Reportes\Reporte2\Reporte2.rdlc" />
+    <None Remove="Presentacion\Reportes\Reporte3\Reporte3.rdlc" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Presentacion\Reportes\Reporte1\RptVenta.rdlc" />
+    <EmbeddedResource Include="Presentacion\Reportes\Reporte2\Reporte2.rdlc" />
+    <EmbeddedResource Include="Presentacion\Reportes\Reporte3\Reporte3.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
@@ -50,6 +61,14 @@
     <Compile Update="Presentacion\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Presentacion\Reportes\Reporte2\DSReporte.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DSReporte.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Presentacion\Reportes\Reporte2\FrmReporteVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -62,6 +81,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Presentacion\Reportes\Reporte2\DSReporte.xsd">
+      <SubType>Designer</SubType>
+      <LastGenOutput>DSReporte.Designer.cs</LastGenOutput>
+      <Generator>MSDataSetGenerator</Generator>
+    </None>
   </ItemGroup>
 
 </Project>

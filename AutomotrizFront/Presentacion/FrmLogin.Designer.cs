@@ -107,7 +107,7 @@
             cbPassword.FlatStyle = FlatStyle.Flat;
             cbPassword.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             cbPassword.Image = Properties.Resources.PassHideIcon;
-            cbPassword.Location = new Point(263, 294);
+            cbPassword.Location = new Point(263, 292);
             cbPassword.Margin = new Padding(0);
             cbPassword.Name = "cbPassword";
             cbPassword.Size = new Size(29, 29);
@@ -131,7 +131,7 @@
             btnSalir.FlatAppearance.BorderSize = 0;
             btnSalir.FlatStyle = FlatStyle.Flat;
             btnSalir.Image = Properties.Resources.ExitIcon;
-            btnSalir.Location = new Point(356, 6);
+            btnSalir.Location = new Point(302, 4);
             btnSalir.Margin = new Padding(4, 3, 4, 3);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(23, 23);

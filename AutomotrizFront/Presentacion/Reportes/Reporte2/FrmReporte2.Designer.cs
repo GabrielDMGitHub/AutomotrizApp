@@ -1,6 +1,6 @@
-﻿namespace AutomotrizFront.Reportes
+﻿namespace AutomotrizFront.Presentacion.Reportes.Reporte2
 {
-    partial class FrmReporte1
+    partial class FrmReporte2
     {
         /// <summary>
         /// Required designer variable.

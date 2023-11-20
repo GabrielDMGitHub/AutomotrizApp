@@ -83,4 +83,6 @@ C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\bin\Debug\net6.0-windows\tr\Microsoft.CodeAnalysis.VisualBasic.resources.dll
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\bin\Debug\net6.0-windows\zh-Hans\Microsoft.CodeAnalysis.VisualBasic.resources.dll
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\bin\Debug\net6.0-windows\zh-Hant\Microsoft.CodeAnalysis.VisualBasic.resources.dll
-C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\obj\Debug\net6.0-windows\AutomotrizFront.Reportes.FrmReporte1.resources
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\obj\Debug\net6.0-windows\AutomotrizFront.Presentacion.Reportes.Reporte1.FrmReporteVentas.resources
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\obj\Debug\net6.0-windows\AutomotrizFront.Presentacion.Reportes.Reporte2.FrmReporte2.resources
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\obj\Debug\net6.0-windows\AutomotrizFront.Presentacion.Reportes.Reporte3.FrmReporte3.resources

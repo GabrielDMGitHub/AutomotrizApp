@@ -11,7 +11,9 @@ using System.Windows.Forms;
 using AutomotrizBack.Entidades;
 using AutomotrizBack.Datos;
 using System.Data.SqlClient;
-using AutomotrizFront.Reportes;
+using AutomotrizFront.Presentacion.Reportes.Reporte1;
+using AutomotrizFront.Presentacion.Reportes.Reporte2;
+using AutomotrizFront.Presentacion.Reportes.Reporte3;
 
 namespace AutomotrizFront
 {
@@ -25,7 +27,9 @@ namespace AutomotrizFront
         public FrmConsultarPresupuestos ConsultarPresupuestos = new FrmConsultarPresupuestos();
         public FrmNuevoPresupuesto NuevoPresupuesto = new FrmNuevoPresupuesto();
         public FrmAcercaDe AcercaDe = new FrmAcercaDe();
-        public FrmReporte1 Reporte1 = new FrmReporte1();
+        public FrmReporteVentas Reporte1 = new FrmReporteVentas();
+        public FrmReporte2 Reporte2 = new FrmReporte2();
+        public FrmReporte3 Reporte3 = new FrmReporte3();
 
         public static Cliente clienteActivo;
         public static FrmPrincipal instancia;
@@ -97,12 +101,12 @@ namespace AutomotrizFront
 
         private void btnReporte2_Click(object sender, EventArgs e)
         {
-
+            CambiarFormulario(Reporte2);
         }
 
         private void btnReporte3_Click(object sender, EventArgs e)
         {
-
+            CambiarFormulario(Reporte3);
         }
 
         private void btnAcercaDe_Click(object sender, EventArgs e)

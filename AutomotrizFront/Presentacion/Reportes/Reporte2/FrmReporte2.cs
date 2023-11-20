@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AutomotrizFront.Reportes
+namespace AutomotrizFront.Presentacion.Reportes.Reporte2
 {
-    public partial class FrmReporte1 : Form
+    public partial class FrmReporte2 : Form
     {
-        public FrmReporte1()
+        public FrmReporte2()
         {
             InitializeComponent();
         }
 
         private void FrmReporte1_Load(object sender, EventArgs e)
         {
-            rvReporte.LocalReport.ReportEmbeddedResource = "AutomotrizFront.Presentacion.Reportes.Reporte1.rdlc";
+            rvReporte.LocalReport.ReportEmbeddedResource = "AutomotrizFront.Presentacion.Reportes.Reporte2.Reporte2.rdlc";
             rvReporte.RefreshReport();
         }
     }
