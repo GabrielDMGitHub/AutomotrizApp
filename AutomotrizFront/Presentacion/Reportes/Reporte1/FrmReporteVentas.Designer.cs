@@ -34,61 +34,66 @@
             dtpFechaMin = new DateTimePicker();
             dtpFechaMax = new DateTimePicker();
             btnBuscar = new Button();
-            rvReporteVenta = new Microsoft.Reporting.WinForms.ReportViewer();
+            pnReporte = new Panel();
+            rvReporte = new Microsoft.Reporting.WinForms.ReportViewer();
+            pnReporte.SuspendLayout();
             SuspendLayout();
             // 
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point);
             lblTitulo.ForeColor = SystemColors.ControlLight;
-            lblTitulo.Location = new Point(15, 15);
+            lblTitulo.Location = new Point(13, 9);
             lblTitulo.Margin = new Padding(4, 0, 4, 0);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(166, 15);
+            lblTitulo.Size = new Size(485, 37);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Ventas por tipos de autopartes";
             // 
             // lblHasta
             // 
             lblHasta.AutoSize = true;
+            lblHasta.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblHasta.ForeColor = SystemColors.ControlLight;
-            lblHasta.Location = new Point(380, 60);
+            lblHasta.Location = new Point(27, 109);
             lblHasta.Margin = new Padding(4, 0, 4, 0);
             lblHasta.Name = "lblHasta";
-            lblHasta.Size = new Size(74, 15);
+            lblHasta.Size = new Size(79, 15);
             lblHasta.TabIndex = 1;
             lblHasta.Text = "Fecha Hasta:";
             // 
             // lblDesde
             // 
             lblDesde.AutoSize = true;
+            lblDesde.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblDesde.ForeColor = SystemColors.ControlLight;
-            lblDesde.Location = new Point(15, 60);
+            lblDesde.Location = new Point(25, 68);
             lblDesde.Margin = new Padding(4, 0, 4, 0);
             lblDesde.Name = "lblDesde";
-            lblDesde.Size = new Size(75, 15);
+            lblDesde.Size = new Size(81, 15);
             lblDesde.TabIndex = 2;
             lblDesde.Text = "Fecha desde:";
             // 
             // dtpFechaMin
             // 
-            dtpFechaMin.Location = new Point(106, 53);
+            dtpFechaMin.Location = new Point(114, 63);
             dtpFechaMin.Margin = new Padding(4, 3, 4, 3);
             dtpFechaMin.Name = "dtpFechaMin";
-            dtpFechaMin.Size = new Size(233, 23);
+            dtpFechaMin.Size = new Size(276, 23);
             dtpFechaMin.TabIndex = 3;
             // 
             // dtpFechaMax
             // 
-            dtpFechaMax.Location = new Point(470, 53);
+            dtpFechaMax.Location = new Point(114, 104);
             dtpFechaMax.Margin = new Padding(4, 3, 4, 3);
             dtpFechaMax.Name = "dtpFechaMax";
-            dtpFechaMax.Size = new Size(233, 23);
+            dtpFechaMax.Size = new Size(276, 23);
             dtpFechaMax.TabIndex = 4;
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(737, 48);
+            btnBuscar.Location = new Point(796, 104);
             btnBuscar.Margin = new Padding(4, 3, 4, 3);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(88, 27);
@@ -97,17 +102,26 @@
             btnBuscar.UseVisualStyleBackColor = true;
             btnBuscar.Click += btnBuscar_Click;
             // 
-            // rvReporteVenta
+            // pnReporte
             // 
-            rvReporteVenta.BackColor = Color.FromArgb(35, 35, 35);
-            rvReporteVenta.LocalReport.ReportEmbeddedResource = "AutomotrizFront.Presentacion.Reportes.Reporte1.RptVenta.rdlc";
-            rvReporteVenta.Location = new Point(14, 102);
-            rvReporteVenta.Margin = new Padding(4, 3, 4, 3);
-            rvReporteVenta.Name = "rvReporteVenta";
-            rvReporteVenta.ServerReport.BearerToken = null;
-            rvReporteVenta.ShowToolBar = false;
-            rvReporteVenta.Size = new Size(870, 484);
-            rvReporteVenta.TabIndex = 6;
+            pnReporte.AutoScroll = true;
+            pnReporte.AutoSize = true;
+            pnReporte.Controls.Add(rvReporte);
+            pnReporte.Location = new Point(12, 144);
+            pnReporte.Name = "pnReporte";
+            pnReporte.Size = new Size(874, 444);
+            pnReporte.TabIndex = 6;
+            // 
+            // rvReporte
+            // 
+            rvReporte.BackColor = Color.FromArgb(35, 35, 35);
+            rvReporte.Dock = DockStyle.Fill;
+            rvReporte.Location = new Point(0, 0);
+            rvReporte.Name = "ReportViewer";
+            rvReporte.ServerReport.BearerToken = null;
+            rvReporte.ShowToolBar = false;
+            rvReporte.Size = new Size(874, 444);
+            rvReporte.TabIndex = 0;
             // 
             // FrmReporteVentas
             // 
@@ -115,7 +129,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(43, 43, 43);
             ClientSize = new Size(898, 600);
-            Controls.Add(rvReporteVenta);
+            Controls.Add(pnReporte);
             Controls.Add(btnBuscar);
             Controls.Add(dtpFechaMax);
             Controls.Add(dtpFechaMin);
@@ -127,6 +141,7 @@
             Name = "FrmReporteVentas";
             Text = "FrmReporteVentas";
             Load += FrmReporteVentas_Load;
+            pnReporte.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -139,6 +154,7 @@
         private System.Windows.Forms.DateTimePicker dtpFechaMin;
         private System.Windows.Forms.DateTimePicker dtpFechaMax;
         private System.Windows.Forms.Button btnBuscar;
-        private Microsoft.Reporting.WinForms.ReportViewer rvReporteVenta;
+        private Panel pnReporte;
+        private Microsoft.Reporting.WinForms.ReportViewer rvReporte;
     }
 }

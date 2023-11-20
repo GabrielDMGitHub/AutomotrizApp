@@ -22,8 +22,8 @@ namespace AutomotrizFront.Presentacion.Reportes.Reporte1
         //
         private void FrmReporteVentas_Load(object sender, EventArgs e)
         {
-            rvReporteVenta.LocalReport.ReportEmbeddedResource = "AutomotrizFront.Presentacion.Reportes.Reporte1.RptVenta.rdlc";
-            rvReporteVenta.RefreshReport();
+            rvReporte.LocalReport.ReportEmbeddedResource = "AutomotrizFront.Presentacion.Reportes.Reporte1.RptVenta.rdlc";
+            rvReporte.RefreshReport();
 
             dtpFechaMin.Value = new DateTime(2000, 1, 1);
             dtpFechaMax.Value = DateTime.Today.AddDays(1);
@@ -42,9 +42,9 @@ namespace AutomotrizFront.Presentacion.Reportes.Reporte1
             DataTable tabla = new DataTable();
             tabla = DBHelper.ObtenerInstancia().ConsultarSP("SP_REPORTE_VENTAS_X_TIPO", lParametros);
 
-            rvReporteVenta.LocalReport.DataSources.Clear();
-            rvReporteVenta.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", tabla));
-            rvReporteVenta.RefreshReport();
+            rvReporte.LocalReport.DataSources.Clear();
+            rvReporte.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", tabla));
+            rvReporte.RefreshReport();
         }
     }
 }

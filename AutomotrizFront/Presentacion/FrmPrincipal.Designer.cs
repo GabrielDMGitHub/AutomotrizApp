@@ -191,7 +191,7 @@
             btnReporte1.Padding = new Padding(29, 0, 0, 0);
             btnReporte1.Size = new Size(200, 45);
             btnReporte1.TabIndex = 3;
-            btnReporte1.Text = "Reporte 1";
+            btnReporte1.Text = "Ganancia x tipo";
             btnReporte1.TextAlign = ContentAlignment.MiddleLeft;
             btnReporte1.UseVisualStyleBackColor = true;
             btnReporte1.Click += btnReporte1_Click;

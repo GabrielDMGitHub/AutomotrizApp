@@ -1,13 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "PhI2mUcHdBaaaA0QzIkd/u9CrLBoICKbOHVejEEmkp7i4kyAWM+CdKyrnKQ2y8RLlooAA7zDCDcvYxgJMhG0rg==",
+  "dgSpecHash": "Gkh3td0WAXB7/zesTXAdwfWSmTtD8JZfyDr+rexCvvid5XwSKrspWSqPvU4rCCbINGXRc7SpL6mgxaiHWzi8iw==",
   "success": true,
   "projectFilePath": "C:\\Users\\gabyd\\Desktop\\Repositorio Programacion II\\AutomotrizApp\\AutomotrizApi\\AutomotrizApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gabyd\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\gabyd\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\gabyd\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
-    "C:\\Users\\gabyd\\.nuget\\packages\\microsoft.reportingservices.reportviewercontrol.winforms\\150.1586.0\\microsoft.reportingservices.reportviewercontrol.winforms.150.1586.0.nupkg.sha512",
     "C:\\Users\\gabyd\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\gabyd\\.nuget\\packages\\microsoft.sqlserver.types\\160.1000.6\\microsoft.sqlserver.types.160.1000.6.nupkg.sha512",
     "C:\\Users\\gabyd\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
@@ -24,16 +23,5 @@
     "C:\\Users\\gabyd\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\gabyd\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "El paquete \"Microsoft.ReportingServices.ReportViewerControl.Winforms 150.1586.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net6.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
-      "libraryId": "Microsoft.ReportingServices.ReportViewerControl.Winforms",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  "logs": []
 }

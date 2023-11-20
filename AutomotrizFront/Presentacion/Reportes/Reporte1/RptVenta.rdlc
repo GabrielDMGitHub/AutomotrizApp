@@ -48,13 +48,13 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>7.49075cm</Width>
+                  <Width>7.52603cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>7.49075cm</Width>
+                  <Width>7.52603cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>7.49075cm</Width>
+                  <Width>7.52603cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -275,7 +275,7 @@
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
             <Height>1.2cm</Height>
-            <Width>22.47224cm</Width>
+            <Width>22.57808cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -304,17 +304,27 @@
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label>Total Venta</Label>
+                  <Group Name="Chart1_SeriesGroup">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!TipoProducto.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!TipoProducto.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <Label>=Fields!TipoProducto.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="TotalVenta">
+                <ChartSeries Name="TipoProducto">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Count(Fields!TotalVenta.Value)</Y>
+                        <Y>=Sum(Fields!TotalVenta.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
@@ -600,7 +610,7 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Título del gráfico</Caption>
+                <Caption>Ganancia total por tipo de autoparte</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>9pt</FontSize>
@@ -632,7 +642,7 @@
             <DataSetName>DataSet1</DataSetName>
             <Top>1.37639cm</Top>
             <Height>7.11294cm</Height>
-            <Width>21.30807cm</Width>
+            <Width>22.57808cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -649,7 +659,7 @@
           <BackgroundColor>White</BackgroundColor>
         </Style>
       </Body>
-      <Width>22.47224cm</Width>
+      <Width>22.57808cm</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
