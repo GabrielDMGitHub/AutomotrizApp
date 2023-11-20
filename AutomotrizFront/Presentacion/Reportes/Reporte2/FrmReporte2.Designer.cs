@@ -66,9 +66,9 @@
             lblTitulo.Location = new Point(12, 9);
             lblTitulo.Margin = new Padding(4, 0, 4, 0);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(273, 37);
+            lblTitulo.Size = new Size(330, 37);
             lblTitulo.TabIndex = 8;
-            lblTitulo.Text = "Importe x Cliente";
+            lblTitulo.Text = "Compras por Cliente";
             // 
             // btnBuscar
             // 

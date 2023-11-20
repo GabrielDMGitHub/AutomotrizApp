@@ -172,7 +172,7 @@
             btnReporte2.Padding = new Padding(29, 0, 0, 0);
             btnReporte2.Size = new Size(200, 45);
             btnReporte2.TabIndex = 4;
-            btnReporte2.Text = "Reporte 2";
+            btnReporte2.Text = "Compras x cliente";
             btnReporte2.TextAlign = ContentAlignment.MiddleLeft;
             btnReporte2.UseVisualStyleBackColor = true;
             btnReporte2.Click += btnReporte2_Click;

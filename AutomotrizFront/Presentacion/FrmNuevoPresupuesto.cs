@@ -1,5 +1,7 @@
-﻿using AutomotrizBack.Datos;
+﻿using AutomotrizBack.Servicios;
+using AutomotrizBack.Datos;
 using AutomotrizBack.Entidades;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -111,23 +113,11 @@ namespace AutomotrizFront.Presentacion
 
 
         //Guarda una lista de productos dentro del combo box para el posterior uso de datos
-        private void CargarComboProductos()
+        private async Task CargarComboProductos()
         {
-            DataTable tProductos = DBHelper.ObtenerInstancia().ConsultarSP("SP_CONSULTAR_PRODUCTOS");
-            List<Producto> lProductos = new List<Producto>();
-
-            foreach (DataRow row in tProductos.Rows)
-            {
-                Producto producto = new Producto
-                {
-                    Id = Convert.ToInt32(row["Id"]),
-                    Nombre = Convert.ToString(row["Nombre"]),
-                    Precio = Convert.ToSingle(row["Precio"]),
-                    Tipo = Convert.ToString(row["Tipo"])
-                };
-
-                lProductos.Add(producto);
-            }
+            string url = "https://localhost:7089/productos";
+            var dataJson = await ClienteSingleton.GetInstance().GetAsync(url);
+            List<Producto> lProductos = JsonConvert.DeserializeObject<List<Producto>>(dataJson);
 
             cboProducto.DataSource = lProductos;
             cboProducto.DisplayMember = "Nombre";
@@ -159,11 +149,11 @@ namespace AutomotrizFront.Presentacion
         //Eventos
         // ================================================================================================================================= //
         //Load
-        private void FrmNuevoPresupuesto_Load(object sender = null, EventArgs e = null)
+        private async void FrmNuevoPresupuesto_Load(object sender = null, EventArgs e = null)
         {
             LimpiarControles();
 
-            CargarComboProductos();
+            await CargarComboProductos();
             txtDniCliente.Text = FrmPrincipal.clienteActivo.Dni; //Carga el DNI del cliente que inicio sesion
 
             txtDniCliente.Focus();
@@ -193,12 +183,16 @@ namespace AutomotrizFront.Presentacion
 
 
         //Evento para iniciar la carga de un nuevo presupuesto a la base de datos
-        private void btnConfirmar_Click(object sender, EventArgs e)
+        private async void btnConfirmar_Click(object sender, EventArgs e)
         {
             if (ValidarConfirmar())
             {
-                nuevoPresupuesto.ClientePresupuesto = clienteNuevoPresupuesto;
-                if (DBHelper.ObtenerInstancia().Transaccion(nuevoPresupuesto))
+                string bodyContent = JsonConvert.SerializeObject(nuevoPresupuesto);
+
+                string url = "https://localhost:7089/presupuesto";
+                var result = await ClienteSingleton.GetInstance().PostAsync(url, bodyContent);
+
+                if (result.Equals("true"))
                 {
                     MessageBox.Show("El Presupuesto se cargo con exito.");
                     LimpiarControles();
@@ -215,7 +209,7 @@ namespace AutomotrizFront.Presentacion
         //Evento para cancelar la creacion y reiniciar los campos
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            LimpiarControles();
+            FrmNuevoPresupuesto_Load();
         }
 
 

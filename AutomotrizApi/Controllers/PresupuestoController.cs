@@ -1,6 +1,6 @@
-﻿using AutomotrizApp.Entidades;
-using AutomotrizApp.Fachada.Implementacion;
-using AutomotrizApp.Fachada.Interfaz;
+﻿using AutomotrizBack.Entidades;
+using AutomotrizBack.Fachada.Implementacion;
+using AutomotrizBack.Fachada.Interfaz;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using static System.Net.Mime.MediaTypeNames;

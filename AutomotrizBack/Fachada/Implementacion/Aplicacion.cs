@@ -14,10 +14,12 @@ namespace AutomotrizBack.Fachada.Implementacion
     {
         private IPresupuestoDao dao;
         private ILogin login;
+        private IProducto prod;
         public Aplicacion()
         {
             dao = new PresupuestoDao();
             login = new Login();
+            prod = new ProductoDao();
         }
         public List<Producto> GetProductos()
         {
@@ -27,6 +29,26 @@ namespace AutomotrizBack.Fachada.Implementacion
         public bool GuadarPresupuesto(Presupuesto presupuesto)
         {
             return dao.CrearPresupuesto(presupuesto);
+        }
+
+        bool IAplicacion.Cliente(Cliente cliente)
+        {
+            return dao.Cliente(cliente);
+        }
+
+        List<Cliente> IAplicacion.GetClientes()
+        {
+            return dao.ObtenerCliente();
+        }
+
+        void IAplicacion.InsertarProducto(Producto producto)
+        {
+            prod.InsertarProducto(producto);
+        }
+
+        void IAplicacion.ActualizarProducto(Producto producto)
+        {
+            prod.ActualizarProducto(producto);
         }
 
         bool IAplicacion.Logeado(Cliente c)

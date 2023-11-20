@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AutomotrizApp\AutomotrizApp.csproj" />
+    <ProjectReference Include="..\AutomotrizBack\AutomotrizBack.csproj" />
   </ItemGroup>
 
 </Project>

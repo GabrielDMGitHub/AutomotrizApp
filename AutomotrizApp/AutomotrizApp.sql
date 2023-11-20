@@ -460,7 +460,7 @@ go
 
 go
 --INGRESANDO EL DNI DEL CLIENTE TRAE LA SUMA TOTAL DE LAS VENTAS DE ESE CLIENTE
-create proc [SP_REPORTE_COMPRAS_X_CIENTE]
+alter proc [SP_REPORTE_COMPRAS_X_CIENTE]
 		@input_dni_cliente int = null  
 as
 begin

@@ -40,11 +40,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="AutomotrizAppDataSet2.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>AutomotrizAppDataSet2.xsd</DependentUpon>
-    </Compile>
     <Compile Update="Presentacion\FrmAcercaDe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,10 +84,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="AutomotrizAppDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>AutomotrizAppDataSet2.Designer.cs</LastGenOutput>
-    </None>
     <None Update="Presentacion\Reportes\Reporte2\DSReporte2.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DSReporte2.Designer.cs</LastGenOutput>
