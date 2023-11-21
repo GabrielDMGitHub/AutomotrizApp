@@ -86,3 +86,14 @@ C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\obj\Debug\net6.0-windows\AutomotrizFront.Presentacion.Reportes.Reporte1.FrmReporteVentas.resources
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\obj\Debug\net6.0-windows\AutomotrizFront.Presentacion.Reportes.Reporte2.FrmReporte2.resources
 C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\obj\Debug\net6.0-windows\AutomotrizFront.Presentacion.Reportes.Reporte3.FrmReporte3.resources
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\bin\Debug\net6.0-windows\AutomotrizApi.deps.json
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\bin\Debug\net6.0-windows\AutomotrizApi.runtimeconfig.json
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\bin\Debug\net6.0-windows\appsettings.Development.json
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\bin\Debug\net6.0-windows\appsettings.json
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\bin\Debug\net6.0-windows\AutomotrizApi.exe
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\bin\Debug\net6.0-windows\Microsoft.OpenApi.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\bin\Debug\net6.0-windows\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\bin\Debug\net6.0-windows\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\bin\Debug\net6.0-windows\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\bin\Debug\net6.0-windows\AutomotrizApi.dll
+C:\Users\gabyd\Desktop\Repositorio Programacion II\AutomotrizApp\AutomotrizFront\bin\Debug\net6.0-windows\AutomotrizApi.pdb

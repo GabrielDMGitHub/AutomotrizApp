@@ -105,7 +105,7 @@ namespace AutomotrizFront.Presentacion
             if (producto != null)
             {
                 //Creacion de producto
-                Producto nuevoProducto = new Producto(idNuevoProducto,
+                Producto nuevoProducto = new Producto(  producto.Id,
                                                         txtNombreProducto.Text,
                                                         Convert.ToSingle(txtPrecioProducto.Text),
                                                         Convert.ToString(cboTipoProducto.SelectedValue));

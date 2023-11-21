@@ -51,6 +51,11 @@ namespace AutomotrizBack.Fachada.Implementacion
             prod.ActualizarProducto(producto);
         }
 
+        bool IAplicacion.EliminarProducto(Producto producto)
+        {
+            return prod.EliminarProducto(producto);
+        }
+
         bool IAplicacion.Logeado(Cliente c)
         {
             return login.Logeado(c);

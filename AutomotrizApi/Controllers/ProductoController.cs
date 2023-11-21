@@ -32,18 +32,30 @@ namespace AutomotrizApi.Controllers
         [HttpPost("UpdateProducto")]
         public IActionResult UpdateProducto(Producto p)
         {
-            //try
-            //{
-            //    app.ActualizarProducto(p);
-            //    return Ok();
-            //}
-            //catch
-            //{
-            //    return BadRequest("Error del servidor");
-            //}
+            try
+            {
+                app.ActualizarProducto(p);
+                return Ok();
+            }
+            catch
+            {
+                return BadRequest("Error del servidor");
+            }
+        }
 
-            app.ActualizarProducto(p);
-            return Ok();
+
+        [HttpPost("DeleteProducto")]
+        public IActionResult DeleteProducto(Producto p)
+        {
+            try
+            {
+                app.EliminarProducto(p);
+                return Ok();
+            }
+            catch
+            {
+                return BadRequest("Error del servidor");
+            }
         }
     }
 }

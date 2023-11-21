@@ -187,6 +187,7 @@ namespace AutomotrizFront.Presentacion
         {
             if (ValidarConfirmar())
             {
+                nuevoPresupuesto.ClientePresupuesto = clienteNuevoPresupuesto;
                 string bodyContent = JsonConvert.SerializeObject(nuevoPresupuesto);
 
                 string url = "https://localhost:7089/presupuesto";

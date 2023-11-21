@@ -35,6 +35,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AutomotrizApi\AutomotrizApi.csproj" />
     <ProjectReference Include="..\AutomotrizApp\AutomotrizApp.csproj" />
     <ProjectReference Include="..\AutomotrizBack\AutomotrizBack.csproj" />
   </ItemGroup>

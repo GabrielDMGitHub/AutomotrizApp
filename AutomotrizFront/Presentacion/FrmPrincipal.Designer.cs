@@ -35,7 +35,6 @@
             pnControles = new Panel();
             btnAcercaDe = new Button();
             pnMenuReportes = new Panel();
-            btnReporte3 = new Button();
             btnReporte2 = new Button();
             btnReporte1 = new Button();
             btnMenuReportes = new Button();
@@ -115,7 +114,7 @@
             btnAcercaDe.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnAcercaDe.ForeColor = SystemColors.ControlLight;
             btnAcercaDe.ImageAlign = ContentAlignment.MiddleRight;
-            btnAcercaDe.Location = new Point(0, 450);
+            btnAcercaDe.Location = new Point(0, 405);
             btnAcercaDe.Margin = new Padding(4, 3, 4, 3);
             btnAcercaDe.Name = "btnAcercaDe";
             btnAcercaDe.Padding = new Padding(18, 0, 0, 0);
@@ -128,7 +127,6 @@
             // 
             // pnMenuReportes
             // 
-            pnMenuReportes.Controls.Add(btnReporte3);
             pnMenuReportes.Controls.Add(btnReporte2);
             pnMenuReportes.Controls.Add(btnReporte1);
             pnMenuReportes.Controls.Add(btnMenuReportes);
@@ -136,27 +134,8 @@
             pnMenuReportes.Location = new Point(0, 270);
             pnMenuReportes.Margin = new Padding(4, 3, 4, 3);
             pnMenuReportes.Name = "pnMenuReportes";
-            pnMenuReportes.Size = new Size(200, 180);
+            pnMenuReportes.Size = new Size(200, 135);
             pnMenuReportes.TabIndex = 5;
-            // 
-            // btnReporte3
-            // 
-            btnReporte3.Dock = DockStyle.Top;
-            btnReporte3.FlatAppearance.BorderColor = Color.White;
-            btnReporte3.FlatAppearance.BorderSize = 0;
-            btnReporte3.FlatStyle = FlatStyle.Flat;
-            btnReporte3.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnReporte3.ForeColor = SystemColors.ControlLight;
-            btnReporte3.Location = new Point(0, 135);
-            btnReporte3.Margin = new Padding(4, 3, 4, 3);
-            btnReporte3.Name = "btnReporte3";
-            btnReporte3.Padding = new Padding(29, 0, 0, 0);
-            btnReporte3.Size = new Size(200, 45);
-            btnReporte3.TabIndex = 5;
-            btnReporte3.Text = "Reporte 3";
-            btnReporte3.TextAlign = ContentAlignment.MiddleLeft;
-            btnReporte3.UseVisualStyleBackColor = true;
-            btnReporte3.Click += btnReporte3_Click;
             // 
             // btnReporte2
             // 
@@ -470,7 +449,6 @@
         private System.Windows.Forms.Label lblReloj;
         private System.Windows.Forms.Timer tmrReloj;
         private System.Windows.Forms.Panel pnMenuReportes;
-        private System.Windows.Forms.Button btnReporte3;
         private System.Windows.Forms.Button btnReporte2;
         private System.Windows.Forms.Button btnReporte1;
     }

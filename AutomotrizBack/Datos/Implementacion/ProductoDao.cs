@@ -35,6 +35,13 @@ namespace AutomotrizBack.Datos.Implementacion
             DBHelper.ObtenerInstancia().ConsultarSP("SP_ACTUALIZAR_PRODUCTOS", lista);
         }
 
-        
+
+        bool IProducto.EliminarProducto(Producto p)
+        {
+            List<Parametro> parametro = new List<Parametro>() { new Parametro("@input_id_producto", p.Id) };
+
+            DBHelper.ObtenerInstancia().ConsultarSP("SP_ELIMINAR_PRODUCTOS", parametro); //Elimina de la base de datos
+            return true;
+        }
     }
 }

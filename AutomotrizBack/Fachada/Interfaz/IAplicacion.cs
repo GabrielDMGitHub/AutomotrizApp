@@ -16,5 +16,6 @@ namespace AutomotrizBack.Fachada.Interfaz
         bool Logeado(Cliente c);
         void InsertarProducto(Producto producto);
         void ActualizarProducto(Producto producto);
+        bool EliminarProducto(Producto producto);
     }
 }

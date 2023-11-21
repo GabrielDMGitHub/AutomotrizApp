@@ -29,7 +29,6 @@ namespace AutomotrizFront
         public FrmAcercaDe AcercaDe = new FrmAcercaDe();
         public FrmReporteVentas Reporte1 = new FrmReporteVentas();
         public FrmReporte2 Reporte2 = new FrmReporte2();
-        public FrmReporte3 Reporte3 = new FrmReporte3();
 
         public static Cliente clienteActivo;
         public static FrmPrincipal instancia;
@@ -104,11 +103,6 @@ namespace AutomotrizFront
             CambiarFormulario(Reporte2);
         }
 
-        private void btnReporte3_Click(object sender, EventArgs e)
-        {
-            CambiarFormulario(Reporte3);
-        }
-
         private void btnAcercaDe_Click(object sender, EventArgs e)
         {
             CambiarFormulario(AcercaDe);
@@ -118,11 +112,10 @@ namespace AutomotrizFront
         //Cierra el programa completo
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            //if (MessageBox.Show("¿Está seguro que desea salir?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            //{
-            //    Application.Exit();
-            //}
-            Application.Exit();
+            if (MessageBox.Show("¿Está seguro que desea salir?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
 
@@ -161,14 +154,14 @@ namespace AutomotrizFront
         //Expande/contrae el panel que muestra los botones de reportes y cambia el color del texto
         private void btnMenuReportes_Click(object sender, EventArgs e)
         {
-            if (pnMenuReportes.Size.Height == 180)
+            if (pnMenuReportes.Size.Height == 135)
             {
                 pnMenuReportes.Height = 45;
                 btnMenuReportes.ForeColor = SystemColors.ControlLight;
             }
             else
             {
-                pnMenuReportes.Height = 180;
+                pnMenuReportes.Height = 135;
                 btnMenuReportes.ForeColor = SystemColors.Highlight;
             }
         }

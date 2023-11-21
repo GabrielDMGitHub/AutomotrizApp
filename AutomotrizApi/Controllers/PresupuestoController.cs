@@ -16,6 +16,8 @@ namespace AutomotrizApi.Controllers
         {
             app = new Aplicacion();
         }
+
+
         [HttpGet("/productos")]
         public IActionResult GetProductos()
         {

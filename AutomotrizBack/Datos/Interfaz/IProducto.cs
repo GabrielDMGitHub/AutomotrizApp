@@ -11,5 +11,6 @@ namespace AutomotrizBack.Datos.Interfaz
     {
         void InsertarProducto(Producto p);
         void ActualizarProducto(Producto p);
+        bool EliminarProducto(Producto p);
     }
 }

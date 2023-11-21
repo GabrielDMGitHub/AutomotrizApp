@@ -38,11 +38,11 @@ namespace AutomotrizBack.Servicios
         public async Task<string> PostAsync(string url, string data)
         {
             StringContent content = new StringContent(data, Encoding.UTF8, "application/json");
-            var result = await cliente.PostAsync(url, content);
+            var resultado = await cliente.PostAsync(url, content);
             var response = "";
-            if (result.IsSuccessStatusCode)
+            if (resultado.IsSuccessStatusCode)
             {
-                response = await result.Content.ReadAsStringAsync();
+                response = await resultado.Content.ReadAsStringAsync();
             }
             return response;
         }
