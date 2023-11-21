@@ -4,6 +4,7 @@ using AutomotrizBack.Entidades;
 using AutomotrizBack.Fachada.Interfaz;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,51 +13,51 @@ namespace AutomotrizBack.Fachada.Implementacion
 {
     public class Aplicacion : IAplicacion
     {
-        private IPresupuestoDao dao;
+        private IPresupuestoDao presupuestoDao;
         private ILogin login;
-        private IProducto prod;
+        private IProducto productoDao;
         public Aplicacion()
         {
-            dao = new PresupuestoDao();
+            presupuestoDao = new PresupuestoDao();
             login = new Login();
-            prod = new ProductoDao();
+            productoDao = new ProductoDao();
         }
         public List<Producto> GetProductos()
         {
-            return dao.ObtenerProductos();
+            return presupuestoDao.ObtenerProductos();
         }
 
         public bool GuadarPresupuesto(Presupuesto presupuesto)
         {
-            return dao.CrearPresupuesto(presupuesto);
+            return presupuestoDao.CrearPresupuesto(presupuesto);
         }
 
         bool IAplicacion.Cliente(Cliente cliente)
         {
-            return dao.Cliente(cliente);
+            return presupuestoDao.Cliente(cliente);
         }
 
         List<Cliente> IAplicacion.GetClientes()
         {
-            return dao.ObtenerCliente();
+            return presupuestoDao.ObtenerCliente();
         }
 
         void IAplicacion.InsertarProducto(Producto producto)
         {
-            prod.InsertarProducto(producto);
+            productoDao.InsertarProducto(producto);
         }
 
         void IAplicacion.ActualizarProducto(Producto producto)
         {
-            prod.ActualizarProducto(producto);
+            productoDao.ActualizarProducto(producto);
         }
 
         bool IAplicacion.EliminarProducto(Producto producto)
         {
-            return prod.EliminarProducto(producto);
+            return productoDao.EliminarProducto(producto);
         }
 
-        bool IAplicacion.Logeado(Cliente c)
+        DataTable IAplicacion.Logeado(Cliente c)
         {
             return login.Logeado(c);
         }

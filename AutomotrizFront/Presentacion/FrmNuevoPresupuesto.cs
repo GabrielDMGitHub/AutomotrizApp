@@ -70,6 +70,8 @@ namespace AutomotrizFront.Presentacion
                             clienteNuevoPresupuesto.NombreCompleto = Convert.ToString(row["Nombre Completo"]);
                             clienteNuevoPresupuesto.Dni = Convert.ToString(row["DNI"]);
                             clienteNuevoPresupuesto.Telefono = Convert.ToString(row["Telefono"]);
+                            clienteNuevoPresupuesto.Usuario = "user";
+                            clienteNuevoPresupuesto.Pass = "pass";
                             return true;
                         }
                     }
@@ -80,6 +82,8 @@ namespace AutomotrizFront.Presentacion
                     clienteNuevoPresupuesto.NombreCompleto = Convert.ToString(tClientes.Rows[0]["Nombre Completo"]);
                     clienteNuevoPresupuesto.Dni = Convert.ToString(tClientes.Rows[0]["DNI"]);
                     clienteNuevoPresupuesto.Telefono = Convert.ToString(tClientes.Rows[0]["Telefono"]);
+                    clienteNuevoPresupuesto.Usuario = "user";
+                    clienteNuevoPresupuesto.Pass = "pass";
                     return true;
                 }
             }
@@ -115,7 +119,7 @@ namespace AutomotrizFront.Presentacion
         //Guarda una lista de productos dentro del combo box para el posterior uso de datos
         private async Task CargarComboProductos()
         {
-            string url = "https://localhost:7089/productos";
+            string url = "https://localhost:7089/api/Presupuesto/ComboProductos";
             var dataJson = await ClienteSingleton.GetInstance().GetAsync(url);
             List<Producto> lProductos = JsonConvert.DeserializeObject<List<Producto>>(dataJson);
 
@@ -190,7 +194,7 @@ namespace AutomotrizFront.Presentacion
                 nuevoPresupuesto.ClientePresupuesto = clienteNuevoPresupuesto;
                 string bodyContent = JsonConvert.SerializeObject(nuevoPresupuesto);
 
-                string url = "https://localhost:7089/presupuesto";
+                string url = "https://localhost:7089/api/Presupuesto/InsertPresupuesto";
                 var result = await ClienteSingleton.GetInstance().PostAsync(url, bodyContent);
 
                 if (result.Equals("true"))

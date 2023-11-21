@@ -18,7 +18,7 @@ namespace AutomotrizApi.Controllers
         }
 
 
-        [HttpGet("/productos")]
+        [HttpGet("ComboProductos")]
         public IActionResult GetProductos()
         {
             List<Producto> lst;
@@ -33,7 +33,7 @@ namespace AutomotrizApi.Controllers
             }
         }
 
-        [HttpPost("/presupuesto")]
+        [HttpPost("InsertPresupuesto")]
         public IActionResult PostPresupuesto(Presupuesto oPre)
         {
             try
