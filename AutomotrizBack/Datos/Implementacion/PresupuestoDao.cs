@@ -114,6 +114,14 @@ namespace AutomotrizBack.Datos.Implementacion
             return true;
         }
 
+        bool IPresupuestoDao.EliminarPresupuesto(Presupuesto presupuesto)
+        {
+            List<Parametro> parametro = new List<Parametro>() { new Parametro("@input_id_presupuesto", presupuesto.Id) };
+
+            DBHelper.ObtenerInstancia().ConsultarSP("[SP_ELIMINAR_PRESUPUESTOS]", parametro);
+            return true;
+        }
+
         List<Cliente>IPresupuestoDao.ObtenerCliente()
         {
             List<Cliente> lCliente = new List<Cliente>();

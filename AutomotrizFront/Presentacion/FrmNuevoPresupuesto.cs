@@ -200,7 +200,7 @@ namespace AutomotrizFront.Presentacion
                 if (result.Equals("true"))
                 {
                     MessageBox.Show("El Presupuesto se cargo con exito.");
-                    LimpiarControles();
+                    FrmNuevoPresupuesto_Load();
                 }
                 else
                 {

@@ -88,7 +88,7 @@
             lblLoginError.AutoSize = true;
             lblLoginError.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             lblLoginError.ForeColor = Color.FromArgb(226, 50, 50);
-            lblLoginError.Location = new Point(55, 389);
+            lblLoginError.Location = new Point(47, 338);
             lblLoginError.Margin = new Padding(4, 0, 4, 0);
             lblLoginError.Name = "lblLoginError";
             lblLoginError.Size = new Size(0, 16);

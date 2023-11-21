@@ -18,5 +18,6 @@ namespace AutomotrizBack.Fachada.Interfaz
         void InsertarProducto(Producto producto);
         void ActualizarProducto(Producto producto);
         bool EliminarProducto(Producto producto);
+        bool EliminarPresupuesto(Presupuesto presupuesto);
     }
 }

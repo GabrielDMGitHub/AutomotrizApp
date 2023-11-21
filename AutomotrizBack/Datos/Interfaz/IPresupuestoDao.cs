@@ -13,5 +13,6 @@ namespace AutomotrizBack.Datos.Interfaz
         List<Producto> ObtenerProductos();
         List<Cliente> ObtenerCliente();
         bool Cliente(Cliente cliente);
+        bool EliminarPresupuesto(Presupuesto presupuesto);
     }
 }

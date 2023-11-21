@@ -61,5 +61,10 @@ namespace AutomotrizBack.Fachada.Implementacion
         {
             return login.Logeado(c);
         }
+
+        bool IAplicacion.EliminarPresupuesto(Presupuesto presupuesto)
+        {
+            return presupuestoDao.EliminarPresupuesto(presupuesto);
+        }
     }
 }

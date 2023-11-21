@@ -43,5 +43,14 @@ namespace AutomotrizFront.Presentacion.Reportes.Reporte2
             rvReporte.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", tabla));
             rvReporte.RefreshReport();
         }
+
+        //Veriica si la tecla presionada es un numero o un "backspace", si no lo es, se ignora
+        private void txtNumerico_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

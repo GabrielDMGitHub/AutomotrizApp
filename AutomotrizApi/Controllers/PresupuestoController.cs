@@ -49,5 +49,18 @@ namespace AutomotrizApi.Controllers
                 return StatusCode(500, "Error interno!! Intente luego!!");
             }
         }
+        [HttpPost("DeletePresupuesto")]
+        public IActionResult DeletePresupuesto(Presupuesto p)
+        {
+            try
+            {
+                app.EliminarPresupuesto(p);
+                return Ok();
+            }
+            catch
+            {
+                return BadRequest("Error del servidor");
+            }
+        }
     }
 }

@@ -90,6 +90,7 @@
             txtDniCliente.Name = "txtDniCliente";
             txtDniCliente.Size = new Size(276, 23);
             txtDniCliente.TabIndex = 10;
+            txtDniCliente.KeyPress += txtNumerico_KeyPress;
             // 
             // lblDniCliente
             // 
