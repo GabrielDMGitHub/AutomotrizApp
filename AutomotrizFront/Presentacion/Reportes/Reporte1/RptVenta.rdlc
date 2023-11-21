@@ -278,7 +278,7 @@
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
             <Height>1.2cm</Height>
-            <Width>22.57808cm</Width>
+            <Width>22.57809cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -332,7 +332,6 @@
                       <ChartDataLabel>
                         <Style />
                         <Label>#PERCENT</Label>
-                        <Visible>true</Visible>
                       </ChartDataLabel>
                       <Style />
                       <ChartMarker>
@@ -662,7 +661,7 @@
           <BackgroundColor>White</BackgroundColor>
         </Style>
       </Body>
-      <Width>22.57808cm</Width>
+      <Width>22.57809cm</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

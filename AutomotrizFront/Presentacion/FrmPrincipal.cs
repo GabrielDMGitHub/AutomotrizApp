@@ -13,7 +13,6 @@ using AutomotrizBack.Datos;
 using System.Data.SqlClient;
 using AutomotrizFront.Presentacion.Reportes.Reporte1;
 using AutomotrizFront.Presentacion.Reportes.Reporte2;
-using AutomotrizFront.Presentacion.Reportes.Reporte3;
 
 namespace AutomotrizFront
 {

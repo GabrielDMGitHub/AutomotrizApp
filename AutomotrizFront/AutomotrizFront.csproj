@@ -18,13 +18,11 @@
     <None Remove="Presentacion\Reportes\Reporte1.rdlc" />
     <None Remove="Presentacion\Reportes\Reporte1\RptVenta.rdlc" />
     <None Remove="Presentacion\Reportes\Reporte2\Reporte2.rdlc" />
-    <None Remove="Presentacion\Reportes\Reporte3\Reporte3.rdlc" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Presentacion\Reportes\Reporte1\RptVenta.rdlc" />
     <EmbeddedResource Include="Presentacion\Reportes\Reporte2\Reporte2.rdlc" />
-    <EmbeddedResource Include="Presentacion\Reportes\Reporte3\Reporte3.rdlc" />
   </ItemGroup>
 
   <ItemGroup>

@@ -104,19 +104,22 @@ namespace AutomotrizFront.Presentacion
 
             if (producto != null)
             {
-                //Creacion de producto
-                Producto nuevoProducto = new Producto(  producto.Id,
-                                                        txtNombreProducto.Text,
-                                                        Convert.ToSingle(txtPrecioProducto.Text),
-                                                        Convert.ToString(cboTipoProducto.SelectedValue));
+                if(ValidarConfirmar())
+                {
+                    //Creacion de producto
+                    Producto nuevoProducto = new Producto(  producto.Id,
+                                                            txtNombreProducto.Text,
+                                                            Convert.ToSingle(txtPrecioProducto.Text),
+                                                            Convert.ToString(cboTipoProducto.SelectedValue));
 
-                string bodyContent = JsonConvert.SerializeObject(nuevoProducto);
+                    string bodyContent = JsonConvert.SerializeObject(nuevoProducto);
 
-                string url = "https://localhost:7089/api/Producto/UpdateProducto";
-                var result = await ClienteSingleton.GetInstance().PostAsync(url, bodyContent);
+                    string url = "https://localhost:7089/api/Producto/UpdateProducto";
+                    var result = await ClienteSingleton.GetInstance().PostAsync(url, bodyContent);
 
-                MessageBox.Show("El producto se actualizo correctamente");
-                FrmPrincipal.instancia.CambiarFormulario(FrmPrincipal.instancia.ConsultarProductos = new FrmConsultarProductos());
+                    MessageBox.Show("El producto se actualizo correctamente");
+                    FrmPrincipal.instancia.CambiarFormulario(FrmPrincipal.instancia.ConsultarProductos = new FrmConsultarProductos());
+                }
             }
             else
             {
@@ -149,7 +152,7 @@ namespace AutomotrizFront.Presentacion
             }
             else
             {
-                LimpiarControles();
+                FrmNuevoProducto_Load();
             }
         }
 
@@ -162,12 +165,6 @@ namespace AutomotrizFront.Presentacion
                 e.Handled = true;
             }
         }
-
-        private void btnCancelar_Click_1(object sender, EventArgs e)
-        {
-            LimpiarControles();
-        }
-
 
         // ================================================================================================================================= //
     }

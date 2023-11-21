@@ -7,9 +7,6 @@
     <Compile Update="Presentacion\Reportes\Reporte2\FrmReporte2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\Reportes\Reporte3\FrmReporte3.cs">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Update="Presentacion\Reportes\Reporte2\DSReporte2.xsd">
